@@ -22,6 +22,10 @@ git push
 mkdocs gh-deploy
 ```
 
+**Reference**
+
+- https://www.mkdocs.org/user-guide/deploying-your-docs/
+
 ---
 ## Mkdocs
 
