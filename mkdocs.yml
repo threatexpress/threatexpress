@@ -10,7 +10,7 @@ theme:
     palette:
         primary: bluegrey
         accent: blue
-    logo: img/icon.png
+    logo: img/threatexpress_logo.png
     favicon: img/favicon.ico
     font:
         text: Roboto
@@ -68,6 +68,9 @@ nav:
     - 2019:
       - 01:
         - Penetration Testing Pasties: blogs/2019/01/penetration-testing-pasties.md 
+    - 2018:
+      - 11:
+        - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2.md
     - 2016:
       - 09:
         - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md

@@ -1,13 +1,18 @@
 # Threatexpress
 
-![](/img/threatexpress_logo.png)
+Welcome to the Threat Express information security blog create by red teamers, penetration testers and security professionals.  This blog contains security research, tools, and other red teaming related information.
+
+The primary authors are:
+
+- Andrew Chiles [@andrewchiles](https://twitter.com/andrewchiles)
+- James Tubberville [@minis_io](https://twitter.com/minis_io)
+- Joe Vest [@joevest](https://twitter.com/joevest)
 
 ---
 ## Recent Posts
 
-### [New Information Security Red Teaming Blog "Threat Express"](/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis)
-### [New Information Security Red Teaming Blog "Threat Express"](/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis)
-### [New Information Security Red Teaming Blog "Threat Express"](/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis)
+### [Penetration Testing Pasties](/blogs/2019/01/penetration-testing-pasties/)
+### [A Deep Dive into Cobalt Strike Malleable C2](/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2)
 
 
 ---
