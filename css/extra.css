@@ -1,0 +1,12 @@
+/******* Tables - START*******/
+/* 100% wide fixed tables with border*/
+ 
+table.tweets{
+    border: 2px solid grey;
+    table-layout: fixed;
+    width: 100%;
+}
+
+/******* Tables - END *******/
+
+
