@@ -8,5 +8,5 @@ Tools will be posted at https://github.com/minisllc.
 
 Stay tuned!
 
-![MINIS - Latin for "threats"](/img/icon-150x150.png)
+![MINIS - Latin for "threats"](/threatexpress/img/icon-150x150.png)
 

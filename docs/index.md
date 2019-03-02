@@ -11,8 +11,8 @@ The primary authors are:
 ---
 ## Recent Posts
 
-### [Penetration Testing Pasties](/blogs/2019/01/penetration-testing-pasties/)
-### [A Deep Dive into Cobalt Strike Malleable C2](/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2)
+### [Penetration Testing Pasties](/threatexpress/blogs/2019/01/penetration-testing-pasties/)
+### [A Deep Dive into Cobalt Strike Malleable C2](/threatexpress/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2)
 
 
 ---

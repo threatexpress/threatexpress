@@ -185,18 +185,17 @@ upload
 [1]: /threatexpress/img/deep_dive_malleable_c2.png
 [2]: https://twitter.com/AndrewChiles
 [3]: https://twitter.com/001SPARTaN
-[5]: http://threatexpress.com/wp-content/uploads/2018/09/sleep.png
-[6]: http://threatexpress.com/wp-content/uploads/2018/09/useragent.png
-[7]: http://threatexpress.com/wp-content/uploads/2018/09/ssl.png
+[5]: /threatexpress/img/sleep.png
+[6]: /threatexpress/img/useragent.png
+[7]: /threatexpress/img/ssl.png
 [8]: http://twitter.com/bluscreenofjeff
-[9]: http://threatexpress.com/wp-content/uploads/2018/09/spawnto.png
-[10]: http://threatexpress.com/wp-content/uploads/2018/09/smb.png
-[11]: http://threatexpress.com/wp-content/uploads/2018/09/dns.png
-[12]: http://threatexpress.com/wp-content/uploads/2018/09/staging.png
-[13]: http://threatexpress.com/wp-content/uploads/2018/09/staging2.png
-[14]: http://threatexpress.com/wp-content/uploads/2018/09/memory.png
-[15]: http://threatexpress.com/wp-content/uploads/2018/09/httpget.png
-[16]: http://threatexpress.com/wp-content/uploads/2018/09/httppost.png
-[17]: https://twitter.com/intent/tweet?url=http://threatexpress.com/2018/09/a-deep-dive-into-cobalt-strike-malleable-c2/&text=Do%20you%20use%20Cobalt%20Strike%3F%20%40andrechiles%20%40001SPARTaN%20and%20I%20created%20a%20self%20documented%20Malleable%20C2%20profile%20with%20the%20hope%20that%20it%20will%20enhance%20your%20understanding%20of%20what%20you%20can%20do%20with%20malleable%20c2.%20&via=joevest&related=joevest
+[9]: /threatexpress/img/spawnto.png
+[10]: /threatexpress/img/smb.png
+[11]: /threatexpress/img/dns.png
+[12]: /threatexpress/img/staging.png
+[13]: /threatexpress/img/staging2.png
+[14]: /threatexpress/img/memory.png
+[15]: /threatexpress/img/httpget.png
+[16]: /threatexpress/img/httppost.png
 
   
