@@ -77,6 +77,8 @@ nav:
         - Threat Mitagation Strategies - Part 2: blogs/2018/05/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
       - 02:
         - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
+      - 01:
+        - Threat Mitagation Strategies - Part 1: blogs/2018/01/threat-mitigation-strategies-observations-recommendations.md
     - 2016:
       - 09:
         - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md
