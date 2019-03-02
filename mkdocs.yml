@@ -71,7 +71,12 @@ nav:
     - 2018:
       - 11:
         - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2.md
+      - 06: 
+        - Threat Get'ss a Vote - Applying a Threat Based Approach to Security Testing: blogs/2018/06/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
+      - 05:
+        - Threat Mitagation Stratigies - Part 2: blogs/2018/05/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
     - 2016:
       - 09:
         - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md
+  - Archive: archive.md
   - Contributors: contributors.md
