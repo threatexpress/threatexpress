@@ -36,6 +36,11 @@ MkDocs is a static site generator that's geared towards building project documen
 - https://www.mkdocs.org
 - https://squidfunk.github.io/mkdocs-material/
 
+---
+## Font Awesome
+
+Reference: http://bwmarrin.github.io/MkDocsPlus/fontawesome/
+
 ## Requirements and Setup
 
 Note: This has been tested with python 3.6 running on MacOS.
@@ -47,6 +52,7 @@ pip3.6 install mkdocs
 pip3.6 install mkdocs-material
 pip3.6 install pygments
 pip3.6 install pymdown-extensions
+pip3.6 install fontawesome-markdown
 ```
 
 

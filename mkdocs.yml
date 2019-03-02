@@ -1,1 +1,74 @@
-site_name: My Docs
+site_name: Threatexpress
+site_description: 'Threatexpress Blog'
+copyright: © 2019 Threatexpress
+
+# Theme
+theme:
+    name: material
+    custom_dir: 'theme'
+    language: en
+    palette:
+        primary: bluegrey
+        accent: blue
+    logo: img/icon.png
+    favicon: img/favicon.ico
+    font:
+        text: Roboto
+        code: Roboto Mono
+    feature:
+        tabs: false
+repo_name: 'threatexpress/threatexpress'
+repo_url: 'https://github.com/threatexpress'
+
+# Extras
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/threatexpress'
+    - type: 'twitter'
+      link: 'https://twitter.com/joevest'
+# Support for jquery and custom javascript
+extra_javascript:
+    - https://platform.twitter.com/widgets.js
+    - https://code.jquery.com/jquery-3.3.1.min.js
+    - js/extra.js
+
+# Support extra CSS
+extra_css:
+    - css/extra.css
+    - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+        guess_lang: true
+        linenums: true
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - fontawesome_markdown
+
+# Navigation
+nav:
+  - Home: index.md
+  - Blogs:
+    - 2019:
+      - 01:
+        - Penetration Testing Pasties: blogs/2019/01/penetration-testing-pasties.md 
+    - 2016:
+      - 09:
+        - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md
+  - Contributors: contributors.md

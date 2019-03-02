@@ -1,17 +1,29 @@
-# Welcome to MkDocs
+# Threatexpress
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+![](/img/threatexpress_logo.png)
 
-## Commands
+---
+## Recent Posts
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+### [New Information Security Red Teaming Blog "Threat Express"](/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis)
+### [New Information Security Red Teaming Blog "Threat Express"](/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis)
+### [New Information Security Red Teaming Blog "Threat Express"](/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis)
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+---
+## Contributor Tweets
+
+<table class="tweets">
+
+<tr>
+    <td>
+        <a class="twitter-timeline" href="https://twitter.com/joevest?ref_src=twsrc%5Etfw"></a>
+    </td>
+    <td>
+        <a class="twitter-timeline" href="https://twitter.com/AndrewChiles?ref_src=twsrc%5Etfw"></a>
+    </td>
+    <td>
+        <a class="twitter-timeline" href="https://twitter.com/minis_io?ref_src=twsrc%5Etfw"></a>
+    </td>
+</tr>
+</table>
