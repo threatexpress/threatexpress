@@ -182,7 +182,7 @@ upload
 - Cobalt Strike 3.6 – A Path for Privilege Escalation (Raphael Mudge) – https://blog.cobaltstrike.com/2016/12/08/cobalt-strike-3-6-a-path-for-privilege-escalation/
 - Malleable Command and Control (Raphael Mudge) – https://blog.cobaltstrike.com/2014/07/16/malleable-command-and-control/
 
-[1]: /img/deep_dive_malleable_c2.png
+[1]: /threatexpress/img/deep_dive_malleable_c2.png
 [2]: https://twitter.com/AndrewChiles
 [3]: https://twitter.com/001SPARTaN
 [5]: http://threatexpress.com/wp-content/uploads/2018/09/sleep.png
