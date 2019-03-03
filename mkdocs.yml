@@ -79,6 +79,14 @@ nav:
         - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
       - 01:
         - Threat Mitagation Strategies - Part 1: blogs/2018/01/threat-mitigation-strategies-observations-recommendations.md
+        - HostEnum - Updates and Usage Guide:  blogs/2018/01/hostenum-updates-usage.md
+    - 2017:
+      - 10:
+        - Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads: blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries.md
+      - 09:
+        - Install BloodHound on Ubuntu: blogs/2017/09/install-bloodhound-ubuntu.md 
+      - 05:
+        - Empire Modifying Server C2 Indicators: blogs/2017/05/empire-modifying-server-c2-indicators.md
     - 2016:
       - 09:
         - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md
