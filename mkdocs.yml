@@ -87,6 +87,7 @@ nav:
         - Install BloodHound on Ubuntu: blogs/2017/09/install-bloodhound-ubuntu.md 
       - 05:
         - Empire Modifying Server C2 Indicators: blogs/2017/05/empire-modifying-server-c2-indicators.md
+        - Invoke-Hostenum: blogs/2017/05/invoke-hostenum.md
     - 2016:
       - 09:
         - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md

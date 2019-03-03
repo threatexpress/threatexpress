@@ -13,11 +13,11 @@
 - January 2018 - [Threat Mitigation Strategies Part 1](threatexpress/blogs/2018/01/threat-mitigation-strategies-observations-recommendations/)
 - January 2018 - [HostEnum - Updates and Usage](threatexpress/blogs/2018/01/hostenum-updates-usage/)
 
-
 ## 2017
 
 - October 2017 - [Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads](threatexpress/blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/)
 - September 2017 - [Install BloodHound on Ubuntu](threatexpress/blogs/2017/09/install-bloodhound-ubuntu/)
 - May 2017 - [Empire - Modifying Server C2 Indicators(threatexpress/2017/05/empire-modifying-server-c2-indicators/)
+- May 2017 - [invoke-hostenum - A PowerShell Host Situational Awareness Tool](threatexpress.com/2017/05/invoke-hostenum/)
 
 ## 2016
