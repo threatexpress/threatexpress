@@ -19,5 +19,10 @@
 - September 2017 - [Install BloodHound on Ubuntu](threatexpress/blogs/2017/09/install-bloodhound-ubuntu/)
 - May 2017 - [Empire - Modifying Server C2 Indicators(threatexpress/2017/05/empire-modifying-server-c2-indicators/)
 - May 2017 - [invoke-hostenum - A PowerShell Host Situational Awareness Tool](threatexpress.com/2017/05/invoke-hostenum/)
+- March 2017 - [Leveraging Expired Domains for Red Team Engagements](threatexpress/blogs/2017/03/leveraging-expired-domains-for-red-team-engagements/)
 
 ## 2016
+
+- December 2016 - [Slack Notifications for Cobalt Strike](threatexpress/blogs/2016/12/slack-notifications-for-cobalt-strike/)
+- October 2016 - [SubShell and TinyShell - Custom Covert Webshells](threatexpress/blogs/2016/10/web-shells-covert-channel/)
+- September 2016 - [New Information Security and Red Teaming Blog Threat Express by MINIS](threatexpress/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis/)

@@ -88,7 +88,13 @@ nav:
       - 05:
         - Empire Modifying Server C2 Indicators: blogs/2017/05/empire-modifying-server-c2-indicators.md
         - Invoke-Hostenum: blogs/2017/05/invoke-hostenum.md
+      - 03:
+        - Leveraging Expired Domains for Red Team Engagements: blogs/2017/03/leveraging-expired-domains-for-red-team-engagements.md
     - 2016:
+      - 12:
+        - Slack Notifications for Cobalt Strike: blogs/2016/12/slack-notifications-for-cobalt-strike.md
+      - 10: 
+        - SubShell and TinyShell - Custom Covert Webshells: blogs/2016/10/web-shells-covert-channel.md
       - 09:
         - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md
   - Archive: archive.md
