@@ -697,6 +697,40 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#verify-neo4j-is-running-on-7474-and-7687" title="Verify neo4j is running on 7474 and 7687" class="md-nav__link">
+    Verify neo4j is running on 7474 and 7687
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-neo4j-password" title="Change neo4j password" class="md-nav__link">
+    Change neo4j password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-bloodhound-binary" title="Get Bloodhound binary" class="md-nav__link">
+    Get Bloodhound binary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-bloodhound" title="Run Bloodhound" class="md-nav__link">
+    Run Bloodhound
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#references" title="References:" class="md-nav__link">
     References:
   </a>
@@ -874,6 +908,40 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#verify-neo4j-is-running-on-7474-and-7687" title="Verify neo4j is running on 7474 and 7687" class="md-nav__link">
+    Verify neo4j is running on 7474 and 7687
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-neo4j-password" title="Change neo4j password" class="md-nav__link">
+    Change neo4j password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-bloodhound-binary" title="Get Bloodhound binary" class="md-nav__link">
+    Get Bloodhound binary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-bloodhound" title="Run Bloodhound" class="md-nav__link">
+    Run Bloodhound
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#references" title="References:" class="md-nav__link">
     References:
   </a>
@@ -906,7 +974,7 @@
                 
                 <h1 id="installing-bloodhound-on-ubuntu-a-quick-reference-guide">Installing BloodHound on Ubuntu - A Quick Reference Guide<a class="headerlink" href="#installing-bloodhound-on-ubuntu-a-quick-reference-guide" title="Permanent link">&para;</a></h1>
 <p><strong>Joe Vest | October 9, 2017 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/09/install-bloodhound-ubuntu/&amp;text=Install BloodHound on Ubuntu"><i class="fa fa-twitter"></i></a></strong></p>
-<p><img alt="" src="threatexpress/img/bloodhound_logo.png" /></p>
+<p><img alt="" src="/threatexpress/img/bloodhound_logo.png" /></p>
 <p>This post is intended as a quick reference guide to install Bloodhound on an Ubuntu system.</p>
 <p>This is heavily based on <a href="https://popped.io/setting-up-bloodhound-on-debian-jessie/">https://popped.io/setting-up-bloodhound-on-debian-jessie/</a> with a few tweaks.</p>
 <h2 id="install-ubuntu">Install Ubuntu<a class="headerlink" href="#install-ubuntu" title="Permanent link">&para;</a></h2>
@@ -952,47 +1020,34 @@ echo &quot;dbms.allow_format_migration=true&quot; &gt;&gt; /etc/neo4j/neo4j.conf
 </td></tr></table>
 
 <h2 id="get-bloodhound-db-for-neo4j">Get Bloodhound DB for neo4j<a class="headerlink" href="#get-bloodhound-db-for-neo4j" title="Permanent link">&para;</a></h2>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone https://github.com/adaptivethreat/BloodHound.git
-cd BloodHound
-mkdir /var/lib/neo4j/data/databases/graph.db
-cd BloodHound/
-cp -R BloodHoundExampleDB.graphdb/* /var/lib/neo4j/data/databases/graph.db
-neo4j start
- ```   
-
-### Verify neo4j is running on 7474 and 7687
-</pre></div>
-</td></tr></table>
-netstat -lantp 
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
 5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## Change neo4j password
-
-Logon to **http://localhost:7474** with neo4j:neo4j and change the password
-
-## Get Bloodhound binary
-
-Download the appropriate binary from 
-
-## Run Bloodhound
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone https://github.com/adaptivethreat/BloodHound.git
+cd BloodHound
+mkdir /var/lib/neo4j/data/databases/graph.db
+cd BloodHound/
+cp -R BloodHoundExampleDB.graphdb/* /var/lib/neo4j/data/databases/graph.db
+neo4j start
 </pre></div>
 </td></tr></table>
-./Bloodhound
-```</p>
+
+<h3 id="verify-neo4j-is-running-on-7474-and-7687">Verify neo4j is running on 7474 and 7687<a class="headerlink" href="#verify-neo4j-is-running-on-7474-and-7687" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>netstat -lantp 
+</pre></div>
+</td></tr></table>
+
+<h2 id="change-neo4j-password">Change neo4j password<a class="headerlink" href="#change-neo4j-password" title="Permanent link">&para;</a></h2>
+<p>Logon to <strong><a href="http://localhost:7474">http://localhost:7474</a></strong> with neo4j:neo4j and change the password</p>
+<h2 id="get-bloodhound-binary">Get Bloodhound binary<a class="headerlink" href="#get-bloodhound-binary" title="Permanent link">&para;</a></h2>
+<p>Download the appropriate binary from </p>
+<h2 id="run-bloodhound">Run Bloodhound<a class="headerlink" href="#run-bloodhound" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>./Bloodhound
+</pre></div>
+</td></tr></table>
+
 <p>Supply the user "neo4j" and your newly created password. Happy hunting!</p>
 <h3 id="references">References:<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
                 
