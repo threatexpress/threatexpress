@@ -38,7 +38,7 @@
     
     
       
-        <title>New Information Security and Red Teaming Blog Threat Express by MINIS - Threatexpress</title>
+        <title>Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads - Threatexpress</title>
       
     
     
@@ -105,7 +105,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#new-information-security-and-red-teaming-blog-threat-express-by-minis" tabindex="1" class="md-skip">
+      <a href="#borrowing-microsoft-metadata-and-signatures-to-hide-binary-payloads" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -131,7 +131,7 @@
                 Threatexpress
               </span>
               <span class="md-header-nav__topic">
-                New Information Security and Red Teaming Blog Threat Express by MINIS
+                Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
               </span>
             
           
@@ -555,10 +555,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       2017
@@ -574,10 +576,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1" checked>
     
     <label class="md-nav__link" for="nav-2-3-1">
       10
@@ -585,70 +589,6 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
       <label class="md-nav__title" for="nav-2-3-1">
         10
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/" title="Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads" class="md-nav__link">
-      Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
-    
-    <label class="md-nav__link" for="nav-2-4">
-      2016
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
-        2016
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-1" type="checkbox" id="nav-2-4-1" checked>
-    
-    <label class="md-nav__link" for="nav-2-4-1">
-      09
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-4-1">
-        09
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -667,10 +607,195 @@
       
     
     
-    <a href="./" title="New Information Security and Red Teaming Blog Threat Express by MINIS" class="md-nav__link md-nav__link--active">
-      New Information Security and Red Teaming Blog Threat Express by MINIS
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
+      </label>
+    
+    <a href="./" title="Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads" class="md-nav__link md-nav__link--active">
+      Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-metatwin-works" title="How MetaTwin Works" class="md-nav__link">
+    How MetaTwin Works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" title="Demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interesting-observations" title="Interesting Observations" class="md-nav__link">
+    Interesting Observations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antivirus" title="AntiVirus" class="md-nav__link">
+    AntiVirus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-reverse-tcp-meterpreter-binary" title="Default Reverse TCP Meterpreter Binary" class="md-nav__link">
+    Default Reverse TCP Meterpreter Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-added-to-reverse-tcp-meterpreter-binary" title="Metadata added to Reverse TCP Meterpreter Binary" class="md-nav__link">
+    Metadata added to Reverse TCP Meterpreter Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-and-digital-signature-added-to-reverse-tcp-meterpreter-binary" title="Metadata and Digital Signature added to Reverse TCP Meterpreter Binary" class="md-nav__link">
+    Metadata and Digital Signature added to Reverse TCP Meterpreter Binary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysinternals-autoruns" title="SysInternals AutoRuns" class="md-nav__link">
+    SysInternals AutoRuns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoruns-default-settings-hide-the-microsoft-scheduled-task" title="AutoRuns Default Settings Hide the "Microsoft" scheduled task" class="md-nav__link">
+    AutoRuns Default Settings Hide the "Microsoft" scheduled task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaway" title="Takeaway" class="md-nav__link">
+    Takeaway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-metatwin-yourself" title="Try MetaTwin Yourself" class="md-nav__link">
+    Try MetaTwin Yourself
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-to-learn-more-about-red-teaming" title="Want to learn more about Red Teaming?" class="md-nav__link">
+    Want to learn more about Red Teaming?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      2016
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        2016
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-1" type="checkbox" id="nav-2-4-1">
+    
+    <label class="md-nav__link" for="nav-2-4-1">
+      09
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-1">
+        09
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2016/09/new-information-security-red-teaming-blog-threat-express-minis/" title="New Information Security and Red Teaming Blog Threat Express by MINIS" class="md-nav__link">
+      New Information Security and Red Teaming Blog Threat Express by MINIS
+    </a>
   </li>
 
         
@@ -730,6 +855,118 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-metatwin-works" title="How MetaTwin Works" class="md-nav__link">
+    How MetaTwin Works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" title="Demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interesting-observations" title="Interesting Observations" class="md-nav__link">
+    Interesting Observations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antivirus" title="AntiVirus" class="md-nav__link">
+    AntiVirus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-reverse-tcp-meterpreter-binary" title="Default Reverse TCP Meterpreter Binary" class="md-nav__link">
+    Default Reverse TCP Meterpreter Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-added-to-reverse-tcp-meterpreter-binary" title="Metadata added to Reverse TCP Meterpreter Binary" class="md-nav__link">
+    Metadata added to Reverse TCP Meterpreter Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-and-digital-signature-added-to-reverse-tcp-meterpreter-binary" title="Metadata and Digital Signature added to Reverse TCP Meterpreter Binary" class="md-nav__link">
+    Metadata and Digital Signature added to Reverse TCP Meterpreter Binary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysinternals-autoruns" title="SysInternals AutoRuns" class="md-nav__link">
+    SysInternals AutoRuns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoruns-default-settings-hide-the-microsoft-scheduled-task" title="AutoRuns Default Settings Hide the "Microsoft" scheduled task" class="md-nav__link">
+    AutoRuns Default Settings Hide the "Microsoft" scheduled task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaway" title="Takeaway" class="md-nav__link">
+    Takeaway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-metatwin-yourself" title="Try MetaTwin Yourself" class="md-nav__link">
+    Try MetaTwin Yourself
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-to-learn-more-about-red-teaming" title="Want to learn more about Red Teaming?" class="md-nav__link">
+    Want to learn more about Red Teaming?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -740,15 +977,58 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/threatexpress/edit/master/docs/blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/threatexpress/edit/master/docs/blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="new-information-security-and-red-teaming-blog-threat-express-by-minis">New Information Security and Red Teaming Blog "Threat Express" by MINIS<a class="headerlink" href="#new-information-security-and-red-teaming-blog-threat-express-by-minis" title="Permanent link">&para;</a></h1>
-<p><strong>Andrew Chiles | September 30, 2016 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/2018/09/a-deep-dive-into-cobalt-strike-malleable-c2/&amp;text=Do you use Cobalt Strike? @andrechiles @001SPARTaN and I created a self documented Malleable C2 profile with the hope that it will enhance your understanding of what you can do with malleable c2."><i class="fa fa-twitter"></i></a></strong></p>
-<p>Welcome to the Threat Express information security blog by the Red Team at MINIS LLC. The primary website remains , but this is our new platform for the release of security research, tools, and other Red Teaming related information.</p>
-<p>Tools will be posted at <a href="https://github.com/minisllc">https://github.com/minisllc</a>.</p>
-<p>Stay tuned!</p>
-<p><img alt="MINIS - Latin for &quot;threats&quot;" src="/threatexpress/img/icon-150x150.png" /></p>
+                <h1 id="borrowing-microsoft-metadata-and-signatures-to-hide-binary-payloads">Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads<a class="headerlink" href="#borrowing-microsoft-metadata-and-signatures-to-hide-binary-payloads" title="Permanent link">&para;</a></h1>
+<p><strong>Joe Vest | October 9, 2017 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/&amp;text=Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads"><i class="fa fa-twitter"></i></a></strong></p>
+<p><img alt="" src="/threatexpress/img/metatwin.png" /></p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A <a href="https://twitter.com/subTee/status/912769644473098240">twitter post</a> by Casey Smith <a href="https://twitter.com/subTee">(@subtee)</a> inspired me to update a tool written by Andrew Chiles <a href="https://twitter.com/AndrewChiles">(@andrewchiles)</a> and I a few years ago.</p>
+<p>During a Red Team engagement, it can be helpful to blend in with the environment as best as possible when forced to operate from disk. Operating in memory is great, but in many situations or scenarios, you must resort to binaries on disk.  A technique I've used with great success is to modify a binary's resource information (metadata). This includes fields such as file icons, version, description, product name, copyright, etc.  When defeating security defenses or managing IOCs (<a href="https://www.youtube.com/watch?v=_JiGsFPYDMQ&amp;t=969s">See my SANS Breaking Red webcast series for more on IOC management</a>), a threat will often attempt to trick or deceive an analyst. Making files blend into the environment can cause an analyst to treat malicious behavior as trusted.  If a binary says is it from Microsoft, it must be…</p>
+<p>This is where <a href="https://github.com/threatexpress/metatwin">MetaTwin</a> comes into play.  This is rewritten to not only modify a binary's metadata, but also add a digital signature as recently described by @subtee and @mattifestation.</p>
+<h2 id="how-metatwin-works">How MetaTwin Works<a class="headerlink" href="#how-metatwin-works" title="Permanent link">&para;</a></h2>
+<ol>
+<li>MetaTwin starts with a legitimate signed source binary, such as explorer.exe</li>
+<li>Extracts the resources (<a href="http://angusj.com/resourcehacker/">via ResourceHacker</a>) and digital signature information (<a href="https://github.com/secretsquirrel/SigThief">via SigThief</a>)</li>
+<li>Writes the captured data to a target binary</li>
+</ol>
+<h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
+<p>In this example, I'm simply using a default meterpreter reverse_tcp binary.  Nothing special here, use any binary (.exe or .dll). Personally, we're huge fans of Cobalt Strike during real engagements.</p>
+<p><img alt="" src="threatexpress/img/metatwin.gif" /></p>
+<p>| ----- |
+| Before MetaTwin |  After MetaTwin |<br />
+| <img alt="" src="threatexpress/img/20171007_202524_revmet.png" /> |  <img alt="" src="threatexpress/img/after.png" /> | </p>
+<p>As you can see, the file looks and feels like it could belong there.  Storing this in a location such as c:ProgramData... with a modified time stamp, <strong>could</strong> buy a Red Team operator a bit of time and support long(er) term persistence.</p>
+<h2 id="interesting-observations">Interesting Observations<a class="headerlink" href="#interesting-observations" title="Permanent link">&para;</a></h2>
+<h3 id="antivirus">AntiVirus<a class="headerlink" href="#antivirus" title="Permanent link">&para;</a></h3>
+<p>Often simple modifications can cause defensive tools to react in different ways.  Of course AV is often not a show stopping defensive tool, but we were curious as to how AV handled a default Metasploit meterpreter binary when modified with MetaTwin.  No obfuscation other than the addition of metadata and digital signatures.  The results were interesting…</p>
+<h4 id="default-reverse-tcp-meterpreter-binary">Default Reverse TCP Meterpreter Binary<a class="headerlink" href="#default-reverse-tcp-meterpreter-binary" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="threatexpress/img/plain_binary.png" /></p>
+<p>As expected, VirusTotal reported several hits</p>
+<h4 id="metadata-added-to-reverse-tcp-meterpreter-binary">Metadata added to Reverse TCP Meterpreter Binary<a class="headerlink" href="#metadata-added-to-reverse-tcp-meterpreter-binary" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="threatexpress/img/metadata_only.png" /></p>
+<p>Interestingly, adding metadata alone reduced the AV detection rate.</p>
+<h4 id="metadata-and-digital-signature-added-to-reverse-tcp-meterpreter-binary">Metadata and Digital Signature added to Reverse TCP Meterpreter Binary<a class="headerlink" href="#metadata-and-digital-signature-added-to-reverse-tcp-meterpreter-binary" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="threatexpress/img/metadata_signed.png" /></p>
+<p>After adding a digital signature and the metadata, exposure dropped from 76% to 58%. This is important because we're not even trying to evade AV!</p>
+<h3 id="sysinternals-autoruns">SysInternals AutoRuns<a class="headerlink" href="#sysinternals-autoruns" title="Permanent link">&para;</a></h3>
+<p>In additions to Antivirus, you can see how default tool behavior responds to these modifications using SysInternals AutoRuns.</p>
+<p>Using the modified binary, we created simple persistence mechanism using a scheduled task.  AutoRuns can be used to display this type of Windows persistence.  But… the modified binary is hidden by default.  Take a look…</p>
+<h2 id="autoruns-default-settings-hide-the-microsoft-scheduled-task"><strong>AutoRuns Default Settings Hide the "Microsoft" scheduled task</strong><a class="headerlink" href="#autoruns-default-settings-hide-the-microsoft-scheduled-task" title="Permanent link">&para;</a></h2>
+<h2 id="_1"><img alt="" src="threatexpress/img/autoruns_default.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>AutoRuns Default Options</strong></p>
+<h2 id="_2"><img alt="" src="threatexpress/img/autoruns_options.png" /><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong><em>Changing the Default Reveals the "Microsoft" scheduled task</em></strong></p>
+<h2 id="_3"><img alt="" src="threatexpress/img/autoruns_display.png" /><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="takeaway"><strong>Takeaway</strong><a class="headerlink" href="#takeaway" title="Permanent link">&para;</a></h2>
+<p>Based on these observations, it's clear that some AV and EDR tools make poor assumptions based on file metadata and digital signatures that can make them less effective or confuse an inexperienced Blue Team member. Red Team operators can use this to their advantage  if forced to operate from disk in future engagements.</p>
+<h2 id="try-metatwin-yourself">Try MetaTwin Yourself<a class="headerlink" href="#try-metatwin-yourself" title="Permanent link">&para;</a></h2>
+<p>Get a copy here </p>
+<h2 id="want-to-learn-more-about-red-teaming">Want to learn more about Red Teaming?<a class="headerlink" href="#want-to-learn-more-about-red-teaming" title="Permanent link">&para;</a></h2>
+<p><img alt="Red Team Operation and Threat Emulation" src="threatexpress/img/sanslogo.png" /></p>
+<p>Check out the new SANS Red Team course written by MINIS' own Joe Vest and James Tubberville</p>
+<p>SEC 564 Red Team Operation and Threat Emulation </p>
                 
                   
                 
@@ -769,7 +1049,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../../2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/" title="Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../../2018/01/hostenum-updates-usage/" title="HostEnum - Updates and Usage Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -778,19 +1058,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
+                HostEnum - Updates and Usage Guide
               </span>
             </div>
           </a>
         
         
-          <a href="../../../../archive/" title="Archive" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../../2016/09/new-information-security-red-teaming-blog-threat-express-minis/" title="New Information Security and Red Teaming Blog Threat Express by MINIS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Archive
+                New Information Security and Red Teaming Blog Threat Express by MINIS
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
