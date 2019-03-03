@@ -1022,7 +1022,7 @@
 <p class="admonition-title">Note</p>
 <p>How likely are asp, jsp, and php to exist together on the same web server? Payload staging is typically easy to identify no matter the C2 technology, but we can improve on Empire's default staging behavior.</p>
 </div>
-<p><img alt="" src="threatexpress/img/empire_defaultstaging.png" /> <strong>Empire – Default Staging URIs</strong></p>
+<p><img alt="" src="/threatexpress/img/empire_defaultstaging.png" /> <strong>Empire – Default Staging URIs</strong></p>
 <ul>
 <li>Server technology<ul>
 <li>Default: Microsoft-IIS/7.5</li>
@@ -1033,7 +1033,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="" src="threatexpress/img/empire_default_server_page-1.png" /></p>
+<p><img alt="" src="/threatexpress/img/empire_default_server_page-1.png" /></p>
 <hr />
 <h2 id="empire-modification">Empire Modification<a class="headerlink" href="#empire-modification" title="Permanent link">&para;</a></h2>
 <p>We'll continue Jeff's original example by porting some of the additional server side parameters in the <a href="https://github.com/bluscreenofjeff/MalleableC2Profiles/blob/master/bingsearch_getonly.profile">Bing Search</a> Malleable C2 profile to Empire.</p>
@@ -1120,7 +1120,7 @@
 
 <h4 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h4>
 <p>Notice we now have new staging URI's that don't stick out quite as much and the new client communication profile is also in use. The staging request length's don't change however so there is still plenty to signature.</p>
-<p><img alt="" src="threatexpress/img/empire_modifiedstagingbing.png" /> <strong>Empire – Custom Bing Search Profile w/ Modified Staging URIs</strong></p>
+<p><img alt="" src="/threatexpress/img/empire_modifiedstagingbing.png" /> <strong>Empire – Custom Bing Search Profile w/ Modified Staging URIs</strong></p>
 <h3 id="modifying-the-default-page">Modifying the default page<a class="headerlink" href="#modifying-the-default-page" title="Permanent link">&para;</a></h3>
 <p>You can modify the default HTML displayed upon a GET request in lib/common/http.py within the “default_page()” function.</p>
 <p><strong>Edit lib/common/http.py</strong></p>
@@ -1211,7 +1211,7 @@
 <p><strong>Restart Empire with your new server C2 parameters</strong></p>
 <p><code class="codehilite">./empire</code></p>
 <h4 id="results_1">Results<a class="headerlink" href="#results_1" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="threatexpress/img/empire_modified_server.png" /></p>
+<p><img alt="" src="/threatexpress/img/empire_modified_server.png" /></p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <hr />
 <p>The ability to modify the network indicators of your C2 technology is critical for a threat representative engagement. While Empire doesn't expose all desired possibilities with the “DefaultProfile” configuration setting, a little exploration into the source reveals more flexibility. Never be afraid to dive into a tool's source and modify it to suit your needs. There are still many ways to signature this traffic and beaconing activity. However, by implementing these modifications your C2 won't completely match the out-of-the-box Empire look and will raise the bar slightly for the Blue guys ;).</p>
