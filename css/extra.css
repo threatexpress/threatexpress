@@ -1,3 +1,78 @@
+
+/******* Material Theme Mods *******/
+
+/* Black Banner - Start */
+.md-header {
+    background-color: rgba(0, 0, 0, 0.87);
+    color: white;
+}
+
+/* List spacing */
+.md-typeset ul li, .md-typeset ol li {
+    margin-bottom: 0.1em;
+}
+
+/* Header Spacing */
+.md-typeset h1 {
+    margin: 0;
+    font-weight: 1000;
+}
+
+/* Header Spacing */
+.md-typeset h2 {
+    margin: 0;
+    font-weight: 500;
+
+}
+
+/* hr spacing */
+.md-typeset hr {
+    margin: 0;
+}
+
+/* Top Padding */
+.md-main__inner {
+    height: 100%;
+    padding-top: 0;
+}
+
+/* Fonts */
+.md-typeset {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+}
+
+/* Blockquote */
+blockquote {
+    background: #f9f9f9;
+    border-left: 100px solid #ff0000;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 2em;
+}
+blockquote:before {
+color: #ff0000;
+/* content: open-quote; */ 
+font-size: 4em;
+line-height: 0.1em;
+margin-right: 0.25em;
+vertical-align: -0.4em;
+}
+blockquote p {
+display: inline;
+}
+
+.md-typeset blockquote {
+/* padding-left: .4rem; */
+/* border-left: 0.4rem solid rgba(0, 0, 0, 0.76); */
+color: #ff0000;
+}
+
+/******* Material Theme Mods - END *******/
+
+
 /******* Tables - START*******/
 /* 100% wide fixed tables with border*/
  
@@ -8,3 +83,5 @@ table.tweets{
 }
 
 /******* Tables - END *******/
+
+
