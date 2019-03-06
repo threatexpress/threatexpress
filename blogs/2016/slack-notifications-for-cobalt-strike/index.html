@@ -712,7 +712,7 @@
 <p><strong>Andrew Chiles | December 5, 2017 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2016/12/slack-notifications-for-cobalt-strike/&amp;text=Slack Notifications for Cobalt Strike"><i class="fa fa-twitter"></i></a></strong></p>
 <p>We've seen several great incoming agent/shell notification mechanisms for Metasploit and Empire recently and the utility of being notified when new shells appear is without question. This is especially true when conducting phishing and social engineering style attacks or while waiting for a persistence mechanism to trigger. A recent example is <a href="https://www.swordshield.com/2016/11/slackshellbot/">SlackShellBot</a> by @Ne0nd0g.  We really like it, but often use Cobalt Strike heavily and thus need another notification method for CS.</p>
 <p>Enter Aggressor script. This is just one quick example of performing Slack notifications for Cobalt Strike using Aggressor. If you're a regular CS user, we highly recommend <a href="https://www.cobaltstrike.com/aggressor-script/index.html">spending some time</a> with Aggressor scripting to step up your automation and workflows. @armitagehacker has a <a href="http://blog.cobaltstrike.com/2016/07/06/gettin-down-with-aggressor-script/">comprehensive post </a>of Aggressor resources that is a great starting point.</p>
-<p><img alt="New Beacon Slack Notifications" src="/img/20161205_slacknotification.png" /></p>
+<p><img alt="New Beacon Slack Notifications" src="/threatexpress/img/20161205_slacknotification.png" /></p>
 <p>New Beacon Slack Notifications</p>
 <p><strong>Requirements:</strong></p>
 <ul>
@@ -723,7 +723,7 @@
 </li>
 </ul>
 <h3 id="step-1-create-your-custom-slack-webhook">Step 1: Create your Custom Slack Webhook<a class="headerlink" href="#step-1-create-your-custom-slack-webhook" title="Permanent link">&para;</a></h3>
-<p><img alt="Slack Custom Webhook Configuration" src="/img//2016/12/20161205_CSIntegration.png" /></p>
+<p><img alt="Slack Custom Webhook Configuration" src="/threatexpress/img//2016/12/20161205_CSIntegration.png" /></p>
 <p>Slack Custom Webhook Configuration</p>
 <h3 id="step-2-create-a-python-script-to-post-the-slack-notifications">Step 2: Create a Python script to post the Slack notifications<a class="headerlink" href="#step-2-create-a-python-script-to-post-the-slack-notifications" title="Permanent link">&para;</a></h3>
 <p>This Python code is a basic example of using the slackweb module to submit a Slack text notification to our custom webhook. Don't forget to make the script executable!</p>

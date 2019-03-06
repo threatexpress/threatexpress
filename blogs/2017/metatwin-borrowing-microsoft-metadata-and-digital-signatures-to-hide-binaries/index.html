@@ -860,7 +860,7 @@
                 
                 <h1 id="borrowing-microsoft-metadata-and-signatures-to-hide-binary-payloads">Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads<a class="headerlink" href="#borrowing-microsoft-metadata-and-signatures-to-hide-binary-payloads" title="Permanent link">&para;</a></h1>
 <p><strong>Joe Vest | October 9, 2017 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/&amp;text=Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads"><i class="fa fa-twitter"></i></a></strong></p>
-<p><img alt="" src="/img/metatwin.png" /></p>
+<p><img alt="" src="/threatexpress/img/metatwin.png" /></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>A <a href="https://twitter.com/subTee/status/912769644473098240">twitter post</a> by Casey Smith <a href="https://twitter.com/subTee">(@subtee)</a> inspired me to update a tool written by Andrew Chiles <a href="https://twitter.com/AndrewChiles">(@andrewchiles)</a> and I a few years ago.</p>
 <p>During a Red Team engagement, it can be helpful to blend in with the environment as best as possible when forced to operate from disk. Operating in memory is great, but in many situations or scenarios, you must resort to binaries on disk.  A technique I've used with great success is to modify a binary's resource information (metadata). This includes fields such as file icons, version, description, product name, copyright, etc.  When defeating security defenses or managing IOCs (<a href="https://www.youtube.com/watch?v=_JiGsFPYDMQ&amp;t=969s">See my SANS Breaking Red webcast series for more on IOC management</a>), a threat will often attempt to trick or deceive an analyst. Making files blend into the environment can cause an analyst to treat malicious behavior as trusted.  If a binary says is it from Microsoft, it must be…</p>
@@ -873,7 +873,7 @@
 </ol>
 <h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
 <p>In this example, I'm simply using a default meterpreter reverse_tcp binary.  Nothing special here, use any binary (.exe or .dll). Personally, we're huge fans of Cobalt Strike during real engagements.</p>
-<p><img alt="" src="/img/metatwin.gif" /></p>
+<p><img alt="" src="/threatexpress/img/metatwin.gif" /></p>
 <table>
 <thead>
 <tr>
@@ -883,8 +883,8 @@
 </thead>
 <tbody>
 <tr>
-<td><img alt="" src="/img/20171007_202524_revmet-722x1024.png" /></td>
-<td><img alt="" src="/img/after-1024x743.png" /></td>
+<td><img alt="" src="/threatexpress/img/20171007_202524_revmet-722x1024.png" /></td>
+<td><img alt="" src="/threatexpress/img/after-1024x743.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -893,29 +893,29 @@
 <h3 id="antivirus">AntiVirus<a class="headerlink" href="#antivirus" title="Permanent link">&para;</a></h3>
 <p>Often simple modifications can cause defensive tools to react in different ways.  Of course AV is often not a show stopping defensive tool, but we were curious as to how AV handled a default Metasploit meterpreter binary when modified with MetaTwin.  No obfuscation other than the addition of metadata and digital signatures.  The results were interesting…</p>
 <h4 id="default-reverse-tcp-meterpreter-binary">Default Reverse TCP Meterpreter Binary<a class="headerlink" href="#default-reverse-tcp-meterpreter-binary" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="/img/plain_binary.png" /></p>
+<p><img alt="" src="/threatexpress/img/plain_binary.png" /></p>
 <p>As expected, VirusTotal reported several hits</p>
 <h4 id="metadata-added-to-reverse-tcp-meterpreter-binary">Metadata added to Reverse TCP Meterpreter Binary<a class="headerlink" href="#metadata-added-to-reverse-tcp-meterpreter-binary" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="/img/metadata_only.png" /></p>
+<p><img alt="" src="/threatexpress/img/metadata_only.png" /></p>
 <p>Interestingly, adding metadata alone reduced the AV detection rate.</p>
 <h4 id="metadata-and-digital-signature-added-to-reverse-tcp-meterpreter-binary">Metadata and Digital Signature added to Reverse TCP Meterpreter Binary<a class="headerlink" href="#metadata-and-digital-signature-added-to-reverse-tcp-meterpreter-binary" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="/img/metadata_signed.png" /></p>
+<p><img alt="" src="/threatexpress/img/metadata_signed.png" /></p>
 <p>After adding a digital signature and the metadata, exposure dropped from 76% to 58%. This is important because we're not even trying to evade AV!</p>
 <h3 id="sysinternals-autoruns">SysInternals AutoRuns<a class="headerlink" href="#sysinternals-autoruns" title="Permanent link">&para;</a></h3>
 <p>In additions to Antivirus, you can see how default tool behavior responds to these modifications using SysInternals AutoRuns.</p>
 <p>Using the modified binary, we created simple persistence mechanism using a scheduled task.  AutoRuns can be used to display this type of Windows persistence.  But… the modified binary is hidden by default.  Take a look…</p>
 <h2 id="autoruns-default-settings-hide-the-microsoft-scheduled-task"><strong>AutoRuns Default Settings Hide the "Microsoft" scheduled task</strong><a class="headerlink" href="#autoruns-default-settings-hide-the-microsoft-scheduled-task" title="Permanent link">&para;</a></h2>
-<h2 id="_1"><img alt="" src="/img/autoruns_default.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1"><img alt="" src="/threatexpress/img/autoruns_default.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><strong>AutoRuns Default Options</strong></p>
-<h2 id="_2"><img alt="" src="/img/autoruns_options.png" /><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2"><img alt="" src="/threatexpress/img/autoruns_options.png" /><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong><em>Changing the Default Reveals the "Microsoft" scheduled task</em></strong></p>
-<h2 id="_3"><img alt="" src="/img/autoruns_display.png" /><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3"><img alt="" src="/threatexpress/img/autoruns_display.png" /><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h2 id="takeaway"><strong>Takeaway</strong><a class="headerlink" href="#takeaway" title="Permanent link">&para;</a></h2>
 <p>Based on these observations, it's clear that some AV and EDR tools make poor assumptions based on file metadata and digital signatures that can make them less effective or confuse an inexperienced Blue Team member. Red Team operators can use this to their advantage  if forced to operate from disk in future engagements.</p>
 <h2 id="try-metatwin-yourself">Try MetaTwin Yourself<a class="headerlink" href="#try-metatwin-yourself" title="Permanent link">&para;</a></h2>
 <p>Get a copy here </p>
 <h2 id="want-to-learn-more-about-red-teaming">Want to learn more about Red Teaming?<a class="headerlink" href="#want-to-learn-more-about-red-teaming" title="Permanent link">&para;</a></h2>
-<p><img alt="Red Team Operation and Threat Emulation" src="/img/sanslogo.png" /></p>
+<p><img alt="Red Team Operation and Threat Emulation" src="/threatexpress/img/sanslogo.png" /></p>
 <p>Check out the new SANS Red Team course written by MINIS' own Joe Vest and James Tubberville</p>
 <p>SEC 564 Red Team Operation and Threat Emulation </p>
                 
