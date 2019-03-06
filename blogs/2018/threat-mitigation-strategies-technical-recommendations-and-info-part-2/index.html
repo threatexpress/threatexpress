@@ -38,7 +38,7 @@
     
     
       
-        <title>Threat Mitigation Strategies: Part 2 - Threatexpress</title>
+        <title>Threat Mitagation Strategies - Part 2 - Threatexpress</title>
       
     
     
@@ -131,7 +131,7 @@
                 Threatexpress
               </span>
               <span class="md-header-nav__topic">
-                Threat Mitigation Strategies: Part 2
+                Threat Mitagation Strategies - Part 2
               </span>
             
           
@@ -258,10 +258,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Blogs
@@ -298,7 +300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2019/01/penetration-testing-pasties.md" title="Penetration Testing Pasties" class="md-nav__link">
+    <a href="../../2019/penetration-testing-pasties/" title="Penetration Testing Pasties" class="md-nav__link">
       Penetration Testing Pasties
     </a>
   </li>
@@ -313,10 +315,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
       2018
@@ -356,11 +360,1613 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../05/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md" title="Threat Mitagation Strategies - Part 2" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Threat Mitagation Strategies - Part 2
+      </label>
+    
+    <a href="./" title="Threat Mitagation Strategies - Part 2" class="md-nav__link md-nav__link--active">
       Threat Mitagation Strategies - Part 2
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-management" title="Account Management" class="md-nav__link">
+    Account Management
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjust-password-policy" title="Adjust Password Policy" class="md-nav__link">
+    Adjust Password Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-the-password-policy-using-gpo" title="Setting the Password Policy using GPO" class="md-nav__link">
+    Setting the Password Policy using GPO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#krbtgt-password-reset" title="KRBTGT password reset" class="md-nav__link">
+    KRBTGT password reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-laps-to-manage-the-local-administrator-rid-500-password" title="Use LAPS to manage the local Administrator (RID 500) password" class="md-nav__link">
+    Use LAPS to manage the local Administrator (RID 500) password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implement-managed-service-accounts" title="Implement Managed Service Accounts" class="md-nav__link">
+    Implement Managed Service Accounts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-lsa" title="Protected LSA" class="md-nav__link">
+    Protected LSA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protect-lsa-via-policy" title="Protect LSA Via policy" class="md-nav__link">
+    Protect LSA Via policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protect-lsa-via-registry-entry" title="Protect LSA Via Registry Entry" class="md-nav__link">
+    Protect LSA Via Registry Entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-logs" title="Windows Logs" class="md-nav__link">
+    Windows Logs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-log" title="Application log" class="md-nav__link">
+    Application log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-log" title="Security log" class="md-nav__link">
+    Security log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-log" title="Setup log" class="md-nav__link">
+    Setup log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-log" title="System log" class="md-nav__link">
+    System log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forwardedevents-log" title="ForwardedEvents log" class="md-nav__link">
+    ForwardedEvents log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-and-services-logs" title="Applications and Services Logs" class="md-nav__link">
+    Applications and Services Logs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin" title="Admin" class="md-nav__link">
+    Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational" title="Operational" class="md-nav__link">
+    Operational
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytic" title="Analytic" class="md-nav__link">
+    Analytic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" title="Debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-audit-policy-should-focus-on-these-in-no-specific-order" title="Advanced Audit Policy should focus on these (in no specific order)" class="md-nav__link">
+    Advanced Audit Policy should focus on these (in no specific order)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-command-line-logging-must-include-ms15-015-kb3031432" title="Enable Command Line Logging (Must include MS15-015 KB3031432)" class="md-nav__link">
+    Enable Command Line Logging (Must include MS15-015 KB3031432)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-honeytoken-manual" title="Account HoneyToken (manual)" class="md-nav__link">
+    Account HoneyToken (manual)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-honeytoken-network" title="Account HoneyToken (network)" class="md-nav__link">
+    Account HoneyToken (network)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spn-honeytoken" title="SPN HoneyToken" class="md-nav__link">
+    SPN HoneyToken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-module-logging" title="PowerShell Module Logging" class="md-nav__link">
+    PowerShell Module Logging
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-parsing" title="Log Parsing" class="md-nav__link">
+    Log Parsing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse-powershell-events-for-the-following-mimikatz-indicators" title="Parse PowerShell events for the following Mimikatz indicators" class="md-nav__link">
+    Parse PowerShell events for the following Mimikatz indicators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-offensive-powershell-tools" title="Detecting Offensive PowerShell Tools" class="md-nav__link">
+    Detecting Offensive PowerShell Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-windows-legacy-typically-unused-features" title="Disable Windows Legacy &amp; Typically Unused Features" class="md-nav__link">
+    Disable Windows Legacy &amp; Typically Unused Features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-group-policy-to-reapply-settings-during-refresh" title="Force Group Policy to reapply settings during "refresh"" class="md-nav__link">
+    Force Group Policy to reapply settings during "refresh"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-unneeded-services" title="Disable Unneeded Services" class="md-nav__link">
+    Disable Unneeded Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-net-session-enumeration-netcease" title="Disable Net Session Enumeration (NetCease)" class="md-nav__link">
+    Disable Net Session Enumeration (NetCease)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-wpad" title="Disable WPAD" class="md-nav__link">
+    Disable WPAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-llmnr" title="Disable LLMNR" class="md-nav__link">
+    Disable LLMNR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-wdigest" title="Disable WDigest" class="md-nav__link">
+    Disable WDigest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-the-use-of-ntlm-v1" title="Remove the use of NTLM v1" class="md-nav__link">
+    Remove the use of NTLM v1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consider-other-mitigations" title="Consider other Mitigations" class="md-nav__link">
+    Consider other Mitigations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-security-back-port-patch-kb2871997" title="Deploy security back-port patch (KB2871997)" class="md-nav__link">
+    Deploy security back-port patch (KB2871997)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevent-local-administrator-accounts-from-authenticating-over-the-network" title="Prevent local "administrator" accounts from authenticating over the network" class="md-nav__link">
+    Prevent local "administrator" accounts from authenticating over the network
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-through-group-policy" title="Configure through Group Policy:" class="md-nav__link">
+    Configure through Group Policy:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-connections" title="Remote Connections" class="md-nav__link">
+    Remote Connections
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rdp-restricted-admin-connect-to-only-1-resource" title="RDP Restricted Admin (Connect to only 1 resource)" class="md-nav__link">
+    RDP Restricted Admin (Connect to only 1 resource)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-restricted-admin-via-registry" title="Enable Restricted Admin via Registry" class="md-nav__link">
+    Enable Restricted Admin via Registry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-restricted-admin-via-gpo" title="Enable Restricted Admin via GPO" class="md-nav__link">
+    Enable Restricted Admin via GPO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rdp-windows-defender-remote-credential-guard-connect-to-multiple-resources" title="RDP Windows Defender Remote Credential Guard (Connect to multiple resources)" class="md-nav__link">
+    RDP Windows Defender Remote Credential Guard (Connect to multiple resources)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-windows-defender-credential-guard-via-registry" title="Enable Windows Defender Credential Guard via Registry" class="md-nav__link">
+    Enable Windows Defender Credential Guard via Registry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-windef-cred-guard-via-gpo" title="Enable WinDef Cred Guard via GPO" class="md-nav__link">
+    Enable WinDef Cred Guard via GPO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-client-to-client-communication-implement-and-configure-host-based-firewalls" title="Limit Client-to-Client Communication (Implement and Configure Host Based Firewalls)" class="md-nav__link">
+    Limit Client-to-Client Communication (Implement and Configure Host Based Firewalls)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-firewall" title="Enable Firewall" class="md-nav__link">
+    Enable Firewall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockcontrol-tcpudp-access-from-the-internal-network-and-dmz" title="Block/control TCP/UDP access from the Internal network and DMZ" class="md-nav__link">
+    Block/control TCP/UDP access from the Internal network and DMZ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-out-bound-tcpudp-access-from-the-client-systems-to-outbound-networks" title="Block out bound TCP/UDP access from the Client systems to outbound networks." class="md-nav__link">
+    Block out bound TCP/UDP access from the Client systems to outbound networks.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implement-a-proxy-for-all-outbound-traffic" title="Implement a Proxy for All Outbound Traffic" class="md-nav__link">
+    Implement a Proxy for All Outbound Traffic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-gpo-to-manage-the-proxy-settings" title="Create a new GPO to manage the proxy settings" class="md-nav__link">
+    Create a new GPO to manage the proxy settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations" title="Configurations" class="md-nav__link">
+    Configurations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autoruns" title="AutoRuns" class="md-nav__link">
+    AutoRuns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-whiteblack-listing" title="Application White/Black listing" class="md-nav__link">
+    Application White/Black listing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applocker" title="Applocker" class="md-nav__link">
+    Applocker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applocker-executable-path-restrictions" title="AppLocker Executable Path Restrictions" class="md-nav__link">
+    AppLocker Executable Path Restrictions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interesting-paths" title="Interesting Paths" class="md-nav__link">
+    Interesting Paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-whitelisting" title="Explicit Whitelisting" class="md-nav__link">
+    Explicit Whitelisting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interesting-file-extensions" title="Interesting file extensions" class="md-nav__link">
+    Interesting file extensions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-hunting-and-detection-examples" title="Manual Hunting and Detection Examples" class="md-nav__link">
+    Manual Hunting and Detection Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-event-logs-via-powershell" title="Filtering Event Logs via PowerShell" class="md-nav__link">
+    Filtering Event Logs via PowerShell
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-locations-on-disk-only-use-event-viewer-or-cli-to-copy" title="Log locations on disk (only use event viewer or cli to copy)" class="md-nav__link">
+    Log locations on disk (only use event viewer or cli to copy)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-times-service-was-installed-all-evtx-files-should-be-system-and-count" title="Get times Service was installed (all evtx files, should be system) and count" class="md-nav__link">
+    Get times Service was installed (all evtx files, should be system) and count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-blocked-events" title="Get blocked events" class="md-nav__link">
+    Get blocked events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-windowsdefender-actions" title="Get WindowsDefender actions" class="md-nav__link">
+    Get WindowsDefender actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-windowsdefender-detections" title="Get WindowsDefender detections" class="md-nav__link">
+    Get WindowsDefender detections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-files-by-extension-with-search-from-application-crash" title="Get files (by extension) with search from Application (crash)" class="md-nav__link">
+    Get files (by extension) with search from Application (crash)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-emet-events" title="Get EMET events" class="md-nav__link">
+    Get EMET events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-service-installs-and-errors" title="Get service installs and errors" class="md-nav__link">
+    Get service installs and errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-usb-loading" title="Search for USB loading" class="md-nav__link">
+    Search for USB loading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-errorwarninginfo" title="Search for error/warning/info" class="md-nav__link">
+    Search for error/warning/info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-remote-eventlog-caution-this-drops-credentials-onto-remote-system" title="Get remote eventlog (caution this drops credentials onto remote system)" class="md-nav__link">
+    Get remote eventlog (caution this drops credentials onto remote system)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-log-within-x-hours" title="Get log within X hours" class="md-nav__link">
+    Get log within X hours
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-logs-during-downtime" title="Get logs during "downtime"" class="md-nav__link">
+    Get logs during "downtime"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-wevtutil-to-export-logs-export-log" title="Use wevtutil to export logs (export-log)" class="md-nav__link">
+    Use wevtutil to export logs (export-log)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-wevutil-to-get-last-20-startups-use-rcomputer-for-remote-and-qe-for-short-query" title="Use wevutil to get last 20 startups (use /r:computer for remote and qe for short query)" class="md-nav__link">
+    Use wevutil to get last 20 startups (use /r:computer for remote and qe for short query)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-consolidated-logging" title="Windows consolidated logging" class="md-nav__link">
+    Windows consolidated logging
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-a-detailed-list-of-all-security-auditing-event-entries-use-an-elevated-prompt" title="Get a detailed list of all security-auditing event entries (use an elevated prompt)" class="md-nav__link">
+    Get a detailed list of all security-auditing event entries (use an elevated prompt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-a-list-of-all-security-auditing-categories-and-subcategories-use-an-elevated-prompt" title="Return a list of all security-auditing categories and subcategories (use an elevated prompt)" class="md-nav__link">
+    Return a list of all security-auditing categories and subcategories (use an elevated prompt)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" title="Network" class="md-nav__link">
+    Network
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-flow-basics" title="Network Flow Basics:" class="md-nav__link">
+    Network Flow Basics:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-pcap-carving-nix" title="Basic PCAP Carving (*nix)" class="md-nav__link">
+    Basic PCAP Carving (*nix)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-certificates-from-pcap-use-bro-if-possible" title="Get certificates from pcap (use BRO if possible)" class="md-nav__link">
+    Get certificates from pcap (use BRO if possible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-certificates-see-bro" title="View certificates (see BRO)" class="md-nav__link">
+    View certificates (see BRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-dns-queries-from-pcap-and-count-instances" title="Get DNS queries from pcap and count instances" class="md-nav__link">
+    Get DNS queries from pcap and count instances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-dns-queries-from-nx-domain" title="Get DNS queries from NX domain" class="md-nav__link">
+    Get DNS queries from NX domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-response-codes" title="DNS Response Codes" class="md-nav__link">
+    DNS Response Codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-agents-from-pcap" title="Get User-Agents from pcap" class="md-nav__link">
+    Get User-Agents from pcap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-info-for-frame-containing-search-dataf" title="Get info for frame containing search dataf" class="md-nav__link">
+    Get info for frame containing search dataf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-string-in-tcp-data-finds-data-not-in-field-ie-ua-in-json" title="Search for string in tcp data (finds data not in field i.e. UA in json)" class="md-nav__link">
+    Search for string in tcp data (finds data not in field i.e. UA in json)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-strings-in-pcap" title="Find strings in pcap" class="md-nav__link">
+    Find strings in pcap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-frame-that-contains-string" title="Get the frame that contains string" class="md-nav__link">
+    Get the frame that contains string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-packet-data-by-field" title="Show packet data by field" class="md-nav__link">
+    Show packet data by field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-data-hex-from-first-two-packets-in-pcap" title="Get data &amp; hex from first two packets in pcap" class="md-nav__link">
+    Get data &amp; hex from first two packets in pcap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frames-that-have-tcp-header-length-gt-20-and-port-25" title="Get frames that have tcp header length gt 20 and port 25" class="md-nav__link">
+    Get frames that have tcp header length gt 20 and port 25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-data-in-frames-that-have-tcp-header-length-gt-20-and-port-25" title="Get data in frames that have tcp header length gt 20 and port 25" class="md-nav__link">
+    Get data in frames that have tcp header length gt 20 and port 25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frames-with-hex-data-0x7932" title="Get frames with hex data 0x7932" class="md-nav__link">
+    Get frames with hex data 0x7932
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frames-and-show-hex-data" title="Get frames and show hex data" class="md-nav__link">
+    Get frames and show hex data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-all-arp-request-and-count-request1-reply2" title="Get all arp request and count (request=1, reply=2)" class="md-nav__link">
+    Get all arp request and count (request=1, reply=2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-iplen-less-than-46-64-for-ethernet-minus-14-header-and-4-trailer-icmp-of-0" title="Get ip.len less than 46 (64 for ethernet minus 14 header and 4 trailer) &amp; icmp of 0" class="md-nav__link">
+    Get ip.len less than 46 (64 for ethernet minus 14 header and 4 trailer) &amp; icmp of 0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-ip-option-of-loose-src-routing-with-offset-starting-at-ip-options" title="Get ip option of loose src routing with offset starting at ip options" class="md-nav__link">
+    Get ip option of loose src routing with offset starting at ip options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-info" title="Filter Info" class="md-nav__link">
+    Filter Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frame-with-ip-src-and-ack-flag-set" title="Get frame with IP src and ACK flag set" class="md-nav__link">
+    Get frame with IP src and ACK flag set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frame-with-ip-src-and-ack-or-rst-flag-set" title="Get frame with IP src and ACK or RST flag set" class="md-nav__link">
+    Get frame with IP src and ACK or RST flag set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frame-with-dst-port-0-and-df-flag-set" title="Get frame with dst port 0 and DF flag set" class="md-nav__link">
+    Get frame with dst port 0 and DF flag set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frame-with-net-1010101024" title="Get frame with net 10.10.10.10/24" class="md-nav__link">
+    Get frame with net 10.10.10.10/24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-frames-by-ip" title="Get frames by ip" class="md-nav__link">
+    Get frames by ip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-specific-frame-verbose-note-tcp-stream-index-number" title="View specific frame verbose (note tcp stream index number)" class="md-nav__link">
+    View specific frame verbose (note tcp stream index number)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-tcp-stream-0-ascii-raw-hex" title="Follow tcp stream 0 (ascii, raw, hex)" class="md-nav__link">
+    Follow tcp stream 0 (ascii, raw, hex)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-data-analysis" title="Flow Data Analysis" class="md-nav__link">
+    Flow Data Analysis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-rwfilter-to-analyze-flow-data-by-ip-and-port" title="Use rwfilter to analyze flow data by IP and port" class="md-nav__link">
+    Use rwfilter to analyze flow data by IP and port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-detail-of-flow-data-by-ip-and-port" title="View detail of flow data by IP and port" class="md-nav__link">
+    View detail of flow data by IP and port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-all-udp-from-flow-then-pipe-to-get-field-4-4dst-port-3srcport-5proto-6packets-etc" title="Extract all UDP from flow then pipe to get field 4 (4=dst port, 3=srcport, 5=proto, 6=packets, etc)" class="md-nav__link">
+    Extract all UDP from flow then pipe to get field 4 (4=dst port, 3=srcport, 5=proto, 6=packets, etc)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-connections-from-108-with-a-reset-to-close-then-pipe-to-get-srcip-count" title="Extract connections from 10/8 with a reset to close then pipe to get srcIP count" class="md-nav__link">
+    Extract connections from 10/8 with a reset to close then pipe to get srcIP count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-rwstats-to-get-flow-data-of-top-5-flows" title="Use rwstats to get flow data of top 5 flows" class="md-nav__link">
+    Use rwstats to get flow data of top 5 flows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-records-not-icmp-tcp-or-udp-note-fail-and-have-src-ip-of-1010101" title="Extract records not ICMP, TCP or UDP (note fail) and have src IP of 10.10.10.1" class="md-nav__link">
+    Extract records not ICMP, TCP or UDP (note fail) and have src IP of 10.10.10.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-top-5-ip-with-data-transfer" title="Get top 5 IP with data transfer" class="md-nav__link">
+    Get top 5 IP with data transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-flows-with-larger-than-100000-bytes" title="Get flows with larger than 100,000 bytes" class="md-nav__link">
+    Get flows with larger than 100,000 bytes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-queries" title="ELSA (BRO queries)" class="md-nav__link">
+    ELSA (BRO queries)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elsa-most-common-svc" title="ELSA most common svc" class="md-nav__link">
+    ELSA most common svc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-nx-domains" title="ELSA BRO nx domains" class="md-nav__link">
+    ELSA BRO nx domains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-common-fqdn" title="ELSA BRO common FQDN" class="md-nav__link">
+    ELSA BRO common FQDN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-sites-hosting-exe" title="ELSA BRO Sites hosting EXE" class="md-nav__link">
+    ELSA BRO Sites hosting EXE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-uri-with-exe-downloads" title="ELSA BRO URI with EXE downloads" class="md-nav__link">
+    ELSA BRO URI with EXE downloads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-internal-ip-exe-download" title="ELSA BRO Internal IP EXE download" class="md-nav__link">
+    ELSA BRO Internal IP EXE download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsa-bro-connections-wo-ua-group-by-source-ip" title="ELSA BRO connections w/o UA group by source IP" class="md-nav__link">
+    ELSA BRO connections w/o UA group by source IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro" title="BRO" class="md-nav__link">
+    BRO
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bro-logs" title="BRO Logs" class="md-nav__link">
+    BRO Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-log-hunting" title="BRO Log Hunting" class="md-nav__link">
+    BRO Log Hunting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-protocol-logs" title="BRO Protocol Logs" class="md-nav__link">
+    BRO Protocol Logs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-carving" title="BRO Carving" class="md-nav__link">
+    BRO Carving
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-and-output-bro-logs" title="Read and output bro logs" class="md-nav__link">
+    Read and output bro logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-source-src-ip-dst-ip-dst-port-and-bytes-in-that-order" title="Get source src ip, dst ip, dst port, and bytes (in that order)" class="md-nav__link">
+    Get source src ip, dst ip, dst port, and bytes (in that order)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-as-above-but-sort-by-bytes-field-5-reverse-by-number" title="Same as above but sort by bytes (field 5 reverse by number)" class="md-nav__link">
+    Same as above but sort by bytes (field 5 reverse by number)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-http-on-non-standard-ports-ssl" title="Get http on non-standard ports (ssl?)" class="md-nav__link">
+    Get http on non-standard ports (ssl?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-dns-info-from-bro-logs" title="Extract DNS info from bro logs" class="md-nav__link">
+    Extract DNS info from bro logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-agents" title="Get User-Agents" class="md-nav__link">
+    Get User-Agents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-mime-types" title="Get Mime Types" class="md-nav__link">
+    Get Mime Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-bro-outbound-signature-stored-in-sig-file-read-with-s" title="Get bro outbound signature stored in .sig file (read with -s)" class="md-nav__link">
+    Get bro outbound signature stored in .sig file (read with -s)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-bro-windows-shell-signature-stored-in-sig-file-read-with-s" title="Get bro Windows Shell signature stored in .sig file (read with -s)" class="md-nav__link">
+    Get bro Windows Shell signature stored in .sig file (read with -s)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-bro-with-sig-file" title="Run bro with sig file" class="md-nav__link">
+    Run bro with sig file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-dst-addresses-in-signature-file" title="View dst addresses in signature file" class="md-nav__link">
+    View dst addresses in signature file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-event-script-to-find-user-agent-outboundbro" title="BRO event script to find User-Agent (outbound.bro)" class="md-nav__link">
+    BRO event script to find User-Agent (outbound.bro)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-event-file-to-view-user-agent" title="Run event file to view user-agent" class="md-nav__link">
+    Run event file to view user-agent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-extract-common-files-from-pcap" title="BRO extract common files from pcap" class="md-nav__link">
+    BRO extract common files from pcap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract-ssl-info" title="Extract ssl info" class="md-nav__link">
+    Extract ssl info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-extract-unique-ssl-certificate-data" title="BRO extract unique SSL certificate data" class="md-nav__link">
+    BRO extract unique SSL certificate data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-extract-ssl-issuer-data-from-certificate-extraction" title="BRO extract SSL issuer data from certificate extraction" class="md-nav__link">
+    BRO extract SSL issuer data from certificate extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bro-show-shortest-issuer-from-extraction" title="BRO show shortest issuer from extraction" class="md-nav__link">
+    BRO show shortest issuer from extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modsecurity-rules" title="ModSecurity rules" class="md-nav__link">
+    ModSecurity rules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-ua-not-starting-with-mozilla" title="error.log UA not starting with Mozilla" class="md-nav__link">
+    error.log UA not starting with Mozilla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-visiting-ip-url" title="error.log visiting IP URL" class="md-nav__link">
+    error.log visiting IP URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-blank-ua" title="error.log blank UA" class="md-nav__link">
+    error.log blank UA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-ua-starting-with-mozilla" title="error.log UA starting with mozilla" class="md-nav__link">
+    error.log UA starting with mozilla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-visiting-by-ip-log-ua-used" title="error.log visiting by IP log UA used" class="md-nav__link">
+    error.log visiting by IP log UA used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-no-ua-not-blank-but-none" title="error.log no UA (not blank but none)" class="md-nav__link">
+    error.log no UA (not blank but none)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-note-param-entry" title="error.log note param entry" class="md-nav__link">
+    error.log note param entry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorlog-trigger-on-keyword-can-use-pattern" title="error.log trigger on keyword (can use pattern)" class="md-nav__link">
+    error.log trigger on keyword (can use pattern)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk" title="Splunk" class="md-nav__link">
+    Splunk
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-unauthorized-service" title="New unauthorized service" class="md-nav__link">
+    New unauthorized service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-process-abuse" title="Detecting process abuse" class="md-nav__link">
+    Detecting process abuse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-process-abuse-simplified-requires-one-entry-per-process" title="Detecting process abuse (simplified, requires one entry per process)" class="md-nav__link">
+    Detecting process abuse (simplified, requires one entry per process)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-starts-and-connects-to-ip" title="Process starts and connects to IP" class="md-nav__link">
+    Process starts and connects to IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-smb-traffic-between-clients" title="Detect SMB traffic between clients" class="md-nav__link">
+    Detect SMB traffic between clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-named-pipes" title="Detect Named Pipes" class="md-nav__link">
+    Detect Named Pipes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-wmi" title="Detect WMI" class="md-nav__link">
+    Detect WMI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-powershell-commands" title="Detect PowerShell Commands" class="md-nav__link">
+    Detect PowerShell Commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alert-on-remote-files-copied-via-cmd-line" title="Alert on remote files copied via cmd line" class="md-nav__link">
+    Alert on remote files copied via cmd line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-on-c-or-admin-share-enumeration" title="Alert on C or Admin share enumeration" class="md-nav__link">
+    Alert on C or Admin share enumeration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-file-delivery" title="Search for file delivery" class="md-nav__link">
+    Search for file delivery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-registry-run-or-runonce-keys" title="Search for Registry Run (or RunOnce) Keys" class="md-nav__link">
+    Search for Registry Run (or RunOnce) Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-file-system-persistence" title="Search for file system persistence" class="md-nav__link">
+    Search for file system persistence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-credential-harvesting" title="Detect credential harvesting" class="md-nav__link">
+    Detect credential harvesting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-privilege-escalation" title="Potential Privilege Escalation" class="md-nav__link">
+    Potential Privilege Escalation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-beaconing-detection" title="Potential Beaconing Detection" class="md-nav__link">
+    Potential Beaconing Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-webshell-activity-note-this-should-be-updated-at-implementation-and-often" title="Detect webshell activity (note this should be updated at implementation and often)" class="md-nav__link">
+    Detect webshell activity (note this should be updated at implementation and often)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-potential-sqli" title="Detect potential SQLi" class="md-nav__link">
+    Detect potential SQLi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-http-post-with-response" title="View HTTP POST with response" class="md-nav__link">
+    View HTTP POST with response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-weird-user-agents" title="Find Weird User-Agents" class="md-nav__link">
+    Find Weird User-Agents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-high-severity-epo-events" title="Get high severity EPO events" class="md-nav__link">
+    Get high severity EPO events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snort" title="Snort" class="md-nav__link">
+    Snort
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect-psexec" title="Detect psexec" class="md-nav__link">
+    Detect psexec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-packets-with-with-port-4444-port-0" title="Detect packets with with port 4444 (port 0?)" class="md-nav__link">
+    Detect packets with with port 4444 (port 0?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snort-appid-list" title="Snort appid list" class="md-nav__link">
+    Snort appid list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interesting-file-extensions-note-this-is-the-same-list-as-above-placed-here-for-use-in-monitoring-via-snort" title="Interesting file extensions (Note this is the same list as above, placed here for use in monitoring via Snort)" class="md-nav__link">
+    Interesting file extensions (Note this is the same list as above, placed here for use in monitoring via Snort)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-useful-info" title="Additional Useful Info" class="md-nav__link">
+    Additional Useful Info
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-methods-from-accesslog" title="Get methods from access.log" class="md-nav__link">
+    Get methods from access.log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decode-encoded-url-line-290" title="Decode %encoded url (line 290)" class="md-nav__link">
+    Decode %encoded url (line 290)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gather-information-on-windows-host" title="Gather Information on Windows host" class="md-nav__link">
+    Gather Information on Windows host
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-task-services" title="List task services" class="md-nav__link">
+    List task services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-modules-for-task" title="Show modules for task" class="md-nav__link">
+    Show modules for task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbose-task-information" title="Verbose task information" class="md-nav__link">
+    Verbose task information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-information-about-processes" title="Get information about processes" class="md-nav__link">
+    Get information about processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-code-injected-into-memory" title="Look for code injected into memory" class="md-nav__link">
+    Look for code injected into memory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -466,7 +2072,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2017/05/invoke-hostenum.md" title="Invoke-Hostenum" class="md-nav__link">
+    <a href="../../2017/invoke-hostenum/" title="Invoke-Hostenum" class="md-nav__link">
       Invoke-Hostenum
     </a>
   </li>
@@ -3466,6 +5072,41 @@ c$id$orig_h,c$id$resp_h,c$id$resp_p,value);
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing/" title="Threat Get's a Vote - Applying a Threat Based Approach to Security Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Threat Get's a Vote - Applying a Threat Based Approach to Security Testing
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/" title="Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
