@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -68,6 +68,9 @@
       <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+      
     
     
   </head>
@@ -126,22 +129,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Threatexpress
-              </span>
-              <span class="md-header-nav__topic">
-                A Deep Dive into Cobalt Strike Malleable C2
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Threatexpress
+            </span>
+            <span class="md-header-nav__topic">
+              A Deep Dive into Cobalt Strike Malleable C2
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,7 +164,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -175,20 +174,18 @@
 
   
 
-
-  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      threatexpress/threatexpress
+<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    threatexpress/threatexpress
+  </div>
+</a>
           </div>
         </div>
       
@@ -224,20 +221,18 @@
 
   
 
-
-  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      threatexpress/threatexpress
+<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    threatexpress/threatexpress
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -850,7 +845,7 @@
                 
                 <h1 id="a-deep-dive-into-cobalt-strike-malleable-c2">A Deep Dive into Cobalt Strike Malleable C2<a class="headerlink" href="#a-deep-dive-into-cobalt-strike-malleable-c2" title="Permanent link">&para;</a></h1>
 <p><strong>Joe Vest | September 5, 2018 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2/&amp;text=A deep dive into Cobaltstrike malleable C2"><i class="fa fa-twitter"></i></a></strong></p>
-<p><img alt="" src="/img/deep_dive_malleable_c2.png" /></p>
+<p><img alt="" src="/threatexpress/img/deep_dive_malleable_c2.png" /></p>
 <p>One of Cobalt Strike's most valuable features is its ability to modify the behavior of the Beacon payload. By changing various defaults within the framework, an operator can modify the memory footprint of Beacon, change how often it checks in, and even what Beacon's network traffic looks like. All of these features are controlled by the Malleable C2 profile, which is chosen when starting the team server.</p>
 <p>The article makes the assumption that you understand the basics of malleable C2 and is intended to be used as reference for designing and creating malleable C2 profiles. The profile found at <a href="https://github.com/threatexpress/malleable-c2">(https://github.com/threatexpress/malleable-c2</a> is to used as a reference profile. It is highly documented and contains tips and guidance to aide in creating new C2 profiles.</p>
 <p>If you are new to malleable C2, we recommend starting with this reference by Jeff Dimmock (@bluscreenofjeff) <a href="https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/">https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/</a>  or reading the other references.</p>
@@ -888,18 +883,18 @@ set useragent &#39;SOME AGENT&#39;;   # BAD
 <h2 id="profile-name">Profile Name<a class="headerlink" href="#profile-name" title="Permanent link">&para;</a></h2>
 <p>![][4]Choose a profile name you would like to see in your reports. This does not affect Beacon's traffic or its footprint on target.</p>
 <h2 id="sleep-times">Sleep Times<a class="headerlink" href="#sleep-times" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/sleep.png" />These settings control the default time between Beacon check in (in milliseconds). A new HTTP/S beacon spawned using this C2 profile will check in using the sleep time as its callback interval, plus a random amount of time up to the specified by the jitter percentage. Choose a default time that will suit your operational needs, along with any OPSEC considerations. This example uses 60 seconds. This may be too aggressive for many engagements, and some defensive products may quickly detect beaconing behavior if it is too regular.</p>
+<p><img alt="" src="/threatexpress/img/sleep.png" />These settings control the default time between Beacon check in (in milliseconds). A new HTTP/S beacon spawned using this C2 profile will check in using the sleep time as its callback interval, plus a random amount of time up to the specified by the jitter percentage. Choose a default time that will suit your operational needs, along with any OPSEC considerations. This example uses 60 seconds. This may be too aggressive for many engagements, and some defensive products may quickly detect beaconing behavior if it is too regular.</p>
 <h2 id="user-agent">User-Agent<a class="headerlink" href="#user-agent" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/useragent.png" />Use a User-Agent value that fits with your engagement. If possible, try to capture a real User-Agent string from the target organization, to blend in with real traffic. For example, consider sending a benign e-mail with a web bug to target organization members and monitor the User-Agents sent in subsequent GET requests. If you are using plaintext HTTP traffic, or if SSL interception is in place in the target environment, a User-Agent string that doesn't match the environment can provide an indicator for defenders.</p>
+<p><img alt="" src="/threatexpress/img/useragent.png" />Use a User-Agent value that fits with your engagement. If possible, try to capture a real User-Agent string from the target organization, to blend in with real traffic. For example, consider sending a benign e-mail with a web bug to target organization members and monitor the User-Agents sent in subsequent GET requests. If you are using plaintext HTTP traffic, or if SSL interception is in place in the target environment, a User-Agent string that doesn't match the environment can provide an indicator for defenders.</p>
 <h2 id="ssl-certificate">SSL Certificate<a class="headerlink" href="#ssl-certificate" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/ssl.png" />This setting controls the SSL certificate used for HTTPS communications. If possible, utilize a real, properly-issued SSL certificate for the domain you're using. LetsEncrypt can issue free SSL certificates that are trusted by all major operating systems and browsers, and will make it harder for defenders to inspect Beacon traffic.</p>
+<p><img alt="" src="/threatexpress/img/ssl.png" />This setting controls the SSL certificate used for HTTPS communications. If possible, utilize a real, properly-issued SSL certificate for the domain you're using. LetsEncrypt can issue free SSL certificates that are trusted by all major operating systems and browsers, and will make it harder for defenders to inspect Beacon traffic.</p>
 <p>SSL certificate store creation steps are well documented in </p>
 <div class="admonition tip">
 <p class="admonition-title">Protect your C2 Server</p>
 <p>It is generally recommended to setup your target facing HTTPS certificates on redirector hosts. This limits the reconfiguration required on your teamserver in case a domain is burned during an operation. Caveat: Some CDN providers require your origin host to maintain a valid SSL certificate and your teamserver will need a trusted SSL certificate installed for Domain Fronting to function. Refer to the Cobalt Strike documentation <a href="https://www.cobaltstrike.com/help-malleable-c2#validssl">https://www.cobaltstrike.com/help-malleable-c2#validssl</a> or this post by <a href="http://twitter.com/bluscreenofjeff">@bluscreenofjeff</a> <a href="https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/">https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/</a> for instructions on configuring SSL with Cobalt Strike.</p>
 </div>
 <h2 id="spawnto-process">SpawnTo Process<a class="headerlink" href="#spawnto-process" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/spawnto.png" />The spawnto settings control what process a beacon will spawn for post-exploitation jobs, and when using the spawn command. This command can even use command line parameters</p>
+<p><img alt="" src="/threatexpress/img/spawnto.png" />The spawnto settings control what process a beacon will spawn for post-exploitation jobs, and when using the spawn command. This command can even use command line parameters</p>
 <p><code class="codehilite">set %windir%\sysnative\svchost.exe -k localservice -p -s fdPHost</code></p>
 <p>The additional parameters may help a Beacon blend in more if a defender looks at the command line of running processes. It can be difficult to find good candidate to use with spawnto. Experiment and test before selecting.</p>
 <p>General Guidelines:</p>
@@ -910,25 +905,25 @@ set useragent &#39;SOME AGENT&#39;;   # BAD
 <li>Consider choosing a binary that would not look strange making network connections</li>
 </ul>
 <h2 id="smb-beacons">SMB Beacons<a class="headerlink" href="#smb-beacons" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/smb.png" />SMB Beacons use named pipes to communicate through a parent Beacon. This allows for peer-to-peer communication between Beacons on the same host or across the network. The SMB Beacon's pipe names can be configured. Do not use default settings, as some defensive products will look for these defaults. Try to choose something that will blend in with the target environment. Follow this link: <a href="https://www.cobaltstrike.com/help-smb-beacon">https://www.cobaltstrike.com/help-smb-beacon</a> for more information on SMB Beacons.</p>
+<p><img alt="" src="/threatexpress/img/smb.png" />SMB Beacons use named pipes to communicate through a parent Beacon. This allows for peer-to-peer communication between Beacons on the same host or across the network. The SMB Beacon's pipe names can be configured. Do not use default settings, as some defensive products will look for these defaults. Try to choose something that will blend in with the target environment. Follow this link: <a href="https://www.cobaltstrike.com/help-smb-beacon">https://www.cobaltstrike.com/help-smb-beacon</a> for more information on SMB Beacons.</p>
 <h2 id="dns-beacons">DNS Beacons<a class="headerlink" href="#dns-beacons" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/dns.png" />DNS Beacons use DNS for all or part of their communications. Depending on the target environment's defensive technologies, DNS traffic can be easily detected, but is often a blind spot for defenders. DNS is best used as low and slow backup channel. Change the defaults to better fit your engagement. Follow this link <a href="https://www.cobaltstrike.com/help-dns-beacon">https://www.cobaltstrike.com/help-dns-beacon</a> for more information on DNS Beacons.</p>
+<p><img alt="" src="/threatexpress/img/dns.png" />DNS Beacons use DNS for all or part of their communications. Depending on the target environment's defensive technologies, DNS traffic can be easily detected, but is often a blind spot for defenders. DNS is best used as low and slow backup channel. Change the defaults to better fit your engagement. Follow this link <a href="https://www.cobaltstrike.com/help-dns-beacon">https://www.cobaltstrike.com/help-dns-beacon</a> for more information on DNS Beacons.</p>
 <h2 id="staging-process">Staging Process<a class="headerlink" href="#staging-process" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/staging.png" />… truncated…</p>
-<p><img alt="" src="/img/staging2.png" /> The Beacon staging process can be customized. The staging process is the stub of code used to fully load a Beacon. Read this post <a href="https://blog.cobaltstrike.com/2013/06/28/staged-payloads-what-pen-testers-should-know/">https://blog.cobaltstrike.com/2013/06/28/staged-payloads-what-pen-testers-should-know/</a> to learn more about the Beacon staging process. Fortunately, the HTTP characteristics of the Beacon stager can be modified. Change these settings to mimic a single legitimate HTTP request/response.</p>
+<p><img alt="" src="/threatexpress/img/staging.png" />… truncated…</p>
+<p><img alt="" src="/threatexpress/img/staging2.png" /> The Beacon staging process can be customized. The staging process is the stub of code used to fully load a Beacon. Read this post <a href="https://blog.cobaltstrike.com/2013/06/28/staged-payloads-what-pen-testers-should-know/">https://blog.cobaltstrike.com/2013/06/28/staged-payloads-what-pen-testers-should-know/</a> to learn more about the Beacon staging process. Fortunately, the HTTP characteristics of the Beacon stager can be modified. Change these settings to mimic a single legitimate HTTP request/response.</p>
 <p>In this example the requests are sent to <strong>/jquery-3.3.1.slim.min.js</strong> or <strong>/jquery-3.3.2.slim.min.js</strong>, dependent on the target process architecture, to begin the staging process. The HTTP server parameters are built to mimic a jQuery request. The Beacon commands and payloads are blended in to a chunk of the jQuery javascript text. The client makes a request that is reasonable when requesting jQuery from content delivery network. Many websites do this with <strong><a href="http://www.google-analytics.com/ga.js">http://www.google-analytics.com/ga.js</a>"&gt; src="jquery-3.3.1.min.js"&gt;</strong>. The URIs can be modified to look like other CDNs. For example, you could modify the http-stager to look as if it is pulling from the Microsoft jQuery CDN. <a href="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js</a></p>
 <p>In some cases, it may be better to use stageless payloads, as the staging process is an indicator that defensive products can alert on.</p>
 <h2 id="memory-indicators">Memory Indicators<a class="headerlink" href="#memory-indicators" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/memory.png" /> Some of the newest Malleable C2 features enable modification of many Beacon memory indicators. This topic can get quite deep and deserves it own blog post. Refer to <a href="https://blog.cobaltstrike.com/2018/02/08/in-memory-evasion/">https://blog.cobaltstrike.com/2018/02/08/in-memory-evasion/</a> and <a href="https://www.youtube.com/playlist?list=PL9HO6M_MU2nc5Q31qd2CwpZ8J4KFMhgnK">https://www.youtube.com/playlist?list=PL9HO6M_MU2nc5Q31qd2CwpZ8J4KFMhgnK</a> for details on controlling Beacon memory indicators. This example uses the peclone tool to rip the memory metadata from explorer.exe, save as part of the Beacon payload, and uses several of the recommendations from Raphael's "In Memory Evasion" blogpost.</p>
+<p><img alt="" src="/threatexpress/img/memory.png" /> Some of the newest Malleable C2 features enable modification of many Beacon memory indicators. This topic can get quite deep and deserves it own blog post. Refer to <a href="https://blog.cobaltstrike.com/2018/02/08/in-memory-evasion/">https://blog.cobaltstrike.com/2018/02/08/in-memory-evasion/</a> and <a href="https://www.youtube.com/playlist?list=PL9HO6M_MU2nc5Q31qd2CwpZ8J4KFMhgnK">https://www.youtube.com/playlist?list=PL9HO6M_MU2nc5Q31qd2CwpZ8J4KFMhgnK</a> for details on controlling Beacon memory indicators. This example uses the peclone tool to rip the memory metadata from explorer.exe, save as part of the Beacon payload, and uses several of the recommendations from Raphael's "In Memory Evasion" blogpost.</p>
 <h2 id="http-get">HTTP GET<a class="headerlink" href="#http-get" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/httpget.png" />… truncated…</p>
+<p><img alt="" src="/threatexpress/img/httpget.png" />… truncated…</p>
 <p>Like the http-stager section, the HTTP GET requests/responses can be modified. This section is used to check a teamserver for tasks. More information can be found here <a href="https://www.cobaltstrike.com/help-http-beacon">https://www.cobaltstrike.com/help-http-beacon</a>. This profile uses a similar format found in the http-stager. The difference is the use of the cookie <strong>__cfduid=</strong>. This value contains information about the Beacon and is used by the teamserver to issue tasks. The teamserver responds with a task hidden in the jQuery javascript text. Modify this section to match the HTTP traffic you would like to use. If you choose to use a GET-only profile (see below), this is also how Beacon transmits information back to the teamserver.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <strong>set uri</strong> option can accept multiple URIs. This can be used to add diversity to your requests. However, Beacons will not perform requests in a round robin style as you might assume and instead a single URI from the list will be assigned to each Beacon during staging.</p>
 </div>
 <h2 id="http-post">HTTP POST<a class="headerlink" href="#http-post" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="/img/httppost.png" /> Like the http-stager and http-get sections, the HTTP-POST requests/responses can be modified. The HTTP-POST section serves as Beacon's response to commands issued by the server and can actually be performed as a HTTP GET or HTTP POST request. This example uses an HTTP POST as shown with <strong>set verb "POST";</strong> The HTTP traffic follows the same style of the HTTP-GET section and mimics a jQuery request. You can change the mode from HTTP-POST to HTTP-GET by commenting out the POST section and uncommenting the GET section of HTTP-POST.</p>
+<p><img alt="" src="/threatexpress/img/httppost.png" /> Like the http-stager and http-get sections, the HTTP-POST requests/responses can be modified. The HTTP-POST section serves as Beacon's response to commands issued by the server and can actually be performed as a HTTP GET or HTTP POST request. This example uses an HTTP POST as shown with <strong>set verb "POST";</strong> The HTTP traffic follows the same style of the HTTP-GET section and mimics a jQuery request. You can change the mode from HTTP-POST to HTTP-GET by commenting out the POST section and uncommenting the GET section of HTTP-POST.</p>
 <div class="admonition note">
 <p class="admonition-title">GET-Only Profiles have Trade-offs</p>
 <p>GET-Only profiles have some trade-offs and may leave you scratching your head when attempting to pull large amounts of data (i.e. download a file or take a screenshot). This is due to the way data is transmitted within the URI, URI parameters, or Headers. This side-effect is well documented by Raphael at </p>
@@ -1072,7 +1067,7 @@ upload
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
@@ -1081,9 +1076,6 @@ upload
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       
         <script src="../../../js/extra.js"></script>
-      
-    
-    
       
     
   </body>

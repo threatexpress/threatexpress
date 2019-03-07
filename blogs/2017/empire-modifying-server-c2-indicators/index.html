@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -68,6 +68,9 @@
       <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+      
     
     
   </head>
@@ -126,22 +129,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Threatexpress
-              </span>
-              <span class="md-header-nav__topic">
-                Empire Modifying Server C2 Indicators
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Threatexpress
+            </span>
+            <span class="md-header-nav__topic">
+              Empire Modifying Server C2 Indicators
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,7 +164,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -175,20 +174,18 @@
 
   
 
-
-  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      threatexpress/threatexpress
+<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    threatexpress/threatexpress
+  </div>
+</a>
           </div>
         </div>
       
@@ -224,20 +221,18 @@
 
   
 
-
-  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      threatexpress/threatexpress
+<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    threatexpress/threatexpress
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -828,7 +823,7 @@
 <p class="admonition-title">Note</p>
 <p>How likely are asp, jsp, and php to exist together on the same web server? Payload staging is typically easy to identify no matter the C2 technology, but we can improve on Empire's default staging behavior.</p>
 </div>
-<p><img alt="" src="/img/empire_defaultstaging.png" /> <strong>Empire – Default Staging URIs</strong></p>
+<p><img alt="" src="/threatexpress/img/empire_defaultstaging.png" /> <strong>Empire – Default Staging URIs</strong></p>
 <ul>
 <li>Server technology<ul>
 <li>Default: Microsoft-IIS/7.5</li>
@@ -839,7 +834,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="" src="/img/empire_default_server_page-1.png" /></p>
+<p><img alt="" src="/threatexpress/img/empire_default_server_page-1.png" /></p>
 <hr />
 <h2 id="empire-modification">Empire Modification<a class="headerlink" href="#empire-modification" title="Permanent link">&para;</a></h2>
 <p>We'll continue Jeff's original example by porting some of the additional server side parameters in the <a href="https://github.com/bluscreenofjeff/MalleableC2Profiles/blob/master/bingsearch_getonly.profile">Bing Search</a> Malleable C2 profile to Empire.</p>
@@ -926,7 +921,7 @@
 
 <h4 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h4>
 <p>Notice we now have new staging URI's that don't stick out quite as much and the new client communication profile is also in use. The staging request length's don't change however so there is still plenty to signature.</p>
-<p><img alt="" src="/img/empire_modifiedstagingbing.png" /> <strong>Empire – Custom Bing Search Profile w/ Modified Staging URIs</strong></p>
+<p><img alt="" src="/threatexpress/img/empire_modifiedstagingbing.png" /> <strong>Empire – Custom Bing Search Profile w/ Modified Staging URIs</strong></p>
 <h3 id="modifying-the-default-page">Modifying the default page<a class="headerlink" href="#modifying-the-default-page" title="Permanent link">&para;</a></h3>
 <p>You can modify the default HTML displayed upon a GET request in lib/common/http.py within the “default_page()” function.</p>
 <p><strong>Edit lib/common/http.py</strong></p>
@@ -1017,7 +1012,7 @@
 <p><strong>Restart Empire with your new server C2 parameters</strong></p>
 <p><code class="codehilite">./empire</code></p>
 <h4 id="results_1">Results<a class="headerlink" href="#results_1" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="/img/empire_modified_server.png" /></p>
+<p><img alt="" src="/threatexpress/img/empire_modified_server.png" /></p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <hr />
 <p>The ability to modify the network indicators of your C2 technology is critical for a threat representative engagement. While Empire doesn't expose all desired possibilities with the “DefaultProfile” configuration setting, a little exploration into the source reveals more flexibility. Never be afraid to dive into a tool's source and modify it to suit your needs. There are still many ways to signature this traffic and beaconing activity. However, by implementing these modifications your C2 won't completely match the out-of-the-box Empire look and will raise the bar slightly for the Blue guys ;).</p>
@@ -1098,7 +1093,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
@@ -1107,9 +1102,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       
         <script src="../../../js/extra.js"></script>
-      
-    
-    
       
     
   </body>
