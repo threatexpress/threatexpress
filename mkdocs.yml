@@ -8,8 +8,8 @@ theme:
     custom_dir: 'theme'
     language: en
     palette:
-        primary: bluegrey
-        accent: blue
+        primary: black
+        accent: red
     logo: img/threatexpress_logo.png
     favicon: img/favicon.ico
     font:
@@ -66,36 +66,23 @@ nav:
   - Home: index.md
   - Blogs:
     - 2019:
-      - 01:
-        - Penetration Testing Pasties: blogs/2019/01/penetration-testing-pasties.md 
+      - Penetration Testing Pasties: blogs/2019/penetration-testing-pasties.md 
     - 2018:
-      - 11:
-        - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2.md
-      - 06: 
-        - Threat Get's a Vote - Applying a Threat Based Approach to Security Testing: blogs/2018/06/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
-      - 05:
-        - Threat Mitagation Strategies - Part 2: blogs/2018/05/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
-      - 02:
-        - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
-      - 01:
-        - Threat Mitagation Strategies - Part 1: blogs/2018/01/threat-mitigation-strategies-observations-recommendations.md
-        - HostEnum - Updates and Usage Guide:  blogs/2018/01/hostenum-updates-usage.md
+      - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2.md
+      - Threat Get's a Vote - Applying a Threat Based Approach to Security Testing: blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
+      - Threat Mitagation Strategies - Part 2: blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
+      - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
+      - Threat Mitagation Strategies - Part 1: blogs/2018/threat-mitigation-strategies-observations-recommendations.md
+      - HostEnum - Updates and Usage Guide:  blogs/2018/hostenum-updates-usage.md
     - 2017:
-      - 10:
-        - Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads: blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries.md
-      - 09:
-        - Install BloodHound on Ubuntu: blogs/2017/09/install-bloodhound-ubuntu.md 
-      - 05:
-        - Empire Modifying Server C2 Indicators: blogs/2017/05/empire-modifying-server-c2-indicators.md
-        - Invoke-Hostenum: blogs/2017/05/invoke-hostenum.md
-      - 03:
-        - Leveraging Expired Domains for Red Team Engagements: blogs/2017/03/leveraging-expired-domains-for-red-team-engagements.md
+      - Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads: blogs/2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries.md
+      - Install BloodHound on Ubuntu: blogs/2017/install-bloodhound-ubuntu.md 
+      - Empire Modifying Server C2 Indicators: blogs/2017/empire-modifying-server-c2-indicators.md
+      - Invoke-Hostenum: blogs/2017/invoke-hostenum.md
+      - Leveraging Expired Domains for Red Team Engagements: blogs/2017/leveraging-expired-domains-for-red-team-engagements.md
     - 2016:
-      - 12:
-        - Slack Notifications for Cobalt Strike: blogs/2016/12/slack-notifications-for-cobalt-strike.md
-      - 10: 
-        - SubShell and TinyShell - Custom Covert Webshells: blogs/2016/10/web-shells-covert-channel.md
-      - 09:
-        - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/09/new-information-security-red-teaming-blog-threat-express-minis.md
+      - Slack Notifications for Cobalt Strike: blogs/2016/slack-notifications-for-cobalt-strike.md
+      - SubShell and TinyShell - Custom Covert Webshells: blogs/2016/web-shells-covert-channel.md
+      - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/new-information-security-red-teaming-blog-threat-express-minis.md
   - Archive: archive.md
   - Contributors: contributors.md

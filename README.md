@@ -66,7 +66,7 @@ pip3.6 install fontawesome-markdown
 ## Directory and File Info
 
 - `./docs/` : mkdocs content
-- `./docs/img/` : Store all course images here
+- `./docs/threatexpress/img/` : Store all course images here
 - `mkdocs.yml` : mkdocs configuration file
 - `./site/` : Prod version of site. Not tracked in git. Used for testing or manual deployment
 

@@ -11,12 +11,14 @@ The primary authors are:
 ---
 ## Recent Posts
 
-- January 2019 - [Penetration Testing Pasties](/threatexpress/blogs/2019/01/penetration-testing-pasties/)
-- November 2018 - [A Deep Dive into Cobalt Strike Malleable C2](/threatexpress/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2)
-- June 2018 - [Threat Get's a Vote: Applying a Threat Based Approach to Security Testing](/threatexpress/blogs/2018/06/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing)
-- May 2018 [Threat Mitigation Strategies Part 2](threatexpress/blogs/2018/05/threat-mitigation-strategies-technical-recommendations-and-info-part-2/)
-- February 2018 - [Automating Apache mod_rewrite and Cobalt Strike Malleable C2 Profiles](threatexpressblogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/)
-- January 2018 - [Threat Mitigation Strategies Part 1](threatexpress/blogs/2018/01/threat-mitigation-strategies-observations-recommendations/)
+Date         | Post
+-------------|-
+January 2019  | [Penetration Testing Pasties](/threatexpress/blogs/2019/penetration-testing-pasties/)
+November 2018 | [A Deep Dive into Cobalt Strike Malleable C2](/threatexpress/blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2)
+June 2018     | [Threat Get's a Vote: Applying a Threat Based Approach to Security Testing](/threatexpress/blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing)
+May 2018      | [Threat Mitigation Strategies Part 2](/threatexpress/blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/)
+February 2018 | [Automating Apache mod_rewrite and Cobalt Strike Malleable C2 Profiles](/threatexpress/blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/)
+January 2018  | [Threat Mitigation Strategies Part 1](/threatexpress/blogs/2018/threat-mitigation-strategies-observations-recommendations/)
 
 ---
 ## Contributor Tweets

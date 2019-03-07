@@ -5,7 +5,7 @@
 
 Designing, deploying, and managing a comprehensive security program is not an easy task. There are pressures from every direction, including customers, compliance, management, peers, budget, public opinion, and news. This process is complex and challenging, but an organization is generally able to overcome the pressures and implement what is considered to be a robust security program. An organization is able to please the various parties and, at least on paper, describe a strong security program designed to stop malicious cyber-attacks. Audit and compliance checks pass with a green light. Robust patch management systems are deployed. Vulnerability assessments and penetration tests are conducted. In general, the organization has good security hygiene. These are all great steps in defending a network from attack, but unfortunately, often fall short in achieving the primary goal of preventing, detecting, and responding to real threats.  Why? What is missing? The real question to consider is:
 
-> __Are organizations really building security programs designed to address the threat?__
+> Are organizations really building security programs designed to address the threat?
 
 This post dives into the shortcomings of security operations design, implementation, and testing and how applying a threat-based security testing program can reduce these gaps to ultimately improve the state of security.
 
