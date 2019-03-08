@@ -88,8 +88,8 @@ SEC 564 Red Team Operation and Threat Emulation
 [4]: https://github.com/Mr-Un1k0d3r/CatMyFish
 [5]: https://twitter.com/joevest
 [6]: https://twitter.com/andrewchiles
-[7]: /threatexpress/img/domainhunter_htmlreport.png
-[8]: /threatexpress/img/domainhunter_console.png
-[9]: /threatexpress/img/sanslogo.png
+[7]: /img/domainhunter_htmlreport.png
+[8]: /img/domainhunter_console.png
+[9]: /img/sanslogo.png
 
   

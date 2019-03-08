@@ -276,6 +276,6 @@ My closing recommendation is for all organizations and security professionals to
     Should a user be able to perform those actions?
 
 
-[1]: /threatexpress/img/20180125_132744_attack.png
+[1]: /img/20180125_132744_attack.png
 
   

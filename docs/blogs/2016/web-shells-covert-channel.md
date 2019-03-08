@@ -89,9 +89,9 @@ These are some mistakes or tools choices that allowed me to get caught by blue/d
 
 For more details, check out the tools in the MINIS repository or watch my Bsides talk on webshells
 
-[1]: /threatexpress/img/subshell.png
-[2]: /threatexpress/img/tinyshell.png
-[3]: /threatexpress/img/phpshell.png
+[1]: /img/subshell.png
+[2]: /img/tinyshell.png
+[3]: /img/phpshell.png
 [4]: https://www.youtube.com/watch?v=Mke74a9guNk
 
   

@@ -88,9 +88,9 @@ Hopefully this post is useful and let us know if you have additional ideas or im
 [1]: https://www.swordshield.com/2016/11/slackshellbot/
 [2]: https://www.cobaltstrike.com/aggressor-script/index.html
 [3]: http://blog.cobaltstrike.com/2016/07/06/gettin-down-with-aggressor-script/
-[4]: /threatexpress/img/20161205_slacknotification.png
+[4]: /img/20161205_slacknotification.png
 [5]: https://api.slack.com/incoming-webhooks
-[6]: /threatexpress/img//2016/12/20161205_CSIntegration.png
+[6]: /img//2016/12/20161205_CSIntegration.png
 [7]: https://www.cobaltstrike.com/help-scripting
 
   

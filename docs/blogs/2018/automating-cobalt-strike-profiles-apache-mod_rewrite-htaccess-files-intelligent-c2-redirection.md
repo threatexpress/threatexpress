@@ -106,7 +106,7 @@ For more details on developing C2 architecture, check out the Red Team Infrastru
 - https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki
 
   
-[1]: /threatexpress/img/cs2modrewriteargs.png
+[1]: /img/cs2modrewriteargs.png
 [2]: https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/
 [3]: https://twitter.com/bluscreenofjeff
 [4]: https://www.twitter.com/joevest

@@ -1364,6 +1364,6 @@ and
 
 * * *
 
-[1]: /threatexpress/img/20180515_094034_defend-300x300.png
+[1]: /img/20180515_094034_defend-300x300.png
 
   

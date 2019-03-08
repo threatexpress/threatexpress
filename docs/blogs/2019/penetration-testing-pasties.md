@@ -1810,7 +1810,7 @@ Quick BASH format .bash_profile (mod ipconfig > ifconfig for Linux)
 
     export PS1="nn[$(if [[ $? == 0 ]]; then echo "[$GREEN]✓"; else echo "[$RED]✕"; fi)[
 
-[1]: /threatexpress/img/pasties.png
+[1]: /img/pasties.png
 [2]: https://www.twitter.com/joevest
 [3]: https://www.twitter.com/andrewchiles
 [4]: https://www.twitter.com/minis_io

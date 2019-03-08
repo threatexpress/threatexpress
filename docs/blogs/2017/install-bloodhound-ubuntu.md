@@ -74,6 +74,6 @@ Supply the user "neo4j" and your newly created password. Happy hunting!
 
 ### References:
 
-[1]: /threatexpress/img/bloodhound_logo.png
+[1]: /img/bloodhound_logo.png
 
   

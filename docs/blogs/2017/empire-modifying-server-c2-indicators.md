@@ -16,14 +16,14 @@ A good example of identifying Empire infrastructure is detailed in a [Chokepoint
 !!! Note
     How likely are asp, jsp, and php to exist together on the same web server? Payload staging is typically easy to identify no matter the C2 technology, but we can improve on Empire's default staging behavior.
 
-![](/threatexpress/img/empire_defaultstaging.png) **Empire – Default Staging URIs**
+![](/img/empire_defaultstaging.png) **Empire – Default Staging URIs**
 
 * Server technology
     * Default: Microsoft-IIS/7.5
 * Server content
     * Default: “It works!”
 
-![](/threatexpress/img/empire_default_server_page-1.png)
+![](/img/empire_default_server_page-1.png)
 
 * * *
 
@@ -90,7 +90,7 @@ SERVER_VERSION = "Microsoft-IIS/8.5"
 
 Notice we now have new staging URI's that don't stick out quite as much and the new client communication profile is also in use. The staging request length's don't change however so there is still plenty to signature.
 
-![](/threatexpress/img/empire_modifiedstagingbing.png) **Empire – Custom Bing Search Profile w/ Modified Staging URIs**
+![](/img/empire_modifiedstagingbing.png) **Empire – Custom Bing Search Profile w/ Modified Staging URIs**
 
 ### Modifying the default page
 
@@ -148,7 +148,7 @@ return page
 
 #### Results
 
-![](/threatexpress/img/empire_modified_server.png)
+![](/img/empire_modified_server.png)
 
 ## Summary
 -------

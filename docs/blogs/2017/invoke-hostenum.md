@@ -136,12 +136,12 @@ SEC 564 Red Team Operation and Threat Emulation
 [2]: https://raw.githubusercontent.com/dafthack/HostRecon/master/HostRecon.ps1
 [3]: https://github.com/EmpireProject/Empire/tree/master/data/module_source/situational_awareness/host
 [4]: http://www.harmj0y.net/blog/redteaming/powerview-2-0/
-[5]: /threatexpress/img/hostenum_console_html.png
+[5]: /img/hostenum_console_html.png
 [6]: https://www.cobaltstrike.com/aggressor-script/index.html
 [7]: http://threatexpress.com/2016/12/slack-notifications-for-cobalt-strike/
 [8]: https://bluescreenofjeff.com/2017-04-11-slack-bots-for-trolls-and-work/
-[9]: /threatexpress/img/hostenum_cs.gif
-[10]: /threatexpress/img/hostenum_empire1.png
-[11]: /threatexpress/img/sanslogo.png
+[9]: /img/hostenum_cs.gif
+[10]: /img/hostenum_empire1.png
+[11]: /img/sanslogo.png
 
   

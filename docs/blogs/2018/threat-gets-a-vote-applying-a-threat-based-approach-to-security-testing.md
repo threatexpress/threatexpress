@@ -160,9 +160,9 @@ In addition to these simple questions, red teams and blue teams can use the MITR
 [6]: https://www.nist.gov/cyberframework/csf-reference-tool
 [7]: https://attack.mitre.org/wiki/Main_Page
 
-[10]: /threatexpress/img/threat_gets_a_vote.png
-[20]: /threatexpress/img/were-looking-up-money-laundering-in-a-dictionary.jpg
-[30]: /threatexpress/img/athreatwill.png
-[40]: /threatexpress/img/threat_pyramid.png
-[50]: /threatexpress/img/pdrr.png
-[60]: /threatexpress/img/mitre-1.png
+[10]: /img/threat_gets_a_vote.png
+[20]: /img/were-looking-up-money-laundering-in-a-dictionary.jpg
+[30]: /img/athreatwill.png
+[40]: /img/threat_pyramid.png
+[50]: /img/pdrr.png
+[60]: /img/mitre-1.png

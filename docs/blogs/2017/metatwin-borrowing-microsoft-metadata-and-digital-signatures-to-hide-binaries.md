@@ -89,7 +89,7 @@ Check out the new SANS Red Team course written by MINIS' own Joe Vest and James 
 
 SEC 564 Red Team Operation and Threat Emulation 
 
-[1]: /threatexpress/img/metatwin.png
+[1]: /img/metatwin.png
 [2]: https://twitter.com/subTee/status/912769644473098240
 [3]: https://twitter.com/subTee
 [4]: https://twitter.com/AndrewChiles
@@ -97,15 +97,15 @@ SEC 564 Red Team Operation and Threat Emulation
 [6]: https://github.com/threatexpress/metatwin
 [7]: http://angusj.com/resourcehacker/
 [8]: https://github.com/secretsquirrel/SigThief
-[9]: /threatexpress/img/metatwin.gif
-[10]: /threatexpress/img/20171007_202524_revmet-722x1024.png
-[11]: /threatexpress/img/after-1024x743.png
-[12]: /threatexpress/img/plain_binary.png
-[13]: /threatexpress/img/metadata_only.png
-[14]: /threatexpress/img/metadata_signed.png
-[15]: /threatexpress/img/autoruns_default.png
-[16]: /threatexpress/img/autoruns_options.png
-[17]: /threatexpress/img/autoruns_display.png
-[18]: /threatexpress/img/sanslogo.png
+[9]: /img/metatwin.gif
+[10]: /img/20171007_202524_revmet-722x1024.png
+[11]: /img/after-1024x743.png
+[12]: /img/plain_binary.png
+[13]: /img/metadata_only.png
+[14]: /img/metadata_signed.png
+[15]: /img/autoruns_default.png
+[16]: /img/autoruns_options.png
+[17]: /img/autoruns_display.png
+[18]: /img/sanslogo.png
 
   
