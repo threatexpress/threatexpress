@@ -2,7 +2,7 @@
 
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -68,9 +68,6 @@
       <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    
-    
-      
     
     
   </head>
@@ -129,19 +126,22 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            <span class="md-header-nav__topic">
-              Threatexpress
-            </span>
-            <span class="md-header-nav__topic">
-              Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
-            </span>
+            
+              <span class="md-header-nav__topic">
+                Threatexpress
+              </span>
+              <span class="md-header-nav__topic">
+                Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
+              </span>
+            
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,6 +164,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -174,18 +175,20 @@
 
   
 
-<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
     </div>
-  
-  <div class="md-source__repository">
-    threatexpress/threatexpress
-  </div>
-</a>
+  </a>
+
           </div>
         </div>
       
@@ -221,18 +224,20 @@
 
   
 
-<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
     </div>
-  
-  <div class="md-source__repository">
-    threatexpress/threatexpress
-  </div>
-</a>
+  </a>
+
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -827,7 +832,7 @@
                 
                 <h1 id="automating-apache-mod_rewrite-and-cobalt-strike-malleable-c2-profiles">Automating Apache mod_rewrite and Cobalt Strike Malleable C2 Profiles<a class="headerlink" href="#automating-apache-mod_rewrite-and-cobalt-strike-malleable-c2-profiles" title="Permanent link">&para;</a></h1>
 <p><strong>Joe Vest | February 1, 2018 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/&amp;text=Automating Cobalt Strike profiles with Apache mod_rewrite for intelligent redirection"><i class="fa fa-twitter"></i></a></strong></p>
-<p><img alt="" src="/threatexpress/img/cs2modrewriteargs.png" /></p>
+<p><img alt="" src="/img/cs2modrewriteargs.png" /></p>
 <p>This post describes a script I created to convert a Cobalt Strike Malleable C2 profile to corresponding mod_rewrite rules to enable intelligent HTTP proxying for redirection of C2 traffic.  The script automates the <a href="https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/">process</a> described by well known redteamer and now co-worker – Jeff Dimmock (<a href="https://twitter.com/bluscreenofjeff">@bluscreenofjeff</a>). Intelligent use of C2 redirectors is core to a mature C2 architecture that can withstand some gentle investigation and prodding. Developing Cobalt Strike compatible mod_rewrite rules to redirect traffic is not incredibly difficult, but there are a few Apache "gotchas" and the process can be error prone when dealing with multiple C2 profiles. Automation improves consistency and reduces the time needed to spin-up, test, and troubleshoot a unique and layered C2 infrastructure. It is always nice to start from a known good.</p>
 <h2 id="highlights-of-cs2modrewritepy">Highlights of cs2modrewrite.py<a class="headerlink" href="#highlights-of-cs2modrewritepy" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1030,7 +1035,7 @@ RewriteRule ^.*$ HTTPS://GOHERE/? [L,R=302]
       
     </div>
     
-      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
@@ -1039,6 +1044,9 @@ RewriteRule ^.*$ HTTPS://GOHERE/? [L,R=302]
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       
         <script src="../../../js/extra.js"></script>
+      
+    
+    
       
     
   </body>

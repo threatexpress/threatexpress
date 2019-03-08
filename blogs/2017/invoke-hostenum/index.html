@@ -2,7 +2,7 @@
 
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
     
@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -68,9 +68,6 @@
       <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    
-    
-      
     
     
   </head>
@@ -129,19 +126,22 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            <span class="md-header-nav__topic">
-              Threatexpress
-            </span>
-            <span class="md-header-nav__topic">
-              Invoke-Hostenum
-            </span>
+            
+              <span class="md-header-nav__topic">
+                Threatexpress
+              </span>
+              <span class="md-header-nav__topic">
+                Invoke-Hostenum
+              </span>
+            
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,6 +164,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -174,18 +175,20 @@
 
   
 
-<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
     </div>
-  
-  <div class="md-source__repository">
-    threatexpress/threatexpress
-  </div>
-</a>
+  </a>
+
           </div>
         </div>
       
@@ -221,18 +224,20 @@
 
   
 
-<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
+
+  <a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      threatexpress/threatexpress
     </div>
-  
-  <div class="md-source__repository">
-    threatexpress/threatexpress
-  </div>
-</a>
+  </a>
+
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -810,7 +815,7 @@
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>powershell -ep bypass -c Import-Module ./Invoke-HostEnum.ps1; Invoke-HostEnum -Local -Path c:programdata
 </pre></div>
 </td></tr></table>
-<img alt="Invoke-HostEnum HTML Report" src="/threatexpress/img/hostenum_console_html.png" /> <strong>Invoke-HostEnum HTML Report</strong></p>
+<img alt="Invoke-HostEnum HTML Report" src="/img/hostenum_console_html.png" /> <strong>Invoke-HostEnum HTML Report</strong></p>
 <h3 id="cobalt-strike">Cobalt Strike<a class="headerlink" href="#cobalt-strike" title="Permanent link">&para;</a></h3>
 <p>Import script and execute interactively in a Beacon console</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -850,7 +855,7 @@ sub enumerate <span class="o">{</span>
 </pre></div>
 </td></tr></table>
 
-<p><img alt="" src="/threatexpress/img/hostenum_cs.gif" /> <strong>Invoke-HostEnum Execution in Cobalt Strike</strong></p>
+<p><img alt="" src="/img/hostenum_cs.gif" /> <strong>Invoke-HostEnum Execution in Cobalt Strike</strong></p>
 <h3 id="powershell-empire"><strong>PowerShell Empire</strong><a class="headerlink" href="#powershell-empire" title="Permanent link">&para;</a></h3>
 <p>I've also created a basic post-exploitation module for Empire (hostenum.py) that makes executing on an Empire agent extremely easy.</p>
 <p>Copy scripts to the appropriate Empire path</p>
@@ -877,13 +882,13 @@ cp hostenum.py /lib/modules/situational_awareness/host
 </pre></div>
 </td></tr></table>
 
-<p><img alt="" src="/threatexpress/img/hostenum_empire1.png" /> <strong>Invoke-HostEnum Empire Module</strong></p>
+<p><img alt="" src="/img/hostenum_empire1.png" /> <strong>Invoke-HostEnum Empire Module</strong></p>
 <hr />
 <h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
 <p>Several functions are inspired or pulled directly from the following projects and are referenced in the code where applicable. Any omissions are not intentional. Thanks to the following authors and projects for the great work!</p>
 <hr />
 <h2 id="want-to-learn-more-about-red-teaming">Want to learn more about Red Teaming?<a class="headerlink" href="#want-to-learn-more-about-red-teaming" title="Permanent link">&para;</a></h2>
-<p><img alt="Red Team Operation and Threat Emulation" src="/threatexpress/img/sanslogo.png" /></p>
+<p><img alt="Red Team Operation and Threat Emulation" src="/img/sanslogo.png" /></p>
 <p>Check out the new SANS Red Team course written by MINIS' own Joe Vest and James Tubberville</p>
 <p>SEC 564 Red Team Operation and Threat Emulation </p>
                 
@@ -963,7 +968,7 @@ cp hostenum.py /lib/modules/situational_awareness/host
       
     </div>
     
-      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
+      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
@@ -972,6 +977,9 @@ cp hostenum.py /lib/modules/situational_awareness/host
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       
         <script src="../../../js/extra.js"></script>
+      
+    
+    
       
     
   </body>
