@@ -66,6 +66,7 @@ nav:
   - Home: index.md
   - Blog Posts:
     - 2019:
+      - Git clone all organizational repos: blogs/2019/git-clone-entire-org.md
       - Penetration Testing Pasties: blogs/2019/penetration-testing-pasties.md 
     - 2018:
       - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2.md
