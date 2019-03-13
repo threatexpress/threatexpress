@@ -10,7 +10,7 @@ Red teaming can provide a deep understand the impacts an intelligent threat-acto
 
 Using an inverse pyramid, we can illustrate the relationships between Red Teaming, Penetration Testing, and Vulnerability Assessments. This will help further define what Red Teaming IS and IS NOT.
 
-![](/images/threat_pyramid.png)
+![](/img/threat_pyramid.png)
 
 __Vulnerability assessments__ tend to be wide in coverage but narrow in scope. Consider a vulnerability assessment of all enterprise workstations. The scope is very wide, but not very deep in context of organizational risks. What can be said about risk when flaws are found? Organizational risk can only be understood at the workstation level. Overall risk to an organization may be extrapolated to a small degree, but generally stays at that workstation level. Vulnerability assessment are good at reducing the attack surface but do not provide much detail in terms of organizational risk.
 
