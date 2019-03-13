@@ -1,6 +1,6 @@
 # Threat Mitigation Strategies: Observations and Recommendations
 
-**James Tubberville | January 25, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/2018/01/threat-mitigation-strategies-observations-recommendations/&text=Threat Mitigation Strategies - Part 1)**
+**James Tubberville | January 25, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/threat-mitigation-strategies-observations-recommendations/&text=Threat Mitigation Strategies - Part 1)**
 
 _Full disclosure: This post is heavy on text. Much of the content is very broad and uses simplified examples. There are literally thousands of extremely cool and interesting ways to limit threat activity; however, I've decided to simplify and focus on those that could have the most significant impact with relatively easy implementation. Enjoy!_
 

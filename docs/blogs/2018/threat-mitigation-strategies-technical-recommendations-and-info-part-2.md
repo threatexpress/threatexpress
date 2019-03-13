@@ -1,6 +1,6 @@
 # Threat Mitigation Strategies: Part 2
 
-**James Tubberville | May 15, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/2018/05/threat-mitigation-strategies-technical-recommendations-and-info-part-2/&text=Threat Mitigation Strategies - Part 2)**
+**James Tubberville | May 15, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/&text=Threat Mitigation Strategies - Part 2)**
 
 _The following information was composed by Andrew Chiles (@andrewchiles), Joe Vest (@joevest) and myself (@minis_io) for quick and easy reference. Much of it was pulled together from a variety of sources with attempts to provide references for each. This post is intended to be more of a brain dump rather than a complete technical breakout._
 
