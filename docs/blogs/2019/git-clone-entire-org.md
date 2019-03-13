@@ -30,7 +30,7 @@ for line in $(curl https://api.github.com/orgs/threatexpress/repos?access_token=
 
 ---
 
-**Pull all repos within an hierarchical folder structure**
+**Pull all repos within a hierarchical folder structure**
 ```
 find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull \;
 ```
