@@ -917,7 +917,7 @@
 <p>Generate your personal access token in your github profile &gt; Developer Settings &gt; Personal Access Tokens</p>
 </div>
 <hr />
-<p><strong>Pull all repos within an hierarchical folder structure</strong>
+<p><strong>Pull all repos within a hierarchical folder structure</strong>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull \;
 </pre></div>
 </td></tr></table></p>
