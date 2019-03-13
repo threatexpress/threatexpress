@@ -42,7 +42,7 @@ find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull \;
 
 
 
-[1]: /img/pasties.png
+[1]: /img/20180125_132744_attack.png
 [2]: https://www.twitter.com/joevest
 [3]: https://www.twitter.com/andrewchiles
 [4]: https://www.twitter.com/minis_io
