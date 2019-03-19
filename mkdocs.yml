@@ -97,6 +97,7 @@ nav:
   - Red Team Planning:
     - Goal Planing: redteaming/redteamplanning/goalplanning.md
     - Red Team Checklist: redteaming/redteamplanning/redteamchecklist.md
+    - Red Team ROE Guide: redteaming/redteamplanning/roeguide.md
     - Tradecraft: redteaming/redteamplanning/tradecraft.md
   - Red Team IOCs:
     - TinyShell IOCs: redteaming/tool_ioc/tinyshell_ioc.md
