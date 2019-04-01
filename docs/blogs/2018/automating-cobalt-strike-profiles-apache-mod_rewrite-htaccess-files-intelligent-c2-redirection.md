@@ -20,6 +20,8 @@ This post describes a script I created to convert a Cobalt Strike Malleable C2 p
 
 The script can be found at: 
 
+[github - cs2modrewrite](https://github.com/threatexpress/cs2modrewrite)
+
 ### Arguments
 
 ```    
