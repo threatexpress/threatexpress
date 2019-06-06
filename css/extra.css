@@ -46,16 +46,16 @@
 /* Blockquote */
 blockquote {
     background: #f9f9f9;
-    border-left: 100px solid #ff0000;
+    border-left: 100px solid #5D5D5D;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
     quotes: "\201C""\201D""\2018""\2019";
-    font-size: 2em;
+    font-size: 1em;
 }
 blockquote:before {
-color: #ff0000;
+color: #5D5D5D;
 /* content: open-quote; */ 
-font-size: 4em;
+font-size: 1em;
 line-height: 0.1em;
 margin-right: 0.25em;
 vertical-align: -0.4em;
@@ -67,7 +67,7 @@ display: inline;
 .md-typeset blockquote {
 /* padding-left: .4rem; */
 /* border-left: 0.4rem solid rgba(0, 0, 0, 0.76); */
-color: #ff0000;
+color: #5D5D5D;
 }
 
 /******* Material Theme Mods - END *******/
