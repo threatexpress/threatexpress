@@ -82,7 +82,7 @@ To keep it simple, a threat-actor must **Get-In** to establish an initial footho
 A threat based approach to security testing may use several names; Red Teaming, Threat Operations, Threat Assessment, Purple Teaming, Adversarial Assessment, Penetration Testing, Vulnerability Testing. These are not all the same, and it is important that the security industry defines terms to establish a common understanding. To help with this, all threat-based security testing in this post will be referred to as Red Teaming.
 
 !!! Definition "Definition of Red Teaming"
-    Red Teaming is the process of using tactics, techniques, and procedures (TTPs) to emulate a real-world threat with the goals of training and measuring the effectiveness of people, processes, and technology used to defend an environment.[5]
+    Red Teaming is the process of using tactics, techniques, and procedures (TTPs) to emulate a real-world threat with the goals of training and measuring the effectiveness of people, processes, and technology used to defend an environment.
 
 In other words, red teaming is the process of emulating a threat using real threat techniques with the goal of training blue teams and/or measuring security operations as a whole. 
 
@@ -147,7 +147,6 @@ In addition to these simple questions, red teams and blue teams can use the MITR
 2. [Threat Definition, ISO 27001, http://www.praxiom.com/iso-27001-definitions.htm#Threat][2]
 3. [Threat Definition, NIST, https://csrc.nist.gov/Glossary/?term=2156][3]
 4. [Reviving DDE: Using OneNote and Excel for Code Execution, https://posts.specterops.io/reviving-dde-using-onenote-and-excel-for-code-execution-d7226864caee][4]
-5. [SANS SEC 564 Red Team Operations and Threat Emulation, https://sans.org/sec564][5]
 6. [NIST Cybersecurity Framework, https://www.nist.gov/cyberframework/csf-reference-tool][6]
 7. [MITRE ATT&CK Framework, https://attack.mitre.org/wiki/Main_Page][7]
 
@@ -156,7 +155,6 @@ In addition to these simple questions, red teams and blue teams can use the MITR
 [2]: http://www.praxiom.com/iso-27001-definitions.htm#Threat
 [3]: https://csrc.nist.gov/Glossary/?term=2156 
 [4]: https://posts.specterops.io/reviving-dde-using-onenote-and-excel-for-code-execution-d7226864caee
-[5]: https://sans.org/sec564 
 [6]: https://www.nist.gov/cyberframework/csf-reference-tool
 [7]: https://attack.mitre.org/wiki/Main_Page
 

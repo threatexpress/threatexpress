@@ -124,14 +124,6 @@ Several functions are inspired or pulled directly from the following projects an
 
 * * *
 
-## Want to learn more about Red Teaming?
-
-![Red Team Operation and Threat Emulation][11]
-
-Check out the new SANS Red Team course written by MINIS' own Joe Vest and James Tubberville
-
-SEC 564 Red Team Operation and Threat Emulation 
-
 [1]: https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
 [2]: https://raw.githubusercontent.com/dafthack/HostRecon/master/HostRecon.ps1
 [3]: https://github.com/EmpireProject/Empire/tree/master/data/module_source/situational_awareness/host

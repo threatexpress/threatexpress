@@ -79,16 +79,6 @@ Based on these observations, it's clear that some AV and EDR tools make poor ass
 
 ## Try MetaTwin Yourself
 
-Get a copy here 
-
-## Want to learn more about Red Teaming?
-
-![Red Team Operation and Threat Emulation][18]
-
-Check out the new SANS Red Team course written by MINIS' own Joe Vest and James Tubberville
-
-SEC 564 Red Team Operation and Threat Emulation 
-
 [1]: /img/metatwin.png
 [2]: https://twitter.com/subTee/status/912769644473098240
 [3]: https://twitter.com/subTee

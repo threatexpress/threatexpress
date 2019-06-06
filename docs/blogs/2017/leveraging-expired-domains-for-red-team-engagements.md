@@ -72,16 +72,6 @@ _**Example Console Output with Reputation Checking**_
 
 ## Additional Resources
 
-## Want to learn more about Red Teaming?
-
-![Red Team Operation and Threat Emulation][9]
-
-Check out the new SANS Red Team course written by MINIS' own Joe Vest and James Tubberville
-
-SEC 564 Red Team Operation and Threat Emulation 
-
-## 
-
 [1]: https://www.mdsec.co.uk/2017/02/domain-fronting-via-cloudfront-alternate-domains/
 [2]: https://blog.cobaltstrike.com/2017/02/06/high-reputation-redirectors-and-domain-fronting/
 [3]: https://www.expireddomains.net/
