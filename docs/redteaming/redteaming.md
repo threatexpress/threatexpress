@@ -4,7 +4,7 @@ Red teaming is a goal oriented process driven by threat tactics. The focus is on
 
 > Definition: __Red Teaming__ is the process of using Tactics, Techniques, and Procedures (TTPs) to emulate a real-world threat with the goals of training and measuring the effectiveness of the people, processes, and technology used to defend an environment.
 
-Red teaming is __NOT__ a hunt for vulnerabilities, flaws, bugs, etc. The goal is on understanding security operations as a whole (people, processes, and technology). The result of a red team engagement may identify vulnerabilities, but more importantly, red teaming provides an understanding of blue's capability to impact a threat's ability to operate.
+Red teaming is __NOT__ a hunt for vulnerabilities, flaws, bugs, etc. The goal is to understand security operations as a whole (people, processes, and technology). The result of a red team engagement may identify vulnerabilities, but more importantly, red teaming provides an understanding of blue's capability to impact a threat's ability to operate.
 
 ## Why Red Team?
 
@@ -17,7 +17,7 @@ Red team engagements can be designed to exercise custom scenarios. Scenarios can
 
 ## Threat Gets a Vote
 
-Dig deeper in the the need for the threat perspective here. [Threat Gets a Vote - Applying a Threat Based Approach to Security Testing](/blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing)
+Dig deeper in the need for the threat perspective here. [Threat Gets a Vote - Applying a Threat Based Approach to Security Testing](/blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing)
 
 ![](/img/threat_gets_a_vote.png)
 
