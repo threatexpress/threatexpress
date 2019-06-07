@@ -17,7 +17,7 @@ Red team engagements can be designed to exercise custom scenarios. Scenarios can
 
 ## Threat Gets a Vote
 
-Dig deeper in the need for the threat perspective here. [Threat Gets a Vote - Applying a Threat Based Approach to Security Testing](/blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing)
+Dig deeper in the need for the threat perspective here. [Threat Gets a Vote - Applying a Threat-Based Approach to Security Testing](/blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing)
 
 ![](/img/threat_gets_a_vote.png)
 

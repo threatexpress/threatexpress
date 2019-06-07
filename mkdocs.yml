@@ -70,7 +70,7 @@ nav:
       - Penetration Testing Pasties: blogs/2019/penetration-testing-pasties.md 
     - 2018:
       - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2.md
-      - Threat Get's a Vote - Applying a Threat Based Approach to Security Testing: blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
+      - Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing: blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
       - Threat Mitagation Strategies - Part 2: blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
       - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
       - Threat Mitagation Strategies - Part 1: blogs/2018/threat-mitigation-strategies-observations-recommendations.md
