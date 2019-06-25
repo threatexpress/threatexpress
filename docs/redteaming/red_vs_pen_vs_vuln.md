@@ -24,7 +24,7 @@ Using an inverse pyramid, we can illustrate the relationships between Red Teamin
 
 Vulnerability assessment and Penetration tests are a means to identify technical flaws with the ultimate goal of reducing a targets attack surface.
 
-Red teaming is a goal driven scenario used to train or measure a blue. Red teaming goals lie in understanding security operations as a whole. people, processes, and technology.
+Red teaming is a goal driven scenario used to train or measure blue. Red teaming goals lie in understanding security operations as a whole. people, processes, and technology.
 
 ## References
 
