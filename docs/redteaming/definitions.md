@@ -38,7 +38,7 @@ OPSEC or Operational Security is a process that identifies critical information 
 
 ## Red Cell
 
-The term red cell is borrowed from the military. It is commonly associated with a group that plays OPFOR (opposing force) during red vs. blue exercises. A red cell is the components that make up the offensive portion of a red team engagement. The red cell is typically comprised of red team leads and operators and is commonly referred to as Red Team instead of Red Cell.
+The term red cell is borrowed from the military. It is commonly associated with a group that plays OPFOR (opposing force) during red vs. blue exercises. A red cell is the components that make up the offensive portion of a red team engagement that simulates the strategic and tactical responses of a given target. The red cell is typically comprised of red team leads and operators and is commonly referred to as Red Team instead of Red Cell.
 
 ## Red Team
 
