@@ -42,7 +42,7 @@ The term red cell is borrowed from the military. It is commonly associated with 
 
 ## Red Team
 
-A Red Team is an independent group that challenges an organization to improve its effectiveness.
+A Red Team is an independent group that, from the perspective of a threat or adversary, explores alternative plans and operations to challenge an organizatioøn to improve its effectiveness.
 
 ## Red Team Lead
 
