@@ -215,9 +215,6 @@ Legend:
 * Limited review
 * Base Framework flags AV
 
-
-
-
 ### **Koadic**
 
  **Code:** https://github.com/zerosum0x0/koadic
@@ -237,8 +234,6 @@ Legend:
 * Limited review
 * Requires cleartext creds for sessions or tokens (no keys/PTH/Kerb/etc)
 * Base flags AV
-
-
 
 ### **Merlin**
 
@@ -261,10 +256,6 @@ Legend:
 * Limited capability for mem resident (recompile is buggy)
 * No native AV obfuscation
 * Significant dll mods to avoid AV
-* Docs state collaborative, but it’s not (second connection more often than not caused crash in testing)
-
-
-
 
 ### **Pinjectra**
 
