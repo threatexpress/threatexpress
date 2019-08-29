@@ -23,7 +23,7 @@ All readers should note that building a C2 agent or framework isn't easy. Buildi
 |Cobalt Strike  |Commercial |Multi  |Win    |Sleep  |Yes    |Yes    |https://www.cobaltstrike.com/  |
 |Covenant   |GNU GPL3   |Post-Exp   |Cross  |C# (.NET)  |Yes    |Yes    |https://github.com/cobbr/Covenant  |
 |Empire |BSD3   |Post-Exp   |Cross  |Python |Yes    |No |https://github.com/EmpireProject/Empire    |
-|Faction    |BSD3   |Post-Exp   |.NET   |Python   |Yes    |Yes    |https://github.com/FactionC2/Faction   |
+|Faction    |BSD3   |Post-Exp   |Multi   |Python   |Yes    |Yes    |https://github.com/FactionC2/Faction   |
 |iBombshell |GNU GPL3   |Post-Exp   |Win    |Powershell |Yes    |No |https://github.com/ElevenPaths/ibombshell  |
 |Koadic |Apache 2   |Post-Exp   |Win    |VBScript/JScript   |   |No |https://github.com/zerosum0x0/koadic   |
 |Merlin |GNU GPL3   |Post-Exp   |Cross  |Go |No |No |https://github.com/Ne0nd0g/merlin  |
@@ -138,7 +138,6 @@ Legend:
 * Crossplatform
 * Docker
 * Web UI
-* JavaScript for Automation (Mac OS)
 * Chrome Extension Payload
 * Many Cobalt Strike similarities
 
