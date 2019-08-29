@@ -11,8 +11,9 @@ The primary authors are:
 ---
 ## Recent Posts
 
-Date         | Post
--------------|-
+Date          | Post
+--------------|------
+August 2019   | [C2 Agent Comparison](blogs/2019/c2-agent-comparison/)
 March 2019    | [Git clone all organizational repos](/blogs/2019/git-clone-entire-org/)
 January 2019  | [Penetration Testing Pasties](/blogs/2019/penetration-testing-pasties/)
 November 2018 | [A Deep Dive into Cobalt Strike Malleable C2](/blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2)

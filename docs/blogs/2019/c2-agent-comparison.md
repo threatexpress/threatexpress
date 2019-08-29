@@ -78,7 +78,7 @@ Legend:
 * * *
 
 
-## **Apfell** 
+### **Apfell** 
 
 **Code**: Python https://github.com/its-a-feature/Apfell
 **License:** BSD-3
@@ -103,7 +103,7 @@ Legend:
 
 
 
-## **Cobalt Strike**
+### **Cobalt Strike**
 
 **Code**: *Sleep* https://www.cobaltstrike.com/
 **License:** Commercial
@@ -126,7 +126,7 @@ Legend:
 
 
 
-## **Covenant**
+### **Covenant**
 
  **Code:** C# https://github.com/cobbr/Covenant
 **License: GNU GPL3**
@@ -150,7 +150,7 @@ Legend:
 
 
 
-## Empire 
+### Empire 
 
 **Code:** Python https://github.com/EmpireProject/Empire
 **License:**  BSD3
@@ -170,7 +170,7 @@ Legend:
 
 
 
-## **Faction**
+### **Faction**
 
  **Code:** https://github.com/FactionC2/Faction
 **License: BSD3**
@@ -197,9 +197,7 @@ Legend:
 * No native AV evasion
 * States it’s a PoC so may be further dev’d or dropped
 
-## 
-
-## **iBombshell**
+### **iBombshell**
 
  **Code:** https://github.com/ElevenPaths/ibombshell
 **License: GNU GPL3**
@@ -221,7 +219,7 @@ Legend:
 
 
 
-## **Koadic**
+### **Koadic**
 
  **Code:** https://github.com/zerosum0x0/koadic
 **License: Apache 2**
@@ -243,7 +241,7 @@ Legend:
 
 
 
-## **Merlin**
+### **Merlin**
 
  **Code:** https://github.com/Ne0nd0g/merlin
 **License: GNU GPL3**
@@ -269,7 +267,7 @@ Legend:
 
 
 
-## **Pinjectra**
+### **Pinjectra**
 
  **Code:** https://github.com/SafeBreach-Labs/pinjectra
 **License: BSD3**
@@ -285,7 +283,7 @@ Legend:
 
 
 
-## **PoshC2**
+### **PoshC2**
 
  **Code:** https://github.com/nettitude/PoshC2_Python
 **License: BSD3**
@@ -308,7 +306,7 @@ Legend:
 
 
 
-## **Sliver**
+### **Sliver**
 
  **Code:** https://github.com/BishopFox/sliver
 **License: GNU GPL3**
@@ -340,7 +338,7 @@ Legend:
 
 
 
-## **Silenttrinity**
+### **Silenttrinity**
 
  **Code:** https://github.com/byt3bl33d3r/SILENTTRINITY
 **License: GNU GPL3**
@@ -360,7 +358,7 @@ Legend:
 
 
 
-## **TrevorC2**
+### **TrevorC2**
 
  **Code:** https://github.com/trustedsec/trevorc2
 **License: WTH**
