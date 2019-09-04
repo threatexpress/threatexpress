@@ -23,7 +23,7 @@ All readers should note that building a C2 agent or framework isn't easy. Buildi
 |Cobalt Strike  |Commercial |Multi  |Win    |Sleep  |Yes    |Yes    |https://www.cobaltstrike.com/  |
 |Covenant   |GNU GPL3   |Post-Exp   |Cross  |C# (.NET)  |Yes    |Yes    |https://github.com/cobbr/Covenant  |
 |Empire |BSD3   |Post-Exp   |Cross  |Python |Yes    |No |https://github.com/EmpireProject/Empire    |
-|Faction    |BSD3   |Post-Exp   |.NET   |Python   |Yes    |Yes    |https://github.com/FactionC2/Faction   |
+|Faction    |BSD3   |Post-Exp   |Multi   |Python   |Yes    |Yes    |https://github.com/FactionC2/Faction   |
 |iBombshell |GNU GPL3   |Post-Exp   |Win    |Powershell |Yes    |No |https://github.com/ElevenPaths/ibombshell  |
 |Koadic |Apache 2   |Post-Exp   |Win    |VBScript/JScript   |   |No |https://github.com/zerosum0x0/koadic   |
 |Merlin |GNU GPL3   |Post-Exp   |Cross  |Go |No |No |https://github.com/Ne0nd0g/merlin  |
@@ -78,7 +78,7 @@ Legend:
 * * *
 
 
-## **Apfell** 
+### **Apfell** 
 
 **Code**: Python https://github.com/its-a-feature/Apfell
 **License:** BSD-3
@@ -103,7 +103,7 @@ Legend:
 
 
 
-## **Cobalt Strike**
+### **Cobalt Strike**
 
 **Code**: *Sleep* https://www.cobaltstrike.com/
 **License:** Commercial
@@ -126,7 +126,7 @@ Legend:
 
 
 
-## **Covenant**
+### **Covenant**
 
  **Code:** C# https://github.com/cobbr/Covenant
 **License: GNU GPL3**
@@ -138,7 +138,6 @@ Legend:
 * Crossplatform
 * Docker
 * Web UI
-* JavaScript for Automation (Mac OS)
 * Chrome Extension Payload
 * Many Cobalt Strike similarities
 
@@ -150,7 +149,7 @@ Legend:
 
 
 
-## Empire 
+### Empire 
 
 **Code:** Python https://github.com/EmpireProject/Empire
 **License:**  BSD3
@@ -170,7 +169,7 @@ Legend:
 
 
 
-## **Faction**
+### **Faction**
 
  **Code:** https://github.com/FactionC2/Faction
 **License: BSD3**
@@ -197,9 +196,7 @@ Legend:
 * No native AV evasion
 * States it’s a PoC so may be further dev’d or dropped
 
-## 
-
-## **iBombshell**
+### **iBombshell**
 
  **Code:** https://github.com/ElevenPaths/ibombshell
 **License: GNU GPL3**
@@ -218,10 +215,7 @@ Legend:
 * Limited review
 * Base Framework flags AV
 
-
-
-
-## **Koadic**
+### **Koadic**
 
  **Code:** https://github.com/zerosum0x0/koadic
 **License: Apache 2**
@@ -241,9 +235,7 @@ Legend:
 * Requires cleartext creds for sessions or tokens (no keys/PTH/Kerb/etc)
 * Base flags AV
 
-
-
-## **Merlin**
+### **Merlin**
 
  **Code:** https://github.com/Ne0nd0g/merlin
 **License: GNU GPL3**
@@ -264,12 +256,8 @@ Legend:
 * Limited capability for mem resident (recompile is buggy)
 * No native AV obfuscation
 * Significant dll mods to avoid AV
-* Docs state collaborative, but it’s not (second connection more often than not caused crash in testing)
 
-
-
-
-## **Pinjectra**
+### **Pinjectra**
 
  **Code:** https://github.com/SafeBreach-Labs/pinjectra
 **License: BSD3**
@@ -285,7 +273,7 @@ Legend:
 
 
 
-## **PoshC2**
+### **PoshC2**
 
  **Code:** https://github.com/nettitude/PoshC2_Python
 **License: BSD3**
@@ -308,7 +296,7 @@ Legend:
 
 
 
-## **Sliver**
+### **Sliver**
 
  **Code:** https://github.com/BishopFox/sliver
 **License: GNU GPL3**
@@ -340,7 +328,7 @@ Legend:
 
 
 
-## **Silenttrinity**
+### **Silenttrinity**
 
  **Code:** https://github.com/byt3bl33d3r/SILENTTRINITY
 **License: GNU GPL3**
@@ -360,7 +348,7 @@ Legend:
 
 
 
-## **TrevorC2**
+### **TrevorC2**
 
  **Code:** https://github.com/trustedsec/trevorc2
 **License: WTH**
