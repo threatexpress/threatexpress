@@ -66,6 +66,7 @@ nav:
   - Home: index.md
   - Posts:
     - 2019:
+      - Event Data Collector: blogs/2019/event-data-collector.md
       - C2 Agent Comparison: blogs/2019/c2-agent-comparison.md
       - Git clone all organizational repos: blogs/2019/git-clone-entire-org.md
       - Penetration Testing Pasties: blogs/2019/penetration-testing-pasties.md 

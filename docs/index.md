@@ -13,6 +13,7 @@ The primary authors are:
 
 Date          | Post
 --------------|------
+November 2019   | [Event Data Collector](blogs/2019/event-data-collector/)
 August 2019   | [C2 Agent Comparison](blogs/2019/c2-agent-comparison/)
 March 2019    | [Git clone all organizational repos](/blogs/2019/git-clone-entire-org/)
 January 2019  | [Penetration Testing Pasties](/blogs/2019/penetration-testing-pasties/)
