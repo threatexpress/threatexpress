@@ -112,7 +112,7 @@ EDC requires an account to be assigned a role for any access. Although individua
 
 
 #### Accounts
-It is recommended to create new acocunts and remove the examples once functionality of new are confirmed.
+It is recommended to create new accounts and remove the examples once functionality of new are confirmed.
 
 | Username | Password | Role |
 |---|---|---|
