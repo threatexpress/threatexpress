@@ -189,7 +189,7 @@ Each account will need to enable 2FA via profile.
     * There are no permissions assigned by default. Login produces no views and no access
     * The deployment should have restricted access (ACL), or be accessible only from VPN, etc.
     * You may optionally restrict registrations to a specific email domain
-* The bashrc is recommended for use as it saves terminal logs locally. It also has several simple example functions for submitting data to EDC. These should be binaries or python execs in your path. The included functions accepts (or if omitted prompts for) entry data, appropriately names and captures a screenshot (if oplog), and submits the entry.
+* The bashrc is recommended for use as it saves terminal logs locally. It also has several simple example functions for submitting data to EDC. These bash examples should be binaries or python execs (client) in your path. The included functions accepts (or if omitted prompts for) entry data, appropriately names and captures a screenshot (if oplog), and submits the entry.
 
 * * *
 
