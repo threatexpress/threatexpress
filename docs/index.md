@@ -2,7 +2,14 @@
 
 Welcome to the Threat Express information security blog created by red teamers, penetration testers and security professionals.  This blog contains security research, tools, and other red teaming related information.
 
-The primary authors are:
+This is the blog of the author's of book "Red Team Development and Operations, zero-day edition"
+
+![](/img/ebook_cover.png)
+
+- [:fa-amazon: Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B083XVG633/ref=sr_1_2?keywords=red+team+development)
+- [:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
+
+### The primary authors are:
 
 - Andrew Chiles [@andrewchiles](https://twitter.com/andrewchiles)
 - James Tubberville [@minis_io](https://twitter.com/minis_io)

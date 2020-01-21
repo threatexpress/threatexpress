@@ -64,6 +64,7 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
+  - REDTEAM.GUIDE: https://redteam.guide
   - Posts:
     - 2020:
       - Red Team Development and Operations: blogs/2020/red-team-development-and-operations.md
