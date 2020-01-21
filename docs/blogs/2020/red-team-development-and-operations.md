@@ -13,7 +13,7 @@ We are excited to announce the release of our new book
 
 This book is the culmination of years of experience in the information technology and cybersecurity field. Components of the book have existed as rough notes, ideas, informal and formal processes developed and/or adopted by the authors as we led and executed Red Team engagements over many years. These components have been used to successfully plan, deliver, and perform professional Red Team engagements of all sizes and complexities. 
 
-One of our first formal attempts to capture this information was the SANS SEC564 Red Team Operation and Threat Emulation course. This first effort was an attempt to document thee concepts in a format usable by others. Although, the SANS course was extremely successful and received highly rated reviews, we have moved on from SANS training and have completed this book to detail Red Team operations in an easily maintainable and digestible format.
+One of our first formal attempts to capture this information was the SANS SEC564 Red Team Operation and Threat Emulation course. This first effort was an attempt to document the concepts in a format usable by others. Although, the SANS course was extremely successful and received highly rated reviews, we have moved on from SANS training and have completed this book to detail Red Team operations in an easily maintainable and digestible format.
 
 It has taken years of research, experimentation (a.k.a trial-and-error), and
 execution to discern what elements should and should not be part of this
