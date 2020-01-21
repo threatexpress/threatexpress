@@ -25,7 +25,7 @@ provide a means to streamline your efforts and alleviate your work-load.
 In the end, improving (making things better) and enjoying yourself in the
 process is what counts the most. 
 
-The first release is our "zero-day" edition. We want to get this book in the public space. It will be updated as needed. The book has a companion website, https://redteam.guide. This website contains tips, templates, and other extras that help develop or run a Red Team.
+The first release is our "zero-day" edition. We want to get this book in the public space and will be updated as needed. The book has a companion website, https://redteam.guide. This website contains tips, templates, and other extras that help develop or run a Red Team.
 
 ### Self published on Amazon
 
@@ -34,11 +34,12 @@ The first release is our "zero-day" edition. We want to get this book in the pub
 [:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
 
 
-(["Red Team Development and Operations", Zero-Day Edition][4])
+(["Red Team Development and Operations", Zero-Day Edition][5])
 Joe Vest ([@joevest][2]) and James Tubberville ([@minis_io][3])
 
 [1]: /img/ebook_cover.png
 [2]: https://www.twitter.com/joevest
 [3]: https://www.twitter.com/minis_io
 [4]: https://www.amazon.com/dp/B083XVG633/ref=sr_1_2?keywords=red+team+development
+[5]: https://www.amazon.com/dp/B083XVG633/ref=sr_1_1?keywords=red+team+development+and+operations&qid=1579629673&sr=8-1
 
