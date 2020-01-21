@@ -7,7 +7,7 @@
 "Red Team Development and Operations", Zero-Day Edition
 Joe Vest ([@joevest][2]) and James Tubberville ([@minis_io][3])
 
-We are excited to announce the release of our new book "Red Team Development and Operations". This book is the culmination of years of experience in the information technology and cybersecurity field. Components of the book have existed as rough notes, ideas, informal and formal processes developed and/or adopted by the authors as we led and executed Red Team engagements over many years. These components have been used to successfully plan, deliver, and perform professional Red Team engagements of all sizes and complexities.   
+We are excited to announce the release of our new book "Red Team Development and Operations". This book is the culmination of years of experience in the information technology and cybersecurity field. Components of the book have existed as rough notes, ideas, informal and formal processes developed and/or adopted by the authors as we led and executed Red Team engagements over many years. These components have been used to successfully plan, deliver, and perform professional Red Team engagements of all sizes and complexities. 
 
 One of our first formal attempts to capture this information was the SANS SEC564 Red Team Operation and Threat Emulation course. This first effort was an attempt to document thee concepts in a format usable by others. Although, the SANS course was extremely successful and received highly rated reviews, we have moved on from SANS training and have completed this book to detail Red Team operations in an easily maintainable and digestible format.
 
@@ -24,6 +24,8 @@ value. It will not only make you a better Red Teamer, but it should also
 provide a means to streamline your efforts and alleviate your work-load.
 In the end, improving (making things better) and enjoying yourself in the
 process is what counts the most. 
+
+The first release is our "zero-day" edition. We want to get this book in the public space. It will be updated as needed. The book has a companion website, https://redteam.guide. This website contains tips, templates, and other extras that help develop or run a Red Team.
 
 ### Self published on Amazon
 
