@@ -65,6 +65,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Posts:
+    - 2020:
+      - Red Team Development and Operations: blogs/2020/red-team-development-and-operations.md
     - 2019:
       - Event Data Collector: blogs/2019/event-data-collector.md
       - C2 Agent Comparison: blogs/2019/c2-agent-comparison.md
