@@ -51,7 +51,7 @@ Using a standard platform does not mean limiting the toolset. If a tool or capab
 ThreatBox is a standard and controlled Linux based attack platform. I've used a version of this for years. It started as a collection of scripts, lived as a rolling virtual machine, existed as code to build a Linux ISO, and has now been converted to a set of ansible playbooks. Why Ansible? Why not? This seemed to be the next natural evolution to the configuration of standard attack platforms.
 
 !!! Note "Provisioning in the Cloud :fa-cloud: "
-    This project uses Ansible playbooks and roles to perform post-deployment configuration on a Linux target. It was tested on Ubuntu 18.04 provisioned in Digitalocean. Provisioning security testing boxes to cloud services providers is a personal preference determined by your own risk factors. Cloud provisioning is not required but does demonstrated the the system deployment side of DevOps. This project will not provision your target systems. This set of playbooks can be run against a Linux box you control (local or remote).
+    This project uses Ansible playbooks and roles to perform post-deployment configuration on a Linux target. It was tested on Ubuntu 18.04 provisioned in Digitalocean. Provisioning security testing boxes to cloud services providers is a personal preference determined by your own risk factors. Cloud provisioning is not required but does demonstrate the the system deployment side of DevOps. This project will not provision your target systems. This set of playbooks can be run against a Linux box you control (local or remote).
 
 It is designed to be used as a starter process in creating, managing, and using a standard attack platform for red teaming or penetration testing.
 
