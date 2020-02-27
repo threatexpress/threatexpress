@@ -2,14 +2,23 @@
 
 Welcome to the Threat Express information security blog created by red teamers, penetration testers and security professionals.  This blog contains security research, tools, and other red teaming related information.
 
-This is the blog of the author's of book "Red Team Development and Operations, zero-day edition"
+---
+Joe Vest and James Tubberville released a book !
 
-![](/img/ebook_cover.png)
+### Red Team Development and Operations, zero-day edition
 
-- [:fa-amazon: Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B083XVG633/ref=sr_1_2?keywords=red+team+development)
-- [:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
+![](/img/book_cover_3d.png)
 
-### The primary authors are:
+Find it on Amazon
+
+[:fa-amazon: Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B083XVG633/ref=sr_1_2?keywords=red+team+development)
+
+[:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
+
+or visit the book's companion website here http://redteam.guide
+
+---
+### The blog contributors are:
 
 - Andrew Chiles [@andrewchiles](https://twitter.com/andrewchiles)
 - James Tubberville [@minis_io](https://twitter.com/minis_io)
