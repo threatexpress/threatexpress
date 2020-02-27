@@ -35,6 +35,8 @@ Using a standard platform does not mean limiting the toolset. If a tool or capab
 
 > TLDR: Be a security professional. Control the tools you use.
 
+![][1] Details on the concept of a Standard Attack Platform and other Red Teaming topics can be found in the book Red Team Development and Operations - A practical guide, written by Joe Vest and James Tubberville.
+
 ---
 ## ThreatBox
 
@@ -95,6 +97,10 @@ ThreatBox ![threatbox](/img/threatbox.png)
 
 Tracking of installed tools ![](/img/tool_tracking.png)
 
+Custom terminal options provide more context ![](/img/custom_terminal.png)
+
+Light version of the terminal ![](/img/light_terminal.png)
+
 Attack platform custom commands ![](/img/help.png)
 
 Automatic logging of terminals ![](/img/terminal_logs.png)
@@ -102,7 +108,7 @@ Automatic logging of terminals ![](/img/terminal_logs.png)
 Tool categories ![](/img/tool_category.png)
 
 Pipenv used to control python projects
-
+ 
 ![](/img/pipenv.png)
 
 ![](/img/pipenv_shell.png)
