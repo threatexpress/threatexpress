@@ -2,6 +2,12 @@
 
 **James Tubberville | February 28, 2020 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2020/threatbox-standard-attack-platform/&text=ThreatBox - Standard Attack Platform)**
 
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:title" content="ThreatBox" />
+<meta name="twitter:description" content="Standard Attack Platform" />
+<meta name="twitter:image" content="https://threatexpress.com/img/threatbox.png" />
+
 [:fa-github: threatbox](http://github.com/threatexpress/threatbox)
 
 Security testers need a mixed set of tools. Some in the penetration testing and red teaming community argue that you shouldn't be limited to a specific set of tools. A threat can use anything they desire, right? This is true, but we are not the threat. We are part of the professional security testing community. Security testers shouldn't be limited to a specific set of tools, but downloading and using something randomly found on the internet is risky. A balance is needed. This balance is one way to separate security professionals from those who 'hack stuff.' We need a standard process to control the tools we use that are flexible enough to provide the capability we need with some assurances around the codebase. This can be achieved through a standard attack platform. 
