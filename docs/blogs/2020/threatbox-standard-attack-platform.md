@@ -14,7 +14,7 @@ Security testers need a mixed set of tools. Some in the penetration testing and 
 
 A standard attack platform is the common set of tools and hardware used by security testers, like a Red Team, to perform an engagement. The term __standard__ is critical. 
 
-A standard platform allows for:
+## A standard platform allows for
 
 ### Better logging
 A common platform shares the same base build, directory structure, and built-in data capture capability. At a minimum, tracks and logs terminal commands. Better logging equals better engagement.
@@ -41,7 +41,7 @@ Using a standard platform does not mean limiting the toolset. If a tool or capab
 
 > TLDR: Be a security professional. Control the tools you use.
 
-![][1] Details on the concept of a Standard Attack Platform and other Red Teaming topics can be found in the book Red Team Development and Operations - A practical guide, written by Joe Vest and James Tubberville.
+![Red Team Guide][http://redteam.guide] Details on the concept of a Standard Attack Platform and other Red Teaming topics can be found in the book Red Team Development and Operations - A practical guide, written by Joe Vest and James Tubberville.
 
 ---
 ## ThreatBox
@@ -49,6 +49,8 @@ Using a standard platform does not mean limiting the toolset. If a tool or capab
 [:fa-github: threatbox](http://github.com/threatexpress/threatbox)
 
 ThreatBox is a standard and controlled Linux based attack platform. I've used a version of this for years. It started as a collection of scripts, lived as a rolling virtual machine, existed as code to build a Linux ISO, and has now been converted to a set of ansible playbooks. Why Ansible? Why not? This seemed to be the next natural evolution to the configuration of standard attack platforms.
+
+Threatbox installed using the default setup is not a complete managed solution but is a great starting point to build and create a controlled attack platform.
 
 !!! Note "Provisioning in the Cloud :fa-cloud: "
     This project uses Ansible playbooks and roles to perform post-deployment configuration on a Linux target. It was tested on Ubuntu 18.04 provisioned in Digitalocean. Provisioning security testing boxes to cloud services providers is a personal preference determined by your own risk factors. Cloud provisioning is not required but does demonstrate the the system deployment side of DevOps. This project will not provision your target systems. This set of playbooks can be run against a Linux box you control (local or remote).
@@ -105,7 +107,7 @@ Tracking of installed tools ![](/img/tool_tracking.png)
 
 Custom terminal options provide more context ![](/img/custom_terminal.png)
 
-Light version of the terminal ![](/img/light_terminal.png)
+Light version of the terminal ![](/img/light_theme.png)
 
 Attack platform custom commands ![](/img/help.png)
 
