@@ -67,6 +67,7 @@ nav:
   - REDTEAM.GUIDE: https://redteam.guide
   - Posts:
     - 2020:
+      - ThreatBox - Standard Attack Platform: blogs/2020/threatbox-standard-attack-platform.md
       - Red Team Development and Operations: blogs/2020/red-team-development-and-operations.md
     - 2019:
       - Event Data Collector: blogs/2019/event-data-collector.md
