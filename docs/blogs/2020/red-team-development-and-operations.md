@@ -37,6 +37,7 @@ The first release is our "zero-day" edition. We want to get this book in the pub
 
 [:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
 
+[:fa-book: B&N Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.barnesandnoble.com/w/red-team-development-and-operations-james-tubberville/1136264411?ean=9798601431828)
 
 (["Red Team Development and Operations", Zero-Day Edition][5])
 Joe Vest ([@joevest][2]) and James Tubberville ([@minis_io][3])
