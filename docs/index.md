@@ -15,6 +15,8 @@ Find it on Amazon
 
 [:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
 
+[:fa-book: B&N Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.barnesandnoble.com/w/red-team-development-and-operations-james-tubberville/1136264411?ean=9798601431828)
+
 or visit the book's companion website here http://redteam.guide
 
 ---
