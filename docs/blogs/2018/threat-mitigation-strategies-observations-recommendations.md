@@ -275,6 +275,10 @@ My closing recommendation is for all organizations and security professionals to
     What did you come up with?
     Should a user be able to perform those actions?
 
+* * *
+
+Refer to [Part 2](http://threatexpress.com/blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/) for detailed technical implementation.
+
 
 [1]: /img/20180125_132744_attack.png
 
