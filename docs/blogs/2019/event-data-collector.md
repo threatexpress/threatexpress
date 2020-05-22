@@ -11,7 +11,7 @@ It is primarily designed to facilitate the flow of a cohesive red team by enabli
 
 It is expected only RT members assigned to the operation and those designated as Trusted Agents (TA), White Cell, or Control Cell members with a need-to-know will use EDC.
 
-You can find all the info, code, and setup instructions on [Github][15].
+You can find the latest info, code, and setup instructions on [Github][15].
 
 
 * * *  
