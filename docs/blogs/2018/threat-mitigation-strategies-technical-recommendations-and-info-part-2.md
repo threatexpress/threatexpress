@@ -6,7 +6,7 @@ _The following information was composed by Andrew Chiles (@andrewchiles), Joe Ve
 
 ![minis_io defender][1]
 
-As discussed in the Threat Mitigation Strategies Part 1  http://threatexpress.com/2018/01/threat-mitigation-strategies-observations-recommendations/, there is commonality between the inherent weaknesses and the actions a threat might perform within an information system or network.  The following recommendations and informational snippets were derived from many offensive and defensive efforts that continue to support these correlations. Each recommendation and snippet can **and very likely should** be applied to all networks. Some systems and networks will have exceptions; however, these are exceptions (not the status quo) and should be handled as such. Also note the exact syntax and use will vary with the network construct, operating system/version, and legal/regulatory security requirements.
+As discussed in the Threat Mitigation Strategies Part 1  http://threatexpress.com/blogs/2018/threat-mitigation-strategies-observations-recommendations/, there is commonality between the inherent weaknesses and the actions a threat might perform within an information system or network.  The following recommendations and informational snippets were derived from many offensive and defensive efforts that continue to support these correlations. Each recommendation and snippet can **and very likely should** be applied to all networks. Some systems and networks will have exceptions; however, these are exceptions (not the status quo) and should be handled as such. Also note the exact syntax and use will vary with the network construct, operating system/version, and legal/regulatory security requirements.
 
 ## Account Management
 
