@@ -1,40 +1,24 @@
 
-
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="Threatexpress Blog">
       
       
       
       
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+        <link rel="prev" href="../a-deep-dive-into-cobalt-strike-malleable-c2/">
       
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
       
-        <meta name="lang:search.language" content="en">
+        <link rel="next" href="../threat-mitigation-strategies-technical-recommendations-and-info-part-2/">
       
-        <meta name="lang:search.pipeline.stopwords" content="True">
       
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
@@ -42,193 +26,195 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
+    
+    
+      
+    
+    
       
         
         
-        <meta name="theme-color" content="">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
-    
-      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="../../../css/extra.css">
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
+    
     
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="red">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red">
+  
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../.." title="Threatexpress" class="md-header-nav__button md-logo">
-          
-            <img src="../../../img/threatexpress_logo.png" width="24" height="24">
-          
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing" class="md-skip">
+          Skip to content
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Threatexpress
-            </span>
-            <span class="md-header-nav__topic">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Threatexpress" class="md-header__button md-logo" aria-label="Threatexpress" data-md-component="logo">
+      
+  <img src="../../../img/threatexpress_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Threatexpress
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
               Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing
-            </span>
-          
+            
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
           
-<div class="md-search" data-md-component="search" role="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
-        
-      </div>
       
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/threatexpress" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
   <div class="md-source__repository">
     threatexpress/threatexpress
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
+  
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
+      
       
         
+          
+        
       
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../.." title="Threatexpress" class="md-nav__button md-logo">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Threatexpress" class="md-nav__button md-logo" aria-label="Threatexpress" data-md-component="logo">
       
-        <img src="../../../img/threatexpress_logo.png" width="48" height="48">
-      
+  <img src="../../../img/threatexpress_logo.png" alt="logo">
+
     </a>
     Threatexpress
   </label>
   
     <div class="md-nav__source">
-      
-
-
-  
-
-<a href="https://github.com/threatexpress/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+      <a href="https://github.com/threatexpress" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
   <div class="md-source__repository">
     threatexpress/threatexpress
   </div>
@@ -239,245 +225,452 @@
     
       
       
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="https://redteam.guide" title="REDTEAM.GUIDE" class="md-nav__link">
-      REDTEAM.GUIDE
-    </a>
-  </li>
-
-    
-      
-      
-      
-
+  </span>
   
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://redteam.guide" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    REDTEAM.GUIDE
     
-    <label class="md-nav__link" for="nav-3">
-      Posts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Posts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            2020
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2020/threatbox-standard-attack-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ThreatBox - Standard Attack Platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2020/red-team-development-and-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Team Development and Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            2019
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/event-data-collector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Data Collector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/c2-agent-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C2 Agent Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/git-clone-entire-org/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git clone all organizational repos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2019/penetration-testing-pasties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Penetration Testing Pasties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            2018
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a-deep-dive-into-cobalt-strike-malleable-c2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A Deep Dive into Cobalt Strike Malleable C2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Posts
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
-    
-    <label class="md-nav__link" for="nav-3-1">
-      2020
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
-        2020
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2020/threatbox-standard-attack-platform/" title="ThreatBox - Standard Attack Platform" class="md-nav__link">
-      ThreatBox - Standard Attack Platform
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2020/red-team-development-and-operations/" title="Red Team Development and Operations" class="md-nav__link">
-      Red Team Development and Operations
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
-    
-    <label class="md-nav__link" for="nav-3-2">
-      2019
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        2019
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2019/event-data-collector/" title="Event Data Collector" class="md-nav__link">
-      Event Data Collector
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2019/c2-agent-comparison/" title="C2 Agent Comparison" class="md-nav__link">
-      C2 Agent Comparison
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2019/git-clone-entire-org/" title="Git clone all organizational repos" class="md-nav__link">
-      Git clone all organizational repos
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2019/penetration-testing-pasties/" title="Penetration Testing Pasties" class="md-nav__link">
-      Penetration Testing Pasties
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
-    
-    <label class="md-nav__link" for="nav-3-3">
-      2018
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
-        2018
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../a-deep-dive-into-cobalt-strike-malleable-c2/" title="A Deep Dive into Cobalt Strike Malleable C2" class="md-nav__link">
-      A Deep Dive into Cobalt Strike Malleable C2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing
-      </label>
-    
-    <a href="./" title="Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing" class="md-nav__link md-nav__link--active">
-      Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#is-the-threat-really-included-in-security-planning" title="Is the threat really included in security planning?" class="md-nav__link">
-    Is the threat really included in security planning?
+  <a href="#is-the-threat-really-included-in-security-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is the threat really included in security planning?
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Is the threat really included in security planning?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-a-threat" title="What is a threat?" class="md-nav__link">
-    What is a threat?
+  <a href="#what-is-a-threat" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a threat?
+    </span>
   </a>
   
 </li>
@@ -488,16 +681,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-do-threats-succeed" title="Why do Threats Succeed?" class="md-nav__link">
-    Why do Threats Succeed?
+  <a href="#why-do-threats-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why do Threats Succeed?
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Why do Threats Succeed?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#isnt-the-identification-and-mitigation-of-vulnerabilities-enough" title="Isn't the identification and mitigation of vulnerabilities enough?" class="md-nav__link">
-    Isn't the identification and mitigation of vulnerabilities enough?
+  <a href="#isnt-the-identification-and-mitigation-of-vulnerabilities-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Isn't the identification and mitigation of vulnerabilities enough?
+    </span>
   </a>
   
 </li>
@@ -508,16 +705,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consider-this-scenario" title="Consider this scenario" class="md-nav__link">
-    Consider this scenario
+  <a href="#consider-this-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consider this scenario
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Consider this scenario">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-is-this-scenario-successful" title="Why is this scenario successful?" class="md-nav__link">
-    Why is this scenario successful?
+  <a href="#why-is-this-scenario-successful" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is this scenario successful?
+    </span>
   </a>
   
 </li>
@@ -528,561 +729,1049 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-threat-will" title="A Threat Will…" class="md-nav__link">
-    A Threat Will…
+  <a href="#a-threat-will" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Threat Will…
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pdrr-protect-detect-respond-recover-coverage" title="PDRR (Protect, Detect, Respond, Recover) Coverage" class="md-nav__link">
-    PDRR (Protect, Detect, Respond, Recover) Coverage
+  <a href="#pdrr-protect-detect-respond-recover-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDRR (Protect, Detect, Respond, Recover) Coverage
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" title="References" class="md-nav__link">
-    References
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
   </a>
   
 </li>
       
-      
-      
-      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
       
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../threat-mitigation-strategies-technical-recommendations-and-info-part-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Threat Mitagation Strategies - Part 2
     
-  </li>
+  </span>
+  
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/" class="md-nav__link">
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../threat-mitigation-strategies-technical-recommendations-and-info-part-2/" title="Threat Mitigation Strategies - Part 2" class="md-nav__link">
-      Threat Mitigation Strategies - Part 2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/" title="Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection" class="md-nav__link">
-      Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../threat-mitigation-strategies-observations-recommendations/" title="Threat Mitigation Strategies - Part 1" class="md-nav__link">
-      Threat Mitigation Strategies - Part 1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../hostenum-updates-usage/" title="HostEnum - Updates and Usage Guide" class="md-nav__link">
-      HostEnum - Updates and Usage Guide
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  <span class="md-ellipsis">
+    Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../threat-mitigation-strategies-observations-recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Threat Mitagation Strategies - Part 1
     
-    <label class="md-nav__link" for="nav-3-4">
-      2017
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        2017
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hostenum-updates-usage/" class="md-nav__link">
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/" title="Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads" class="md-nav__link">
-      Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2017/install-bloodhound-ubuntu/" title="Install BloodHound on Ubuntu" class="md-nav__link">
-      Install BloodHound on Ubuntu
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2017/empire-modifying-server-c2-indicators/" title="Empire Modifying Server C2 Indicators" class="md-nav__link">
-      Empire Modifying Server C2 Indicators
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2017/invoke-hostenum/" title="Invoke-Hostenum" class="md-nav__link">
-      Invoke-Hostenum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2017/leveraging-expired-domains-for-red-team-engagements/" title="Leveraging Expired Domains for Red Team Engagements" class="md-nav__link">
-      Leveraging Expired Domains for Red Team Engagements
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  <span class="md-ellipsis">
+    HostEnum - Updates and Usage Guide
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-3-5">
-      2016
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        2016
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2016/slack-notifications-for-cobalt-strike/" title="Slack Notifications for Cobalt Strike" class="md-nav__link">
-      Slack Notifications for Cobalt Strike
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          
-          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            2017
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
+    
+  </span>
+  
 
-  <li class="md-nav__item">
-    <a href="../../2016/web-shells-covert-channel/" title="SubShell and TinyShell - Custom Covert Webshells" class="md-nav__link">
-      SubShell and TinyShell - Custom Covert Webshells
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2017/install-bloodhound-ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install BloodHound on Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2017/empire-modifying-server-c2-indicators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Empire Modifying Server C2 Indicators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2017/invoke-hostenum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Invoke-Hostenum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2017/leveraging-expired-domains-for-red-team-engagements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Leveraging Expired Domains for Red Team Engagements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          
-          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2016
+    
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../2016/new-information-security-red-teaming-blog-threat-express-minis/" title="New Information Security and Red Teaming Blog Threat Express by MINIS" class="md-nav__link">
-      New Information Security and Red Teaming Blog Threat Express by MINIS
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-      </ul>
-    </nav>
-  </li>
-
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            2016
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2016/slack-notifications-for-cobalt-strike/" class="md-nav__link">
         
-      </ul>
-    </nav>
-  </li>
+  
+  
+  <span class="md-ellipsis">
+    Slack Notifications for Cobalt Strike
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2016/web-shells-covert-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SubShell and TinyShell - Custom Covert Webshells
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2016/new-information-security-red-teaming-blog-threat-express-minis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    New Information Security and Red Teaming Blog Threat Express by MINIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Red Teaming
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Red Teaming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/redteaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is Red Teaming
     
-    <label class="md-nav__link" for="nav-4">
-      Red Teaming
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Red Teaming
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/red_vs_pen_vs_vuln/" class="md-nav__link">
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/redteaming/" title="What is Red Teaming" class="md-nav__link">
-      What is Red Teaming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/red_vs_pen_vs_vuln/" title="Red vs Pen vs Vuln" class="md-nav__link">
-      Red vs Pen vs Vuln
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/rolesandrelationships/" title="Roles and Relationships" class="md-nav__link">
-      Roles and Relationships
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/mitre_attack/" title="Red Teaming and MITRE ATT&CK" class="md-nav__link">
-      Red Teaming and MITRE ATT&CK
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/definitions/" title="Definitions" class="md-nav__link">
-      Definitions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  <span class="md-ellipsis">
+    Red vs Pen vs Vuln
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/rolesandrelationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roles and Relationships
     
-    <label class="md-nav__link" for="nav-4-6">
-      Red Team Planning
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-6">
-        Red Team Planning
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/mitre_attack/" class="md-nav__link">
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/redteamplanning/goalplanning/" title="Goal Planing" class="md-nav__link">
-      Goal Planing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/redteamplanning/redteamchecklist/" title="Red Team Checklist" class="md-nav__link">
-      Red Team Checklist
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/redteamplanning/roeguide/" title="Red Team ROE Guide" class="md-nav__link">
-      Red Team ROE Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/redteamplanning/tradecraft/" title="Tradecraft Guidance" class="md-nav__link">
-      Tradecraft Guidance
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  <span class="md-ellipsis">
+    Red Teaming and MITRE ATT&CK
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Definitions
     
-    <label class="md-nav__link" for="nav-4-7">
-      Red Team IOCs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-7">
-        Red Team IOCs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../../redteaming/tool_ioc/tinyshell_ioc/" title="TinyShell IOCs" class="md-nav__link">
-      TinyShell IOCs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/tool_ioc/psexec/" title="PSEXEC IOCs" class="md-nav__link">
-      PSEXEC IOCs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://jpcertcc.github.io/ToolAnalysisResultSheet/" title="JPCert IOCs" class="md-nav__link">
-      JPCert IOCs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://digital-forensics.sans.org/media/SANS_Poster_2018_Hunt_Evil_FINAL.pdf" title="SANS Hunt Evil" class="md-nav__link">
-      SANS Hunt Evil
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
+              
+            
+              
+                
+  
+  
+  
+  
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
     
-    <label class="md-nav__link" for="nav-4-8">
-      Red Team Resources
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
-        Red Team Resources
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/cheatsheets/" title="Cheatsheets" class="md-nav__link">
-      Cheatsheets
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
-          
-          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Red Team Planning
+    
+  </span>
+  
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Red Team Planning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/redteamplanning/goalplanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Goal Planing
+    
+  </span>
+  
 
-  <li class="md-nav__item">
-    <a href="../../../redteaming/resources/" title="General Resources" class="md-nav__link">
-      General Resources
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/redteamplanning/redteamchecklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Team Checklist
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/redteamplanning/roeguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Team ROE Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/redteamplanning/tradecraft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tradecraft Guidance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          
-          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Red Team IOCs
+    
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/windowsactivedirectory/" title="Attack Active Directory" class="md-nav__link">
-      Attack Active Directory
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-      </ul>
-    </nav>
-  </li>
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Red Team IOCs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/tool_ioc/tinyshell_ioc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TinyShell IOCs
+    
+  </span>
+  
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/tool_ioc/psexec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PSEXEC IOCs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://jpcertcc.github.io/ToolAnalysisResultSheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JPCert IOCs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://digital-forensics.sans.org/media/SANS_Poster_2018_Hunt_Evil_FINAL.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SANS Hunt Evil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          
-          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Red Team Resources
+    
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../../redteaming/videos/videos/" title="Red Team Videos" class="md-nav__link">
-      Red Team Videos
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-      </ul>
-    </nav>
-  </li>
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Red Team Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/cheatsheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cheatsheets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/windowsactivedirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Attack Active Directory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redteaming/videos/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Team Videos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
-      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Post Archive
+    
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../../archive/" title="Post Archive" class="md-nav__link">
-      Post Archive
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
     
       
       
-      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributors
+    
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../../contributors/" title="Contributors" class="md-nav__link">
-      Contributors
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -1092,30 +1781,40 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#is-the-threat-really-included-in-security-planning" title="Is the threat really included in security planning?" class="md-nav__link">
-    Is the threat really included in security planning?
+  <a href="#is-the-threat-really-included-in-security-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is the threat really included in security planning?
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Is the threat really included in security planning?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-a-threat" title="What is a threat?" class="md-nav__link">
-    What is a threat?
+  <a href="#what-is-a-threat" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a threat?
+    </span>
   </a>
   
 </li>
@@ -1126,16 +1825,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-do-threats-succeed" title="Why do Threats Succeed?" class="md-nav__link">
-    Why do Threats Succeed?
+  <a href="#why-do-threats-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why do Threats Succeed?
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Why do Threats Succeed?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#isnt-the-identification-and-mitigation-of-vulnerabilities-enough" title="Isn't the identification and mitigation of vulnerabilities enough?" class="md-nav__link">
-    Isn't the identification and mitigation of vulnerabilities enough?
+  <a href="#isnt-the-identification-and-mitigation-of-vulnerabilities-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Isn't the identification and mitigation of vulnerabilities enough?
+    </span>
   </a>
   
 </li>
@@ -1146,16 +1849,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consider-this-scenario" title="Consider this scenario" class="md-nav__link">
-    Consider this scenario
+  <a href="#consider-this-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consider this scenario
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Consider this scenario">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-is-this-scenario-successful" title="Why is this scenario successful?" class="md-nav__link">
-    Why is this scenario successful?
+  <a href="#why-is-this-scenario-successful" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is this scenario successful?
+    </span>
   </a>
   
 </li>
@@ -1166,29 +1873,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-threat-will" title="A Threat Will…" class="md-nav__link">
-    A Threat Will…
+  <a href="#a-threat-will" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Threat Will…
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pdrr-protect-detect-respond-recover-coverage" title="PDRR (Protect, Detect, Respond, Recover) Coverage" class="md-nav__link">
-    PDRR (Protect, Detect, Respond, Recover) Coverage
+  <a href="#pdrr-protect-detect-respond-recover-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDRR (Protect, Detect, Respond, Recover) Coverage
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" title="References" class="md-nav__link">
-    References
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
   </a>
   
 </li>
       
-      
-      
-      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
       
     </ul>
   
@@ -1198,16 +1916,20 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <a href="https://github.com/threatexpress/edit/master/docs/blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                <h1 id="threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing">Threat Gets A Vote: Applying a Threat-Based Approach to Security Testing<a class="headerlink" href="#threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing" title="Permanent link">&para;</a></h1>
-<p><strong>Joe Vest | June 04, 2018 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/06/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing/&amp;text=Threat Gets A Vote: Applying a Threat-Based Approach to Security Testing"><i class="fa fa-twitter"></i></a></strong></p>
-<p>Designing, deploying, and managing a comprehensive security program is not an easy task. An organization's security design is influenced and pressured from multiple, often competing, sources. This includes customers, compliance, management, peers, budget, public opinion, and news. This process is complex and challenging, but an organization is generally able to overcome the pressures and implement what is considered to be a robust security program. An organization is able to please the various parties and, at least on paper, describe a strong security program designed to stop malicious cyber-attacks. Audit and compliance checks pass with a green light. Robust patch management systems are deployed. Vulnerability assessments and penetration tests are conducted. In general, the organization has good security hygiene. These are all great steps in defending a network from attack, but unfortunately, often fall short in achieving the primary goal of preventing, detecting, and responding to real threats.  Why? What is missing? The real question to consider is:</p>
+                  
+
+
+  
+  
+
+
+<h1 id="threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing">Threat Gets A Vote: Applying a Threat-Based Approach to Security Testing<a class="headerlink" href="#threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing" title="Permanent link">&para;</a></h1>
+<p><strong>Joe Vest | June 04, 2018 | Tweet This Post: <a href="https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/06/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing/&amp;text=Threat Gets A Vote: Applying a Threat-Based Approach to Security Testing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg></span></a></strong></p>
+<p>Designing, deploying, and managing a comprehensive security program is not an easy task. An organization's security design is influenced and pressured from multiple, often competing, sources. This includes customers, compliance, management, peers, budget, public opinion, and news. This process is complex and challenging, but an organization is generally able to overcome the pressures and implement what is considered to be a robust security program. An organization is able to please the various parties and, at least on paper, describe a strong security program designed to stop malicious cyber-attacks. Audit and compliance checks pass with a green light. Robust patch management systems are deployed. Vulnerability assessments and penetration tests are conducted. In general, the organization has good security hygiene. These are all great steps in defending a network from attack, but unfortunately, often fall short in achieving the primary goal of preventing, detecting, and responding to real threats. Why? What is missing? The real question to consider is:</p>
 <blockquote>
 <p>Are organizations really building security programs designed to address the threat?</p>
 </blockquote>
@@ -1216,18 +1938,18 @@
 <p><img alt="" src="/img/threat_gets_a_vote.png" /></p>
 <h2 id="is-the-threat-really-included-in-security-planning"><em>Is the threat really included in security planning?</em><a class="headerlink" href="#is-the-threat-really-included-in-security-planning" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="/img/were-looking-up-money-laundering-in-a-dictionary.jpg" /></p>
-<p>Good intentions by a group of intelligent people do not add up to understanding threats or how they operate. If the goal of security operations is to prevent, detect, respond, and recover to malicious actions, it only makes sense to include the opinions of those who you are defending against. </p>
+<p>Good intentions by a group of intelligent people do not add up to understanding threats or how they operate. If the goal of security operations is to prevent, detect, respond, and recover to malicious actions, it only makes sense to include the opinions of those who you are defending against.</p>
 <p>Unfortunately, the threat or threat perspective is often excluded from security design. This omission can lead to the mitigation or acceptance of risks not fully understood or revealed from traditional security testing and auditing. This can lead to a serious false sense of security. A real threat knows this and uses it to their advantage.</p>
-<p>Consider the following. Does a threat know a target has a robust security program? Do threats perform actions that will trigger an alert or get them caught?  Are threats still successful? If so, why are threats able to successfully achieve their goals and negatively impact an organization that has a comprehensive security program? To understand this, we need to know what we are defending against.</p>
+<p>Consider the following. Does a threat know a target has a robust security program? Do threats perform actions that will trigger an alert or get them caught? Are threats still successful? If so, why are threats able to successfully achieve their goals and negatively impact an organization that has a comprehensive security program? To understand this, we need to know what we are defending against.</p>
 <p>The security industry uses the term threat, but...</p>
 <h3 id="what-is-a-threat"><em>What is a threat?</em><a class="headerlink" href="#what-is-a-threat" title="Permanent link">&para;</a></h3>
 <p><strong>Dictionary.com</strong><a href="http://www.dictionary.com/browse/threat">1</a> defines threat as:</p>
 <ol>
-<li>a declaration of an intention or <br />
-determination to inflict punishment, injury, etc., in retaliation for, or <br />
-conditionally upon, some action or course; menace</li>
-<li>an indication or warning of probable <br />
-trouble</li>
+<li>a declaration of an intention or
+   determination to inflict punishment, injury, etc., in retaliation for, or
+   conditionally upon, some action or course; menace</li>
+<li>an indication or warning of probable
+   trouble</li>
 <li>a person or thing that threatens.</li>
 </ol>
 <p><strong>ISO 27001</strong><a href="http://www.praxiom.com/iso-27001-definitions.htm#Threat">2</a> defines threat as:</p>
@@ -1237,21 +1959,21 @@ trouble</li>
 <p><strong>NIST</strong><a href="https://csrc.nist.gov/Glossary/?term=2156">3</a> defines threat as:</p>
 <ol>
 <li>Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image, or reputation), organizational assets, individuals, other organizations, or the Nation through an information system via unauthorized access, destruction, disclosure, modification of information, and/or denial of service.
- | </li>
+   |</li>
 </ol>
-<p>To summarize and keep this in context of cybersecurity, a threat is an event that has the potential to adversely impact an organization.  Is this what security operations is defending against? A negative event? Perhaps, but consider including the term threat-actor when using threat.  A threat-actor is the person or group of people behind an attack. A solid defensive strategy must defend against the intelligent threat-actor bent on causing damage to an organization, and not just a potential event. People are behind cyber-attacks. When the defense considers the tactics, techniques, and procedures (TTPs) of intelligent threat-actors, they begin to truly understand the real threat. Defenders can then implement security defenses that directly impact the ability a threat-actor has to perform negative actions. Shifting security operations from the mindset of "Vulnerable" or "Not Vulnerable" and adopting an approach that focuses on threat actions will significantly improve the ability an organization has to not only prevent but also detect and respond to real threats.  This is the beginning of understanding security through the eyes of the threat. Organizations who use threat actions to drive their defensive TTPs can make life very difficult for threat-actors and even protect themselves against unknown or zero-day attacks.</p>
+<p>To summarize and keep this in context of cybersecurity, a threat is an event that has the potential to adversely impact an organization. Is this what security operations is defending against? A negative event? Perhaps, but consider including the term threat-actor when using threat. A threat-actor is the person or group of people behind an attack. A solid defensive strategy must defend against the intelligent threat-actor bent on causing damage to an organization, and not just a potential event. People are behind cyber-attacks. When the defense considers the tactics, techniques, and procedures (TTPs) of intelligent threat-actors, they begin to truly understand the real threat. Defenders can then implement security defenses that directly impact the ability a threat-actor has to perform negative actions. Shifting security operations from the mindset of "Vulnerable" or "Not Vulnerable" and adopting an approach that focuses on threat actions will significantly improve the ability an organization has to not only prevent but also detect and respond to real threats. This is the beginning of understanding security through the eyes of the threat. Organizations who use threat actions to drive their defensive TTPs can make life very difficult for threat-actors and even protect themselves against unknown or zero-day attacks.</p>
 <h2 id="why-do-threats-succeed">Why do Threats Succeed?<a class="headerlink" href="#why-do-threats-succeed" title="Permanent link">&para;</a></h2>
-<p>Many organization's currently use audit and compliance, vulnerability assessments, and penetration testing to evaluate and measure risk to cyber-attack. Why bother with a new threat focused approach?  </p>
+<p>Many organization's currently use audit and compliance, vulnerability assessments, and penetration testing to evaluate and measure risk to cyber-attack. Why bother with a new threat focused approach?</p>
 <h3 id="isnt-the-identification-and-mitigation-of-vulnerabilities-enough"><em>Isn't the identification and mitigation of vulnerabilities enough?</em><a class="headerlink" href="#isnt-the-identification-and-mitigation-of-vulnerabilities-enough" title="Permanent link">&para;</a></h3>
-<p>In order to answer, you must understand how a threat-actor thinks and acts.  Remember, a threat is really an intelligent person bent on causing harm. It is NOT an exploit of a vulnerability, NOT a piece of malware, or NOT a phishing attack.  These are merely means a threat-actor may choose to use to achieve their end goal. The threat-actor knows the target has a comprehensive security program. A suite of security tools (firewalls, intrusion detection systems, anti-virus, EDR, etc) are deployed with the intent of stopping cyber-attacks. A good threat-actor knows this and will most likely assume patches are deployed and vulnerability assessments and penetration tests are performed.  This understanding can significantly change the actions taken by a threat-actor compared to the actions taken by a traditional security tester. Does the threat-actor fire up a port scanner and enumerate an entire network? Does a threat-actor fire up vulnerability scanning tool to find an exploit? Attacks by threat-actors do not always follow the models adopted by traditional security testing. An attack is not scan -&gt; exploit -&gt; profit. An intelligent threat-actor evaluates what a target presents and uses weakness not always discovered through traditional security tests. The threat-actor will take a number of controlled steps to gain access to a target, establish command and control, establish persistence, and ultimately achieve their desired goal. The people charged with defending an organization often ignore or misunderstand the steps taken by a threat-actor. This often leads to focus on prevention, not detection. Defenders who do focus on detection may drown themselves in un-actionable default or vendor generate logs and alerts. Have you ever heard from the defending team "We have too many logs and alerts to respond!"? Why do organizations log what they log? Compliance? In case they are needed? Vendor advice? Organizations are still missing a key piece to all threats; understanding their actions and TTPs. </p>
+<p>In order to answer, you must understand how a threat-actor thinks and acts. Remember, a threat is really an intelligent person bent on causing harm. It is NOT an exploit of a vulnerability, NOT a piece of malware, or NOT a phishing attack. These are merely means a threat-actor may choose to use to achieve their end goal. The threat-actor knows the target has a comprehensive security program. A suite of security tools (firewalls, intrusion detection systems, anti-virus, EDR, etc) are deployed with the intent of stopping cyber-attacks. A good threat-actor knows this and will most likely assume patches are deployed and vulnerability assessments and penetration tests are performed. This understanding can significantly change the actions taken by a threat-actor compared to the actions taken by a traditional security tester. Does the threat-actor fire up a port scanner and enumerate an entire network? Does a threat-actor fire up vulnerability scanning tool to find an exploit? Attacks by threat-actors do not always follow the models adopted by traditional security testing. An attack is not scan -&gt; exploit -&gt; profit. An intelligent threat-actor evaluates what a target presents and uses weakness not always discovered through traditional security tests. The threat-actor will take a number of controlled steps to gain access to a target, establish command and control, establish persistence, and ultimately achieve their desired goal. The people charged with defending an organization often ignore or misunderstand the steps taken by a threat-actor. This often leads to focus on prevention, not detection. Defenders who do focus on detection may drown themselves in un-actionable default or vendor generate logs and alerts. Have you ever heard from the defending team "We have too many logs and alerts to respond!"? Why do organizations log what they log? Compliance? In case they are needed? Vendor advice? Organizations are still missing a key piece to all threats; understanding their actions and TTPs.</p>
 <h2 id="consider-this-scenario">Consider this scenario<a class="headerlink" href="#consider-this-scenario" title="Permanent link">&para;</a></h2>
-<p>After evaluating a target network, a threat-actor decides phishing is their chosen method to gain access.  A phish is sent to a small number of people. The phish contains an excel attachment with a DDE<a href="https://posts.specterops.io/reviving-dde-using-onenote-and-excel-for-code-execution-d7226864caee">4</a> based attack. An email recipient opens the attachment, malicious code is executed on the target, and command and control (C2) is established. The threat-actor then performs a series of steps that includes situational awareness of current access, enumeration of potential new targets, and lateral movement options to those targets. In this case, the threat finds clear text database credentials on a old test web application backup in a public share. The credentials are used to laterally move to a test database server. Code execution on the database server provides elevated access. The situational awareness cycle repeats. The threat-actor discovers elevated credentials stored in memory on the database server. Credential material is extracted from a Windows domain controller using the stolen elevated database credentials. The threat-actor performs additional situational awareness and enumeration using the new credentials from the domain controller. The intended target is identified and is located on a sensitive file repository. Using the elevated access and C2 channels, the threat-actor achieves their final objective and exfiltrates sensitive data outside the network.</p>
-<p>Is this scenario reasonable? Were opportunities presented to detect or prevent the threat? Organizations often blame the end user who clicked the link. What about the actions taken after the initial click? This scenario indicates an organization's entire security model may depend on users not clicking a link in an email. The organization does not intend to hinge all security on a single user, but the actions taken to defend their systems often say otherwise. </p>
+<p>After evaluating a target network, a threat-actor decides phishing is their chosen method to gain access. A phish is sent to a small number of people. The phish contains an excel attachment with a DDE<a href="https://posts.specterops.io/reviving-dde-using-onenote-and-excel-for-code-execution-d7226864caee">4</a> based attack. An email recipient opens the attachment, malicious code is executed on the target, and command and control (C2) is established. The threat-actor then performs a series of steps that includes situational awareness of current access, enumeration of potential new targets, and lateral movement options to those targets. In this case, the threat finds clear text database credentials on a old test web application backup in a public share. The credentials are used to laterally move to a test database server. Code execution on the database server provides elevated access. The situational awareness cycle repeats. The threat-actor discovers elevated credentials stored in memory on the database server. Credential material is extracted from a Windows domain controller using the stolen elevated database credentials. The threat-actor performs additional situational awareness and enumeration using the new credentials from the domain controller. The intended target is identified and is located on a sensitive file repository. Using the elevated access and C2 channels, the threat-actor achieves their final objective and exfiltrates sensitive data outside the network.</p>
+<p>Is this scenario reasonable? Were opportunities presented to detect or prevent the threat? Organizations often blame the end user who clicked the link. What about the actions taken after the initial click? This scenario indicates an organization's entire security model may depend on users not clicking a link in an email. The organization does not intend to hinge all security on a single user, but the actions taken to defend their systems often say otherwise.</p>
 <h3 id="why-is-this-scenario-successful"><em>Why is this scenario successful?</em><a class="headerlink" href="#why-is-this-scenario-successful" title="Permanent link">&para;</a></h3>
 <p>Organizations often have the wrong mindset to security defense</p>
 <ul>
 <li>Users are blamed for clicking links</li>
-<li>Policies, procedures, and compliance measure security </li>
+<li>Policies, procedures, and compliance measure security</li>
 <li>Log everything (You never know what you need)</li>
 <li>Patch, patch, patch. Threats only use exploits</li>
 <li>Our security tools will save use</li>
@@ -1263,9 +1985,9 @@ trouble</li>
 <p>A threat-based approach to security testing may use several names; Red Teaming, Threat Operations, Threat Assessment, Purple Teaming, Adversarial Assessment, Penetration Testing, Vulnerability Testing. These are not all the same, and it is important that the security industry defines terms to establish a common understanding. To help with this, all threat-based security testing in this post will be referred to as Red Teaming.</p>
 <div class="admonition definition">
 <p class="admonition-title">Definition of Red Teaming</p>
-<p>Red Teaming is the process of using tactics, techniques, and procedures (TTPs) to emulate a real-world threat with the goals of training and measuring the effectiveness of people, processes, and technology used to defend an environment.</p>
 </div>
-<p>In other words, red teaming is the process of emulating a threat using real threat techniques with the goal of training blue teams and/or measuring security operations as a whole. </p>
+<p>Red Teaming is the process of using tactics, techniques, and procedures (TTPs) to emulate a real-world threat with the goals of training and measuring the effectiveness of people, processes, and technology used to defend an environment.</p>
+<p>In other words, red teaming is the process of emulating a threat using real threat techniques with the goal of training blue teams and/or measuring security operations as a whole.</p>
 <p>Red teaming can provide a deep understand of the negative impacts an intelligent threat-actor can have against a target.</p>
 <p>Using an inverse pyramid, we can illustrate the relationships between Red Teaming, Penetration Testing, and Vulnerability Assessments. This will help further define what Red Teaming <strong>IS</strong> and <strong>IS NOT</strong>.</p>
 <p><img alt="" src="/img/threat_pyramid.png" /></p>
@@ -1299,13 +2021,11 @@ trouble</li>
 <p>Security program development should include the threat during design and development. Organizations should continue to build and manage a comprehensive security program designed to reduce the attack surface; however, must include Blue TTPs that directly impact the threat. Organizations should use red teams to provide threat faithful stimulus to train blue teams or measure security operations as a whole. Simple measurements are often missed in traditional security testing, but are core to red team engagements. Red teaming can provide answers to question like;</p>
 <div class="admonition questions">
 <p class="admonition-title">Questions</p>
-<ul>
-<li>What ability does a threat have to laterally move throughout a network?</li>
-<li>What ability does a threat have to escalate privileges?</li>
-<li>What ability does a threat have to exfiltrate sensitive data?</li>
-<li>Can a threat degrade, disrupt, deny, or destroy operations?</li>
-</ul>
 </div>
+<p>_ What ability does a threat have to laterally move throughout a network?
+_ What ability does a threat have to escalate privileges?
+_ What ability does a threat have to exfiltrate sensitive data?
+_ Can a threat degrade, disrupt, deny, or destroy operations?</p>
 <p>In addition to these simple questions, red teams and blue teams can use the MITRE ATT&amp;CK Framework as a tool to measure blue's ability to defend against threat TTPs.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1316,18 +2036,26 @@ trouble</li>
 <li><a href="https://www.nist.gov/cyberframework/csf-reference-tool">NIST Cybersecurity Framework, https://www.nist.gov/cyberframework/csf-reference-tool</a></li>
 <li><a href="https://attack.mitre.org/wiki/Main_Page">MITRE ATT&amp;CK Framework, https://attack.mitre.org/wiki/Main_Page</a></li>
 </ol>
-                
-                  
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
       </main>
       
         
@@ -1351,13 +2079,13 @@ trouble</li>
           </a>
         
         
-          <a href="../threat-mitigation-strategies-technical-recommendations-and-info-part-2/" title="Threat Mitigation Strategies - Part 2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../threat-mitigation-strategies-technical-recommendations-and-info-part-2/" title="Threat Mitagation Strategies - Part 2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Threat Mitigation Strategies - Part 2
+                Threat Mitagation Strategies - Part 2
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1377,25 +2105,47 @@ trouble</li>
           </div>
         
       </div>
+      <div class="md-social">
+  
+    
+    
+    
+    
       
-  <div class="md-footer-social">
-    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+      
     
-      <a href="https://github.com/threatexpress" class="md-footer-social__link fa fa-github"></a>
+    <a href="https://github.com/threatexpress" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
     
-      <a href="https://twitter.com/joevest" class="md-footer-social__link fa fa-twitter"></a>
     
-  </div>
-
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/joevest" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
+    
+    
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://platform.twitter.com/widgets.js"></script>
       
