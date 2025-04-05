@@ -8,7 +8,7 @@
 <meta name="twitter:description" content="Standard Attack Platform" />
 <meta name="twitter:image" content="https://threatexpress.com/img/threatbox.png" />
 
-[:fa-github: threatbox](http://github.com/threatexpress/threatbox)
+[:fontawesome-brands-github: threatbox](http://github.com/threatexpress/threatbox)
 
 Security testers need a mixed set of tools. Some in the penetration testing and red teaming community argue that you shouldn't be limited to a specific set of tools. A threat can use anything they desire, right? This is true, but we are not the threat. We are part of the professional security testing community. Security testers shouldn't be limited to a specific set of tools, but downloading and using something randomly found on the internet is risky. A balance is needed. This balance is one way to separate security professionals from those who 'hack stuff.' We need a standard process to control the tools we use that are flexible enough to provide the capability we need with some assurances around the codebase. This can be achieved through a standard attack platform.
 
@@ -54,13 +54,13 @@ Using a standard platform does not mean limiting the toolset. If a tool or capab
 
 ## ThreatBox
 
-[:fa-github: threatbox](http://github.com/threatexpress/threatbox)
+[:fontawesome-brands-github: threatbox](http://github.com/threatexpress/threatbox)
 
 ThreatBox is a standard and controlled Linux based attack platform. I've used a version of this for years. It started as a collection of scripts, lived as a rolling virtual machine, existed as code to build a Linux ISO, and has now been converted to a set of ansible playbooks. Why Ansible? Why not? This seemed to be the next natural evolution to the configuration of standard attack platforms.
 
 Threatbox installed using the default setup is not a complete managed solution but is a great starting point to build and create a controlled attack platform.
 
-!!! Note "Provisioning in the Cloud :fa-cloud: "
+!!! Note "Provisioning in the Cloud"
 This project uses Ansible playbooks and roles to perform post-deployment configuration on a Linux target. It was tested on Ubuntu 18.04 provisioned in Digitalocean. Provisioning security testing boxes to cloud services providers is a personal preference determined by your own risk factors. Cloud provisioning is not required but does demonstrate the the system deployment side of DevOps. This project will not provision your target systems. This set of playbooks can be run against a Linux box you control (local or remote).
 
 It is designed to be used as a starter process in creating, managing, and using a standard attack platform for red teaming or penetration testing.
@@ -135,9 +135,9 @@ Pipenv used to control python projects
 
 ![][1]
 
-[:fa-amazon: Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B083XVG633/ref=sr_1_2?keywords=red+team+development)
+[:fontawesome-brands-amazon: Paperback - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B083XVG633/ref=sr_1_2?keywords=red+team+development)
 
-[:fa-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
+[:fontawesome-brands-amazon: eBook - "Red Team Development and Operations", Zero-Day Edition](https://www.amazon.com/dp/B0842BMMCC/ref=sr_1_1?keywords=Red+Team+Development+and+Operations)
 
 Companion site. https://redteam.guide/
 
