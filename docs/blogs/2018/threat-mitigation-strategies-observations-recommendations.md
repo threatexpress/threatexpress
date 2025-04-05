@@ -1,6 +1,6 @@
 # Threat Mitigation Strategies: Observations and Recommendations
 
-**James Tubberville | January 25, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/threat-mitigation-strategies-observations-recommendations/&text=Threat Mitigation Strategies - Part 1)**
+**James Tubberville | January 25, 2018 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/threat-mitigation-strategies-observations-recommendations/&text=Threat Mitigation Strategies - Part 1)**
 
 _Full disclosure: This post is heavy on text. Much of the content is very broad and uses simplified examples. There are literally thousands of extremely cool and interesting ways to limit threat activity; however, I've decided to simplify and focus on those that could have the most significant impact with relatively easy implementation. Enjoy!_
 
@@ -30,14 +30,14 @@ Once escalation is achieved, the threat most often targets a server, commonly th
 
 Although this simplification identifies a Windows based network. It is also important to understand that access to a server, DC, or directory services may not be a requirement for access or impact to the target; however, it is more often than not a major enabler.
 
-This synopsis simply demonstrates that most threat attack paths follow the same principles of __getting in__, __staying in__ and __acting__ regardless of the tools, techniques, and procedures (TTPs), or motivators.
+This synopsis simply demonstrates that most threat attack paths follow the same principles of **getting in**, **staying in** and **acting** regardless of the tools, techniques, and procedures (TTPs), or motivators.
 
 ## Problem Sets
 
 As IT and security professionals, we must understand that "security" isn't what we should strive towards. Our purpose is to enable the objectives, functions, sustainment and success of the businesses and systems we support. Rather than forcing the concepts of "security", we should be identifying and communicating how our efforts support those basic business requirements and provide solutions to existing (and potential) problems to business success. In this article, I'm focusing on those security problems in which most IT and security staff directly influence. Although every organization has it's own unique set of problems, there is a clear commonality that all lead to four root causes.
 
 !!! Tip "Consider This"
-    Anyone has the ability to influence any aspect of the organization regardless of their position!
+Anyone has the ability to influence any aspect of the organization regardless of their position!
 
 ### Compliance does not equate to security
 
@@ -69,19 +69,19 @@ Clients rarely need to communicate amongst themselves. Over a roughly eighteen-y
 
 Of the systems and networks evaluated in recent years, none have required client-to-client communications. In fact, most have already implemented some type of host-based firewall. Yet in every network evaluated to date, all have been configured to allow client-to-client communication. Often the systems, network and defensive teams were unaware that such communications were allowed. In other instances administrative functions were identified as reasons for allowing communication.
 
-__Example:__ During review, each network staff identifies that host-based firewalls have been implemented; however, initiating a connection to other clients using multiple ports and protocols has always been successful. Most often the staff cite requirements for system and network administration using Server Message Block (SMB), Remote Desktop Protocol (RDP) or another Remote Administration Tool (RAT). In several instances, security tools were also identified as reasoning for allowing client-to-client communications.
+**Example:** During review, each network staff identifies that host-based firewalls have been implemented; however, initiating a connection to other clients using multiple ports and protocols has always been successful. Most often the staff cite requirements for system and network administration using Server Message Block (SMB), Remote Desktop Protocol (RDP) or another Remote Administration Tool (RAT). In several instances, security tools were also identified as reasoning for allowing client-to-client communications.
 
 !!! Note
-    There are multiple methods of allowing communications for administrative purposes only when required and should never be allowed perpetually.
+There are multiple methods of allowing communications for administrative purposes only when required and should never be allowed perpetually.
 
 ### Recommendation: Prevent client-to-client communication
 
 Simply implement and configure host and network based firewalls, IPTables, Access Control Lists (ACLs), etc. Leverage any and all capabilities of the network and organization. Preventing these communications limits a threat's ability to move freely throughout the network, reduces the likelihood of privileged account discovery, forces an increase in time and effort (more activities and artifacts), and therefore can increase the defender's ability to detect.
 
 !!! Note
-    Effective configuration of host based firewalls requires a thorough understanding of what network traffic should occur (what does normal look like?).
+Effective configuration of host based firewalls requires a thorough understanding of what network traffic should occur (what does normal look like?).
 
-* * *
+---
 
 ## Server-to-client communication
 
@@ -100,9 +100,9 @@ The most common IT staff concern with this implementation is malfunctioning or b
 Another common concern is the ability to "push" software, updates, etc. from the server. This is another instance where best practices are not being followed. A client should always request from a server. If deploying software or updates, the client should be notified when communicating with the server (via policy, configurations, etc.) and pull the respective requirements.
 
 !!! Note
-    In this context, a server is a functional role rather than a type of device.
+In this context, a server is a functional role rather than a type of device.
 
-* * *
+---
 
 ## Outbound Server Communications
 
@@ -117,9 +117,9 @@ Of the networks evaluated, all have had servers that allow communication with ex
 There are few instances where a server needs to communicate with a system external to the network. These are exceptions and should be managed to allow only connections to the required external asset or IP and allow only the use of required ports and protocols. All other outbound communications from servers should be blocked. This implementation combined with the limits between clients and server-to-client exponentially increases the difficulty of lateral movement and command and control.
 
 ??? Question "Should your internal Domain Controller manage the server in the DMZ?"
-    Of course not, but how many organization effectively control communication paths?
+Of course not, but how many organization effectively control communication paths?
 
-* * *
+---
 
 ## Cached administrative credentials
 
@@ -134,9 +134,9 @@ Of the networks evaluated, all have had cached administrative credentials presen
 Clearing credentials is relatively easy to do, yet is not often done. A few simple registry changes and requiring administrators to reboot (mainly workstations/clients) after using elevated accounts is a great step forward in limiting cached credentials. Also, forcing the use of Remote Desktop Credential Guard and Restricted Admin (see client-to-client above) has proven to be helpful in limitations; however, depending upon function, there may still be cached credentials present. It is recommended to always reboot after administrative functions.
 
 !!! Note
-    There are also several methods for injecting invalid credentials into memory for use as indicators. These HoneyTokens can be used as indicators of malicious activity.
+There are also several methods for injecting invalid credentials into memory for use as indicators. These HoneyTokens can be used as indicators of malicious activity.
 
-* * *
+---
 
 ## KRBTGT (Domain Kerberos Account)
 
@@ -151,9 +151,9 @@ Although many security professionals understand the GT/ST concept, most standard
 Reset the KRBTGT account twice within a limited time-frame (36-48 hours apart is recommended) followed by the changing of all administrative credentials. These resets limit a threat's ability to maintain access after credential changes. The administrative credential change is highly recommended and should be required. If the threat has a valid GT they have obtained valid credentials. A new Golden Ticket can be created after the KRBTGT reset if credentials have not been changed (defeating the purpose of the KRBTGT reset). This process should be completed periodically (no less frequently than quarterly).
 
 !!! Note
-    Anyone using assets not on the network during the resets (traveling, out of office, etc.) will likely need help authenticating when reconnecting.
+Anyone using assets not on the network during the resets (traveling, out of office, etc.) will likely need help authenticating when reconnecting.
 
-* * *
+---
 
 ## Sensitive Items
 
@@ -165,11 +165,11 @@ In every network evaluated, multiple instances of sensitive items were discovere
 
 ### Recommendation: Perform a sensitive items review
 
-Perform frequent search and discovery activities for critical items stored across the network and network systems.  With the exception of credential storage, there are legitimate reasons for storing information such as configurations, diagrams, business information, etc. on the network. These need special focus to determine where they are stored, who has access and if they have any authenticators or credentials.
+Perform frequent search and discovery activities for critical items stored across the network and network systems. With the exception of credential storage, there are legitimate reasons for storing information such as configurations, diagrams, business information, etc. on the network. These need special focus to determine where they are stored, who has access and if they have any authenticators or credentials.
 
 Challenge: Perform a string search for "pass", "assw", "pwd", "key", and "Type 7" on the network. You may be amazed at what is discovered.
 
-* * *
+---
 
 ## Ports, Protocols, and Services
 
@@ -184,9 +184,9 @@ In every network evaluated, PPS were not limited to only those required. This ap
 Both internal and external systems and network devices should block PPS that aren't required for the network. Limit PPS to only what is required for each specific system. Think of this as "PPS white-listing". Does the network have a need for port 5900 to traverse the entire network? Or is there a need for port 5900 to a specific system? Does the network really need IPX/SPX, WPAD, LLMNR, and NetBIOS enabled? Controlling PPS limits a threat's range of capabilities and increases chances of detection.
 
 !!! Note
-    Firewalls (network or host based) are listed above as an easy example. Network based firewalls are simply traffic control devices that allow ingress and egress traffic based upon configuration. Host based firewalls do the same for individual hosts.
+Firewalls (network or host based) are listed above as an easy example. Network based firewalls are simply traffic control devices that allow ingress and egress traffic based upon configuration. Host based firewalls do the same for individual hosts.
 
-* * *
+---
 
 ## Accounts and privileges
 
@@ -197,7 +197,7 @@ Accounts, group memberships, and privileges are primary enablers for most threat
 Many organizations have user accounts with some level of elevated access, administrative accounts that administer multiple resource types, and groups with specific permissions nested within other groups with higher level permissions. Each of these enable a threat to freely escalate privileges to a level required to meet their objective.
 
 !!! Tip "Consider this Concept"
-    A threat has the ability to elevate a standard user to one of privileged access, elevate a privileged access account to local administrator, and/or elevate local administrator to domain administrator. If a threat has the ability to escalate a standard user account to that of DA, so does every other user on the network.
+A threat has the ability to elevate a standard user to one of privileged access, elevate a privileged access account to local administrator, and/or elevate local administrator to domain administrator. If a threat has the ability to escalate a standard user account to that of DA, so does every other user on the network.
 
 ### Recommendation 1: Implement separation of accounts and privileges
 
@@ -212,17 +212,17 @@ Also, consider having separate dedicated administrative systems with no email cl
 This recommendation has multiple applications; however, the main focus is nested groups and permissions. Nesting is a common problem in nearly every windows based-network in existence. Is it easier to troubleshoot permissions or give a user membership to a group to solve the problem? We've all been there.
 
 !!! Tip "Consider this Concept"
-    Group 3 has domain access. Group 2 has server access. Group 1 has workstation access. Group 0 are domain users in a specific division. If a member of Group 0 is assigned to Group 1 due to an elevation requirement, the chances of that user being able to escalate to domain administrator (Group 3) are high. This occurs simply because at least one member of Group 1 is likely a member of Group 2, and at least one member of Group 2 is likely a member of Group 3. It may require a bit of work, but these are the paths and nested permissions a threat will leverage to gain elevated access.
+Group 3 has domain access. Group 2 has server access. Group 1 has workstation access. Group 0 are domain users in a specific division. If a member of Group 0 is assigned to Group 1 due to an elevation requirement, the chances of that user being able to escalate to domain administrator (Group 3) are high. This occurs simply because at least one member of Group 1 is likely a member of Group 2, and at least one member of Group 2 is likely a member of Group 3. It may require a bit of work, but these are the paths and nested permissions a threat will leverage to gain elevated access.
 
 ### Recommendation 3: Implement Microsoft Local Administrator Password Solution (LAPS)
 
 LAPS provides automated local administrator account management for every computer in Active Directory. A client-side component generates a random password, updates the LAPS password on the Active Directory computer account, and sets the password locally. LAPS configuration is managed through Group Policy which provides the values for password complexity, password length, local account name for password change, password change frequency, etc.
 
-### Recommendation 4: Rudimentary *nix Two Factor Authentication (2FA)
+### Recommendation 4: Rudimentary \*nix Two Factor Authentication (2FA)
 
-Many organizations have issues with credential reuse and implementation of Two Factor Authentication (2FA) in *nix based systems especially in off-line or closed networks. A very rudimentary but simple implementation of 2FA is the use of ssh key-files. The user generates a key-file that requires a password for use. The system administrator configures the system to require a key and password. The user now must use the password protected key-file to connect and the system password to complete authentication.
+Many organizations have issues with credential reuse and implementation of Two Factor Authentication (2FA) in \*nix based systems especially in off-line or closed networks. A very rudimentary but simple implementation of 2FA is the use of ssh key-files. The user generates a key-file that requires a password for use. The system administrator configures the system to require a key and password. The user now must use the password protected key-file to connect and the system password to complete authentication.
 
-* * *
+---
 
 ## Account and Event Activity
 
@@ -237,18 +237,18 @@ Account and event activity collection is commonly identified as a compliance ite
 Short and simple. Multiple fails followed by a success indicates bad things. Many organizations focus on the failures and only respond when a target number of failures occur (i.e. three failed attempts per account or 300 failed attempts total).
 
 !!! Tip "Consider this Concept"
-    A threat has a password discovered via open source intelligence. The account is unknown; however, the password file has a recent date. The threat performs one validation per account for all accounts on the network (or Outlook Web Access or external SharePoint Portal). After twenty attempts one account has the same password and successfully authenticates. This action met neither of the conditions for alerting. Would this action be identified?
+A threat has a password discovered via open source intelligence. The account is unknown; however, the password file has a recent date. The threat performs one validation per account for all accounts on the network (or Outlook Web Access or external SharePoint Portal). After twenty attempts one account has the same password and successfully authenticates. This action met neither of the conditions for alerting. Would this action be identified?
 
 ### Recommendation 2: Consider implementing a second instance or dashboard (or properly tuning the primary)
 
 Given that most organizations have a compliance requirement to log all events, it is unreasonable to discard all incoming data. It is feasible to tune the primary or a second instance, dashboard, etc. to look specifically for the indicators as described above.
 
-__Example:__ The network has been configured to prevent client-to-client communications. If client-to-client communications are attempted, an alert provides notification.
+**Example:** The network has been configured to prevent client-to-client communications. If client-to-client communications are attempted, an alert provides notification.
 
 !!! Note:
-    The example action should occur for the eight or ten actions common to most threats. Eight or ten possible scenarios are much easier to monitor and maintain _and_ provide a realistic view of potential threats (outsider or insider) within the network.
+The example action should occur for the eight or ten actions common to most threats. Eight or ten possible scenarios are much easier to monitor and maintain _and_ provide a realistic view of potential threats (outsider or insider) within the network.
 
-* * *
+---
 
 ### Application Whitelisting
 
@@ -263,23 +263,20 @@ Application Whitelisting is extremely useful in securing a network; however, for
 Implement Application Whitelisting only after all of the prior recommendations have been implemented. An interim strategy (until Application Whitelisting can be fully implemented) may be to prevent standard user execution of specific applications such as: arp, at, certutil, cscript, cmd, dsquery, hostname, ipconfig, msbuild, nbtstat, net, netsh, netstat, nslookup, ntdsutil, pcalua, ping, powershell, psexec, reg, regasm, regedit, regedt32, regsvr32, regsvcs, rundll32, set, sc, schtasks, systeminfo, tasklist, tracert, whoami, wmic, wscript, wsmprovhost, etc.
 
 ??? Question "Do standard users normally run any of the preceding commands? Should they?"
-    Most users do not use these commands. If they do, why?
+Most users do not use these commands. If they do, why?
 
-* * *
+---
 
 Most organizations have historically focused on prevention (which is why we consistently see networks with a harder exterior and soft chewy center). While prevention is a huge concern, complete protection will never be possible. Although preventative in nature, the major benefit of the listed recommendations is relative ease of detection. Each activity performed outside the baseline should stand out as indicators of malicious activity.
 
 My closing recommendation is for all organizations and security professionals to adopt the concept of _"Assumed Breach"_. An Assumed Breach mentality accepts that a network is currently, or will eventually be, compromised. Prepare your networks and business functions as if there's a known or impending threat to the network. I'll expand more on this in future posts.
 
 ??? Question "If a standard user was given administrative credentials while sitting at their workstation, what could they do?"
-    What did you come up with?
-    Should a user be able to perform those actions?
+What did you come up with?
+Should a user be able to perform those actions?
 
-* * *
+---
 
 Refer to [Part 2](http://threatexpress.com/blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/) for detailed technical implementation.
 
-
 [1]: /img/20180125_132744_attack.png
-
-  

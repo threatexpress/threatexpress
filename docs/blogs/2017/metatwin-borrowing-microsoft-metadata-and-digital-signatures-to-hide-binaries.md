@@ -1,7 +1,6 @@
-
 # Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads
 
-**Joe Vest | October 9, 2017 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/&text=Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads)**
+**Joe Vest | October 9, 2017 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/10/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries/&text=Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads)**
 
 ![][1]
 
@@ -9,9 +8,9 @@
 
 A [twitter post][2] by Casey Smith [(@subtee)][3] inspired me to update a tool written by Andrew Chiles [(@andrewchiles)][4] and I a few years ago.
 
-During a Red Team engagement, it can be helpful to blend in with the environment as best as possible when forced to operate from disk. Operating in memory is great, but in many situations or scenarios, you must resort to binaries on disk.  A technique I've used with great success is to modify a binary's resource information (metadata). This includes fields such as file icons, version, description, product name, copyright, etc.  When defeating security defenses or managing IOCs ([See my SANS Breaking Red webcast series for more on IOC management][5]), a threat will often attempt to trick or deceive an analyst. Making files blend into the environment can cause an analyst to treat malicious behavior as trusted.  If a binary says is it from Microsoft, it must be…
+During a Red Team engagement, it can be helpful to blend in with the environment as best as possible when forced to operate from disk. Operating in memory is great, but in many situations or scenarios, you must resort to binaries on disk. A technique I've used with great success is to modify a binary's resource information (metadata). This includes fields such as file icons, version, description, product name, copyright, etc. When defeating security defenses or managing IOCs ([See my SANS Breaking Red webcast series for more on IOC management][5]), a threat will often attempt to trick or deceive an analyst. Making files blend into the environment can cause an analyst to treat malicious behavior as trusted. If a binary says is it from Microsoft, it must be…
 
-This is where [MetaTwin][6] comes into play.  This is rewritten to not only modify a binary's metadata, but also add a digital signature as recently described by @subtee and @mattifestation.
+This is where [MetaTwin][6] comes into play. This is rewritten to not only modify a binary's metadata, but also add a digital signature as recently described by @subtee and @mattifestation.
 
 ## How MetaTwin Works
 
@@ -21,21 +20,21 @@ This is where [MetaTwin][6] comes into play.  This is rewritten to not only modi
 
 ## Demo
 
-In this example, I'm simply using a default meterpreter reverse_tcp binary.  Nothing special here, use any binary (.exe or .dll). Personally, we're huge fans of Cobalt Strike during real engagements.
+In this example, I'm simply using a default meterpreter reverse_tcp binary. Nothing special here, use any binary (.exe or .dll). Personally, we're huge fans of Cobalt Strike during real engagements.
 
 ![][9]
 
-Before MetaTwin |  After MetaTwin
-----------------|------
- ![][10]        |  ![][11] 
+| Before MetaTwin | After MetaTwin |
+| --------------- | -------------- |
+| ![][10]         | ![][11]        |
 
-As you can see, the file looks and feels like it could belong there.  Storing this in a location such as c:ProgramData... with a modified time stamp, **could** buy a Red Team operator a bit of time and support long(er) term persistence.
+As you can see, the file looks and feels like it could belong there. Storing this in a location such as c:ProgramData... with a modified time stamp, **could** buy a Red Team operator a bit of time and support long(er) term persistence.
 
 ## Interesting Observations
 
 ### AntiVirus
 
-Often simple modifications can cause defensive tools to react in different ways.  Of course AV is often not a show stopping defensive tool, but we were curious as to how AV handled a default Metasploit meterpreter binary when modified with MetaTwin.  No obfuscation other than the addition of metadata and digital signatures.  The results were interesting…
+Often simple modifications can cause defensive tools to react in different ways. Of course AV is often not a show stopping defensive tool, but we were curious as to how AV handled a default Metasploit meterpreter binary when modified with MetaTwin. No obfuscation other than the addition of metadata and digital signatures. The results were interesting…
 
 #### Default Reverse TCP Meterpreter Binary
 
@@ -59,7 +58,7 @@ After adding a digital signature and the metadata, exposure dropped from 76% to 
 
 In additions to Antivirus, you can see how default tool behavior responds to these modifications using SysInternals AutoRuns.
 
-Using the modified binary, we created simple persistence mechanism using a scheduled task.  AutoRuns can be used to display this type of Windows persistence.  But… the modified binary is hidden by default.  Take a look…
+Using the modified binary, we created simple persistence mechanism using a scheduled task. AutoRuns can be used to display this type of Windows persistence. But… the modified binary is hidden by default. Take a look…
 
 ## **AutoRuns Default Settings Hide the "Microsoft" scheduled task**
 
@@ -75,7 +74,7 @@ Using the modified binary, we created simple persistence mechanism using a sched
 
 ## **Takeaway**
 
-Based on these observations, it's clear that some AV and EDR tools make poor assumptions based on file metadata and digital signatures that can make them less effective or confuse an inexperienced Blue Team member. Red Team operators can use this to their advantage  if forced to operate from disk in future engagements.
+Based on these observations, it's clear that some AV and EDR tools make poor assumptions based on file metadata and digital signatures that can make them less effective or confuse an inexperienced Blue Team member. Red Team operators can use this to their advantage if forced to operate from disk in future engagements.
 
 ## Try MetaTwin Yourself
 
@@ -97,5 +96,3 @@ Based on these observations, it's clear that some AV and EDR tools make poor ass
 [16]: /img/autoruns_options.png
 [17]: /img/autoruns_display.png
 [18]: /img/sanslogo.png
-
-  

@@ -1,49 +1,49 @@
 site_name: Threatexpress
-site_description: 'Threatexpress Blog'
+site_description: "Threatexpress Blog"
 copyright: © 2019 Threatexpress
 
 # Theme
 theme:
-    name: material
-    custom_dir: 'theme'
-    language: en
-    palette:
-        primary: black
-        accent: red
-    logo: img/threatexpress_logo.png
-    favicon: img/favicon.ico
-    font:
-        text: Roboto
-        code: Roboto Mono
-    feature:
-        tabs: false
-repo_name: 'threatexpress/threatexpress'
-repo_url: 'https://github.com/threatexpress'
+  name: material
+  custom_dir: "theme"
+  language: en
+  palette:
+    primary: black
+    accent: red
+  logo: img/threatexpress_logo.png
+  favicon: img/favicon.ico
+  font:
+    text: Roboto
+    code: Roboto Mono
+  feature:
+    tabs: false
+repo_name: "threatexpress/threatexpress"
+repo_url: "https://github.com/threatexpress"
 
 # Extras
 extra:
   social:
-    - type: 'github'
-      link: 'https://github.com/threatexpress'
-    - type: 'twitter'
-      link: 'https://twitter.com/joevest'
+    - icon: fontawesome/brands/github-alt
+      link: "https://github.com/threatexpress"
+    - icon: fontawesome/brands/twitter
+      link: "https://twitter.com/joevest"
 # Support for jquery and custom javascript
 extra_javascript:
-    - https://platform.twitter.com/widgets.js
-    - https://code.jquery.com/jquery-3.3.1.min.js
-    - js/extra.js
+  - https://platform.twitter.com/widgets.js
+  - https://code.jquery.com/jquery-3.3.1.min.js
+  - js/extra.js
 
 # Support extra CSS
 extra_css:
-    - css/extra.css
-    - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+  - css/extra.css
+  - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
 
 # Extensions
 markdown_extensions:
   - admonition
   - codehilite:
-        guess_lang: true
-        linenums: true
+      guess_lang: true
+      linenums: true
   - toc:
       permalink: true
   - pymdownx.arithmatex
@@ -53,64 +53,66 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - fontawesome_markdown
+  # - fontawesome_markdown
 
 # Navigation
 nav:
   - Home: index.md
   - REDTEAM.GUIDE: https://redteam.guide
   - Posts:
-    - 2020:
-      - ThreatBox - Standard Attack Platform: blogs/2020/threatbox-standard-attack-platform.md
-      - Red Team Development and Operations: blogs/2020/red-team-development-and-operations.md
-    - 2019:
-      - Event Data Collector: blogs/2019/event-data-collector.md
-      - C2 Agent Comparison: blogs/2019/c2-agent-comparison.md
-      - Git clone all organizational repos: blogs/2019/git-clone-entire-org.md
-      - Penetration Testing Pasties: blogs/2019/penetration-testing-pasties.md 
-    - 2018:
-      - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2.md
-      - Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing: blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
-      - Threat Mitagation Strategies - Part 2: blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
-      - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
-      - Threat Mitagation Strategies - Part 1: blogs/2018/threat-mitigation-strategies-observations-recommendations.md
-      - HostEnum - Updates and Usage Guide:  blogs/2018/hostenum-updates-usage.md
-    - 2017:
-      - Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads: blogs/2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries.md
-      - Install BloodHound on Ubuntu: blogs/2017/install-bloodhound-ubuntu.md 
-      - Empire Modifying Server C2 Indicators: blogs/2017/empire-modifying-server-c2-indicators.md
-      - Invoke-Hostenum: blogs/2017/invoke-hostenum.md
-      - Leveraging Expired Domains for Red Team Engagements: blogs/2017/leveraging-expired-domains-for-red-team-engagements.md
-    - 2016:
-      - Slack Notifications for Cobalt Strike: blogs/2016/slack-notifications-for-cobalt-strike.md
-      - SubShell and TinyShell - Custom Covert Webshells: blogs/2016/web-shells-covert-channel.md
-      - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/new-information-security-red-teaming-blog-threat-express-minis.md
-  - Red Teaming: 
-    - What is Red Teaming: redteaming/redteaming.md
-    - Red vs Pen vs Vuln: redteaming/red_vs_pen_vs_vuln.md
-    - Roles and Relationships: redteaming/rolesandrelationships.md
-    - Red Teaming and MITRE ATT&CK: redteaming/mitre_attack.md
-    - Definitions: redteaming/definitions.md
-    - Red Team Planning:
-      - Goal Planing: redteaming/redteamplanning/goalplanning.md
-      - Red Team Checklist: redteaming/redteamplanning/redteamchecklist.md
-      - Red Team ROE Guide: redteaming/redteamplanning/roeguide.md
-      - Tradecraft Guidance: redteaming/redteamplanning/tradecraft.md
-    - Red Team IOCs:
-      - TinyShell IOCs: redteaming/tool_ioc/tinyshell_ioc.md
-      - PSEXEC IOCs: redteaming/tool_ioc/psexec.md
-      - JPCert IOCs: https://jpcertcc.github.io/ToolAnalysisResultSheet/
-      - SANS Hunt Evil: https://digital-forensics.sans.org/media/SANS_Poster_2018_Hunt_Evil_FINAL.pdf
-    - Red Team Resources:
-      - Cheatsheets: redteaming/cheatsheets.md
-      - General Resources: redteaming/resources.md
-      - Attack Active Directory: redteaming/windowsactivedirectory.md
-    - Red Team Videos: redteaming/videos/videos.md
+      - 2020:
+          - ThreatBox - Standard Attack Platform: blogs/2020/threatbox-standard-attack-platform.md
+          - Red Team Development and Operations: blogs/2020/red-team-development-and-operations.md
+      - 2019:
+          - Event Data Collector: blogs/2019/event-data-collector.md
+          - C2 Agent Comparison: blogs/2019/c2-agent-comparison.md
+          - Git clone all organizational repos: blogs/2019/git-clone-entire-org.md
+          - Penetration Testing Pasties: blogs/2019/penetration-testing-pasties.md
+      - 2018:
+          - A Deep Dive into Cobalt Strike Malleable C2: blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2.md
+          - Threat Get's a Vote - Applying a Threat-Based Approach to Security Testing: blogs/2018/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing.md
+          - Threat Mitagation Strategies - Part 2: blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2.md
+          - Automating Cobalt Strike Profiles Apache mod_rewrite htaccess Files for Intelligent C2 Redirection: blogs/2018/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection.md
+          - Threat Mitagation Strategies - Part 1: blogs/2018/threat-mitigation-strategies-observations-recommendations.md
+          - HostEnum - Updates and Usage Guide: blogs/2018/hostenum-updates-usage.md
+      - 2017:
+          - Borrowing Microsoft MetaData and Signatures to Hide Binary Payloads: blogs/2017/metatwin-borrowing-microsoft-metadata-and-digital-signatures-to-hide-binaries.md
+          - Install BloodHound on Ubuntu: blogs/2017/install-bloodhound-ubuntu.md
+          - Empire Modifying Server C2 Indicators: blogs/2017/empire-modifying-server-c2-indicators.md
+          - Invoke-Hostenum: blogs/2017/invoke-hostenum.md
+          - Leveraging Expired Domains for Red Team Engagements: blogs/2017/leveraging-expired-domains-for-red-team-engagements.md
+      - 2016:
+          - Slack Notifications for Cobalt Strike: blogs/2016/slack-notifications-for-cobalt-strike.md
+          - SubShell and TinyShell - Custom Covert Webshells: blogs/2016/web-shells-covert-channel.md
+          - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/new-information-security-red-teaming-blog-threat-express-minis.md
+  - Red Teaming:
+      - What is Red Teaming: redteaming/redteaming.md
+      - Red vs Pen vs Vuln: redteaming/red_vs_pen_vs_vuln.md
+      - Roles and Relationships: redteaming/rolesandrelationships.md
+      - Red Teaming and MITRE ATT&CK: redteaming/mitre_attack.md
+      - Definitions: redteaming/definitions.md
+      - Red Team Planning:
+          - Goal Planing: redteaming/redteamplanning/goalplanning.md
+          - Red Team Checklist: redteaming/redteamplanning/redteamchecklist.md
+          - Red Team ROE Guide: redteaming/redteamplanning/roeguide.md
+          - Tradecraft Guidance: redteaming/redteamplanning/tradecraft.md
+      - Red Team IOCs:
+          - TinyShell IOCs: redteaming/tool_ioc/tinyshell_ioc.md
+          - PSEXEC IOCs: redteaming/tool_ioc/psexec.md
+          - JPCert IOCs: https://jpcertcc.github.io/ToolAnalysisResultSheet/
+          - SANS Hunt Evil: https://digital-forensics.sans.org/media/SANS_Poster_2018_Hunt_Evil_FINAL.pdf
+      - Red Team Resources:
+          - Cheatsheets: redteaming/cheatsheets.md
+          - General Resources: redteaming/resources.md
+          - Attack Active Directory: redteaming/windowsactivedirectory.md
+      - Red Team Videos: redteaming/videos/videos.md
   - Post Archive: archive.md
   - Contributors: contributors.md

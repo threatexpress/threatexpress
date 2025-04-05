@@ -1,50 +1,50 @@
 # Empire – Modifying Server C2 Indicators
 
-**Andrew Chiles | May 14, 2017 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/2017/05/empire-modifying-server-c2-indicators/&text=Empire – Modifying Server C2 Indicators)**
+**Andrew Chiles | May 14, 2017 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/2017/05/empire-modifying-server-c2-indicators/&text=Empire – Modifying Server C2 Indicators)**
 
 ## Overview
 
 This post is intended as a follow-on to Jeff Dimmock's [detailed write-up](https://github.com/bluscreenofjeff/bluscreenofjeff.github.io/blob/master/_posts/2017-03-01-how-to-make-communication-profiles-for-empire.md) on creating communication profiles for [Empire](https://github.com/EmpireProject/Empire). Empire 1.6's “DefaultProfile” setting for modifying C2 indicators doesn't directly allow modification of the server-side parameters. When faced with an experienced group of defenders, default C2 server indicators can quickly reveal your infrastructure. HTTPS listeners with valid certificates can certainly hinder traffic monitoring, but isn't a silver bullet.
 
-A good example of identifying Empire infrastructure is detailed in a [Chokepoint post](http://www.chokepoint.net/2017/04/hunting-red-team-empire-c2.html) using Shodan and Scans.io scan data. They included a Python script that idenfitied an Empire server based on a cookie handling error, but the bug was fixed in a subsequent [commit](https://github.com/EmpireProject/Empire/commit/01f530700e21fd8d3eb7381864459dea85ba44fb). This is just another reason to protect your infrastructure from probing using redirectors with Apache mod\_rewrite as Jeff also [explained](https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/). Nevertheless, the steps for identifying a default configured Empire server are fairly trivial and we wanted to be able to change them! We explored the ability to modify Empire 1.6 server side C2 indicators without breaking agent functionality.
+A good example of identifying Empire infrastructure is detailed in a [Chokepoint post](http://www.chokepoint.net/2017/04/hunting-red-team-empire-c2.html) using Shodan and Scans.io scan data. They included a Python script that idenfitied an Empire server based on a cookie handling error, but the bug was fixed in a subsequent [commit](https://github.com/EmpireProject/Empire/commit/01f530700e21fd8d3eb7381864459dea85ba44fb). This is just another reason to protect your infrastructure from probing using redirectors with Apache mod_rewrite as Jeff also [explained](https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/). Nevertheless, the steps for identifying a default configured Empire server are fairly trivial and we wanted to be able to change them! We explored the ability to modify Empire 1.6 server side C2 indicators without breaking agent functionality.
 
 #### Server Parameters
 
-*   Staging URIs
-    *   Default: index.asp,index.jsp,index.php
-    
+- Staging URIs
+  - Default: index.asp,index.jsp,index.php
+
 !!! Note
-    How likely are asp, jsp, and php to exist together on the same web server? Payload staging is typically easy to identify no matter the C2 technology, but we can improve on Empire's default staging behavior.
+How likely are asp, jsp, and php to exist together on the same web server? Payload staging is typically easy to identify no matter the C2 technology, but we can improve on Empire's default staging behavior.
 
 ![](/img/empire_defaultstaging.png) **Empire – Default Staging URIs**
 
-* Server technology
-    * Default: Microsoft-IIS/7.5
-* Server content
-    * Default: “It works!”
+- Server technology
+  - Default: Microsoft-IIS/7.5
+- Server content
+  - Default: “It works!”
 
 ![](/img/empire_default_server_page-1.png)
 
-* * *
+---
 
 ## Empire Modification
 
 We'll continue Jeff's original example by porting some of the additional server side parameters in the [Bing Search](https://github.com/bluscreenofjeff/MalleableC2Profiles/blob/master/bingsearch_getonly.profile) Malleable C2 profile to Empire.
 
 !!! Note
-    The following modifications are applicable to Empire 1.6. Empire 2.0 utilizes Flask and some of these settings will need to be changed elsewhere if you're running 2.0 beta.
+The following modifications are applicable to Empire 1.6. Empire 2.0 utilizes Flask and some of these settings will need to be changed elsewhere if you're running 2.0 beta.
 
 ### Modifying the staging URIs and Server header
 
-The easiest way to update the server's default behavior is through the setup\_database.py script. _Disclaimer:_ These steps assume you're building up your server from scratch and aren't running an active engagement. You could also update the sqlite database directly if you don't want to blow away your existing database.
+The easiest way to update the server's default behavior is through the setup*database.py script. \_Disclaimer:* These steps assume you're building up your server from scratch and aren't running an active engagement. You could also update the sqlite database directly if you don't want to blow away your existing database.
 
 **First, remove your existing Empire database**
 
 ```
 rm /data/empire.db
-```    
+```
 
-**Next, edit /setup/setup\_database.py**
+**Next, edit /setup/setup_database.py**
 
 ```
 # /setup/setup_database.py
@@ -84,7 +84,7 @@ SERVER_VERSION = "Microsoft-IIS/8.5"
 ```
 ./setup/setup_database.py
 ./empire
-```    
+```
 
 #### Results
 
@@ -94,7 +94,7 @@ Notice we now have new staging URI's that don't stick out quite as much and the 
 
 ### Modifying the default page
 
-You can modify the default HTML displayed upon a GET request in lib/common/http.py within the “default\_page()” function.
+You can modify the default HTML displayed upon a GET request in lib/common/http.py within the “default_page()” function.
 
 **Edit lib/common/http.py**
 
@@ -131,7 +131,7 @@ Returns the default page for this server.
 
 # Return some basic Bing Search content
 
-page = """<!DOCTYPE html><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:Web="http://schemas.live.com/Web/"><script type="text/javascript">//<![CDATA[ 
+page = """<!DOCTYPE html><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:Web="http://schemas.live.com/Web/"><script type="text/javascript">//<![CDATA[
     si_ST=new Date;
     //]]></script>
     <head><!--pc--><title>Search - Bing</title><meta content="text/html; charset=utf-8" http-equiv="content-type" /><link href="/search?format=rss&q= &qs=n&form=QBLH&sp=-1&pq= &sc=8-4&sk=&cvid=86384E39A0DC4E01BDC606F982540419" rel="alternate" title="XML" type="text/xml" /><link href="/search?format=rss&q= &qs=n&form=QBLH&sp=-1&pq= &sc=8-4&sk=&cvid=86384E39A0DC4E01BDC606F982540419" rel="alternate" title="RSS" type="application/rss+xml" /><link href="/sa/simg/bing_p_rr_teal_min.ico" rel="shortcut icon" /><script type="text/javascript">//<![CDATA[
@@ -151,7 +151,7 @@ return page
 ![](/img/empire_modified_server.png)
 
 ## Summary
--------
+
+---
 
 The ability to modify the network indicators of your C2 technology is critical for a threat representative engagement. While Empire doesn't expose all desired possibilities with the “DefaultProfile” configuration setting, a little exploration into the source reveals more flexibility. Never be afraid to dive into a tool's source and modify it to suit your needs. There are still many ways to signature this traffic and beaconing activity. However, by implementing these modifications your C2 won't completely match the out-of-the-box Empire look and will raise the bar slightly for the Blue guys ;).
-

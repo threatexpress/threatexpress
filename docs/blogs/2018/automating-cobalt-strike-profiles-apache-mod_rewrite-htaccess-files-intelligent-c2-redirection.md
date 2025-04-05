@@ -1,30 +1,30 @@
 # Automating Apache mod_rewrite and Cobalt Strike Malleable C2 Profiles
 
-**Joe Vest | February 1, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/&text=Automating Cobalt Strike profiles with Apache mod_rewrite for intelligent redirection)**
+**Joe Vest | February 1, 2018 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/02/automating-cobalt-strike-profiles-apache-mod_rewrite-htaccess-files-intelligent-c2-redirection/&text=Automating Cobalt Strike profiles with Apache mod_rewrite for intelligent redirection)**
 
 ![][1]
 
-This post describes a script I created to convert a Cobalt Strike Malleable C2 profile to corresponding mod_rewrite rules to enable intelligent HTTP proxying for redirection of C2 traffic.  The script automates the [process][2] described by well known redteamer and now co-worker – Jeff Dimmock ([@bluscreenofjeff][3]). Intelligent use of C2 redirectors is core to a mature C2 architecture that can withstand some gentle investigation and prodding. Developing Cobalt Strike compatible mod_rewrite rules to redirect traffic is not incredibly difficult, but there are a few Apache "gotchas" and the process can be error prone when dealing with multiple C2 profiles. Automation improves consistency and reduces the time needed to spin-up, test, and troubleshoot a unique and layered C2 infrastructure. It is always nice to start from a known good.
+This post describes a script I created to convert a Cobalt Strike Malleable C2 profile to corresponding mod_rewrite rules to enable intelligent HTTP proxying for redirection of C2 traffic. The script automates the [process][2] described by well known redteamer and now co-worker – Jeff Dimmock ([@bluscreenofjeff][3]). Intelligent use of C2 redirectors is core to a mature C2 architecture that can withstand some gentle investigation and prodding. Developing Cobalt Strike compatible mod_rewrite rules to redirect traffic is not incredibly difficult, but there are a few Apache "gotchas" and the process can be error prone when dealing with multiple C2 profiles. Automation improves consistency and reduces the time needed to spin-up, test, and troubleshoot a unique and layered C2 infrastructure. It is always nice to start from a known good.
 
 ## Highlights of cs2modrewrite.py
 
-* Rewrite Rules based on valid C2 URIs (HTTP GET, POST, and Stager) and specified User-Agent string. **Result**: Only requests to valid C2 URIs with a specified UA string will be proxied to the Team Server by default.
-* Uses a custom Malleable C2 profile to build a _.htaccess_ file with corresponding mod_rewrite rules
-* Supports the most recent Cobalt Strike 3.10 profile features
-* HTTP or HTTPS proxying to the Cobalt Strike Team Server
-* HTTP 302 Redirection to a Legitimate Site for Non-Matching Requests
+- Rewrite Rules based on valid C2 URIs (HTTP GET, POST, and Stager) and specified User-Agent string. **Result**: Only requests to valid C2 URIs with a specified UA string will be proxied to the Team Server by default.
+- Uses a custom Malleable C2 profile to build a _.htaccess_ file with corresponding mod_rewrite rules
+- Supports the most recent Cobalt Strike 3.10 profile features
+- HTTP or HTTPS proxying to the Cobalt Strike Team Server
+- HTTP 302 Redirection to a Legitimate Site for Non-Matching Requests
 
 ## Quick Start
 
 ## Usage
 
-The script can be found at: 
+The script can be found at:
 
 [github - cs2modrewrite](https://github.com/threatexpress/cs2modrewrite)
 
 ### Arguments
 
-```    
+```
 cs2modrewrite.py [-h] [-i INPUTFILE] [-c C2SERVER] [-d DESTINATION]
 
 Converts Cobalt Strike profiles to Apache mod_rewrite .htaccess file format by
@@ -39,16 +39,16 @@ optional arguments:
 ```
 
 ### Example Output
-    
-```    
+
+```
 #### Save the following as .htaccess in the root web directory
 
 ########################################
-## .htaccess START 
+## .htaccess START
 RewriteEngine On
 
 ## (Optional)
-## Scripted Web Delivery 
+## Scripted Web Delivery
 ## Uncomment and adjust as needed
 #RewriteCond %{REQUEST_URI} ^/css/style1.css?$
 #RewriteCond %{HTTP_USER_AGENT} ^$
@@ -84,7 +84,7 @@ When Apache receives an HTTP request with the User-Agent Mozilla/5.0 (Windows; U
 
 ### C2 Traffic
 
-When Apache receives an HTTP request with the User-Agent Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 5.2) Java/1.5.0_080 and one of the following URIs 
+When Apache receives an HTTP request with the User-Agent Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 5.2) Java/1.5.0_080 and one of the following URIs
 
 `(/include/template/isx.php._|/wp06/wp-includes/po.php._|/wp08/wp-includes/dtcla.php,/modules/mod_search.php,/blog/wp-includes/pomo/src.php,/includes/phpmailer/class.pop3.php,/api/516280565958,/api/516280565959)`
 
@@ -107,12 +107,9 @@ For more details on developing C2 architecture, check out the Red Team Infrastru
 - https://github.com/threatexpress/cs2modrewrite
 - https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki
 
-  
 [1]: /img/cs2modrewriteargs.png
 [2]: https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/
 [3]: https://twitter.com/bluscreenofjeff
 [4]: https://www.twitter.com/joevest
 [5]: https://github.com/threatexpress/cs2modrewrite
 [6]: https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki
-
-  

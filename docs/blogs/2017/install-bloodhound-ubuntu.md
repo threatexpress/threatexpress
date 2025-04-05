@@ -1,6 +1,6 @@
 # Installing BloodHound on Ubuntu - A Quick Reference Guide
 
-**Joe Vest | October 9, 2017 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/09/install-bloodhound-ubuntu/&text=Install BloodHound on Ubuntu)**
+**Joe Vest | October 9, 2017 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2017/09/install-bloodhound-ubuntu/&text=Install BloodHound on Ubuntu)**
 
 ![][1]
 
@@ -13,16 +13,16 @@ This is heavily based on https://popped.io/setting-up-bloodhound-on-debian-jessi
 Install Ubuntu as you normally would. In this case Xubuntu 16.04 was installed in VMWare
 
 ### Optional – Install VM Tools
-    
-``` 
+
+```
 sudo apt-get update
-sudo apt-get upgrade 
-sudo apt-get install open-vm-tools open-vm-tools-desktop 
+sudo apt-get upgrade
+sudo apt-get install open-vm-tools open-vm-tools-desktop
 reboot
-``` 
+```
 
 ## Install Neo4j
-    
+
 ```
 sudo apt-get install wget curl git
 
@@ -40,7 +40,7 @@ echo "dbms.allow_format_migration=true" >> /etc/neo4j/neo4j.conf
 ```
 
 ## Get Bloodhound DB for neo4j
-    
+
 ```
 git clone https://github.com/adaptivethreat/BloodHound.git
 cd BloodHound
@@ -48,13 +48,13 @@ mkdir /var/lib/neo4j/data/databases/graph.db
 cd BloodHound/
 cp -R BloodHoundExampleDB.graphdb/* /var/lib/neo4j/data/databases/graph.db
 neo4j start
-```   
+```
 
 ### Verify neo4j is running on 7474 and 7687
-    
+
 ```
-netstat -lantp 
-```    
+netstat -lantp
+```
 
 ## Change neo4j password
 
@@ -62,7 +62,7 @@ Logon to **http://localhost:7474** with neo4j:neo4j and change the password
 
 ## Get Bloodhound binary
 
-Download the appropriate binary from 
+Download the appropriate binary from
 
 ## Run Bloodhound
 
@@ -75,5 +75,3 @@ Supply the user "neo4j" and your newly created password. Happy hunting!
 ### References:
 
 [1]: /img/bloodhound_logo.png
-
-  

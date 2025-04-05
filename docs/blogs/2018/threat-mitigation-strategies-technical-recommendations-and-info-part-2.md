@@ -1,17 +1,17 @@
 # Threat Mitigation Strategies: Part 2
 
-**James Tubberville | May 15, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/&text=Threat Mitigation Strategies - Part 2)**
+**James Tubberville | May 15, 2018 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/threat-mitigation-strategies-technical-recommendations-and-info-part-2/&text=Threat Mitigation Strategies - Part 2)**
 
 _The following information was composed by Andrew Chiles (@andrewchiles), Joe Vest (@joevest) and myself (@minis_io) for quick and easy reference. Much of it was pulled together from a variety of sources with attempts to provide references for each. This post is intended to be more of a brain dump rather than a complete technical breakout._
 
 ![minis_io defender][1]
 
-As discussed in the Threat Mitigation Strategies Part 1  http://threatexpress.com/blogs/2018/threat-mitigation-strategies-observations-recommendations/, there is commonality between the inherent weaknesses and the actions a threat might perform within an information system or network.  The following recommendations and informational snippets were derived from many offensive and defensive efforts that continue to support these correlations. Each recommendation and snippet can **and very likely should** be applied to all networks. Some systems and networks will have exceptions; however, these are exceptions (not the status quo) and should be handled as such. Also note the exact syntax and use will vary with the network construct, operating system/version, and legal/regulatory security requirements.
+As discussed in the Threat Mitigation Strategies Part 1 http://threatexpress.com/blogs/2018/threat-mitigation-strategies-observations-recommendations/, there is commonality between the inherent weaknesses and the actions a threat might perform within an information system or network. The following recommendations and informational snippets were derived from many offensive and defensive efforts that continue to support these correlations. Each recommendation and snippet can **and very likely should** be applied to all networks. Some systems and networks will have exceptions; however, these are exceptions (not the status quo) and should be handled as such. Also note the exact syntax and use will vary with the network construct, operating system/version, and legal/regulatory security requirements.
 
 !!! Note
-    Technical recommendations within this blog entry will be periodically updated on [ThreatExpress' GitHub](https://github.com/threatexpress/threat-mitigation)
+Technical recommendations within this blog entry will be periodically updated on [ThreatExpress' GitHub](https://github.com/threatexpress/threat-mitigation)
 
-* * *
+---
 
 ## Account Management
 
@@ -19,40 +19,40 @@ Accounts should have specific roles.
 
 **General Guidelines**
 
-* Domain Administrators perform management of Windows Active Directory. They do not manage servers or workstations.
-* Server Administrators perform management of servers. They do not manage workstations.
-* Workstation Administrators perform management of workstation. They do not manage servers.
-* Privileged accounts should NOT have external communications (Internet, email, etc.)
-* Standard users should NOT have elevated access (use secondary accounts if required)
+- Domain Administrators perform management of Windows Active Directory. They do not manage servers or workstations.
+- Server Administrators perform management of servers. They do not manage workstations.
+- Workstation Administrators perform management of workstation. They do not manage servers.
+- Privileged accounts should NOT have external communications (Internet, email, etc.)
+- Standard users should NOT have elevated access (use secondary accounts if required)
 
 ### Adjust Password Policy
 
 Adjust password policy to conform to "800-63-3: Digital Identity Guidelines".
 
-* Remove periodic password change requirements
-* Passwords should only be changed if forgotten or suspected compromise  
+- Remove periodic password change requirements
+- Passwords should only be changed if forgotten or suspected compromise
 
 !!! Warning
-    I don't agree with the two above and recommend maintaining a reasonable duration for password change requirements
+I don't agree with the two above and recommend maintaining a reasonable duration for password change requirements
 
-* Remove complexity requirements (Upper/Lower/Number/Special character)
-* Require a minimum password length of
-* A minimum length of 8 is required by NIST, but minimum of **16** is recommended for user accounts
-* A minimum length of 20 (28+ is recommended) for service accounts
-* Suggest the use of pass-phrases (such as four random lowercase words). **Example:** "correct horse battery staple!"
-* Screen passwords against password compromise lists
-* Screen passwords against keyboard walks
+- Remove complexity requirements (Upper/Lower/Number/Special character)
+- Require a minimum password length of
+- A minimum length of 8 is required by NIST, but minimum of **16** is recommended for user accounts
+- A minimum length of 20 (28+ is recommended) for service accounts
+- Suggest the use of pass-phrases (such as four random lowercase words). **Example:** "correct horse battery staple!"
+- Screen passwords against password compromise lists
+- Screen passwords against keyboard walks
 
 !!!Note
-    Meeting the complexity recommendation may not be possible due to current compliance requirements.
+Meeting the complexity recommendation may not be possible due to current compliance requirements.
 
 #### Setting the Password Policy using GPO
 
 Edit the "Domain Password Policy" GPO to configure the appropriate password length
 
 ```
-1. Open Group Policy  
-2. Computer Configurations > Policies > Windows Settings > Security Settings > Account Policy > Password Policy  
+1. Open Group Policy
+2. Computer Configurations > Policies > Windows Settings > Security Settings > Account Policy > Password Policy
 3. Minimum password length: 20
 ```
 
@@ -61,28 +61,30 @@ Edit the "Domain Password Policy" GPO to configure the appropriate password leng
 Regularly reset the KRBTGT password to minimize stolen credentials from be used in the future.
 
 ```
-Review the reset tool guide "Guide to Running New-CtmADKrbtgtKeys" (see references)  
-Use the the PowerShell script New-CtmADKrbtgtKeys.ps1 to reset the KRBTGT  
-Wait 24 hours and execute the change a 2nd time  
+Review the reset tool guide "Guide to Running New-CtmADKrbtgtKeys" (see references)
+Use the the PowerShell script New-CtmADKrbtgtKeys.ps1 to reset the KRBTGT
+Wait 24 hours and execute the change a 2nd time
 Recommend running on a regular schedule. This should be monthly, quarterly (at most), or after an incident where compromise is suspected.
 ```
 
 **References**
 
-* https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51
-* https://adsecurity.org/?p=483
-* * *
+- https://gallery.technet.microsoft.com/Reset-the-krbtgt-account-581a9e51
+- https://adsecurity.org/?p=483
+
+---
 
 ### Use LAPS to manage the local Administrator (RID 500) password
 
-* Install KB2871997
-* Follow details outlined at https://adsecurity.org/?p=1790
+- Install KB2871997
+- Follow details outlined at https://adsecurity.org/?p=1790
 
 **References**
 
-* https://adsecurity.org/?p=1790
-* https://adsecurity.org/?p=559
-* * *
+- https://adsecurity.org/?p=1790
+- https://adsecurity.org/?p=559
+
+---
 
 ### Implement Managed Service Accounts
 
@@ -92,29 +94,31 @@ Group level MSA's can be deployed in Windows 2012 or higher Domains.
 
 **Reference**
 
-* https://blogs.technet.microsoft.com/askds/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting/
-* https://technet.microsoft.com/en-us/library/hh831782.aspx
-* * *
+- https://blogs.technet.microsoft.com/askds/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting/
+- https://technet.microsoft.com/en-us/library/hh831782.aspx
+
+---
 
 ### Protected LSA
 
 #### Protect LSA Via policy
 
 ```
-1. Advanced Audit Policy Configuration > Object Access > Audit Kernel Object  
+1. Advanced Audit Policy Configuration > Object Access > Audit Kernel Object
 2. Enable SACL L"S:(AU;SAFA;0x0010;;;WD)"
 ```
+
 and
 
 ```
-1. Computer Configuration > Preferences > Windows Settings  
-2. Right-click Registry > New > Registry Item  
-3. Hive HKLM > Path SYSTEMCurrentControlSetControlLsa  
+1. Computer Configuration > Preferences > Windows Settings
+2. Right-click Registry > New > Registry Item
+3. Hive HKLM > Path SYSTEMCurrentControlSetControlLsa
 4. DWORD value RunAsPPL=00000001
 ```
 
 !!! Note
-    LSA Protection prevents non-protected processes from interacting with LSASS. Mimikatz can still bypass this with a driver ("!+").
+LSA Protection prevents non-protected processes from interacting with LSASS. Mimikatz can still bypass this with a driver ("!+").
 
 #### Protect LSA Via Registry Entry
 
@@ -124,7 +128,7 @@ or
 
 `reg add HKEY_LOCAL_MACHINESystemCurrentControlSetControlLsa /v RunAsPPL /d 00000001 /t REG_DWORD`
 
-* * *
+---
 
 Windows Event Forwarding (WEF) reads any operational or administrative event log on a device in your organization and forwards the events you choose to a Windows Event Collector (WEC) server.
 
@@ -176,34 +180,34 @@ Analytic events are published in high volume. They describe program operation an
 
 Debug events are used by developers troubleshooting issues with their programs.
 
-* * *
+---
 
 ### Advanced Audit Policy should focus on these (in no specific order)
 
 ```
-1. A logon was attempted using explicit credentials: Event 552 and 4648  
-2. A member was added to a security-enabled global group: Event 4728  
-3. A member was added to a security-enabled local group: Event 4732  
-4. A member was added to a security-enabled universal group: Event 4756  
-5. An account failed to log on: Event 529-539 4625 (followed by a success 4624)  
-6. LogonAccount/TargetUserName is Administrator (Using RID-500): Event 4624, 4776  
-7. Scheduled Task Creation: Event 602, 4698  
-8. Log was cleared: Event 104 and 1102, 4949  
-9. EMET dies: Event 1 and 2  
-10. Application Error or Hang: Event 1000 and 1002  
-11. Windows Defender Errors: Event 1005, 1006, 1008, 1010, 2001, 2003, 2004, 3002, 5008  
-12. New process: User NOT admin and Event 4688  
-(arp, at, bcdedit, certutil, cscript, cmd, dsquery, hostname, ipconfig, msbuild, nbtstat, net, netsh, netstat, nslookup, ntdsutil, pcalua, ping, powershell, psexec, reg, regasm, regedit, regedt32, regsvr32, regsvcs, rundll32, set, sc, schtasks, systeminfo, tasklist, tracert, whoami, wmic, wscript, wsmprovhost)  
-13. Service creation/install: Event 601, 4697, 7045  
-14. Service changes: Event 7040  
-15. File share access/attempts (C$, ADMIN$, IPC$): Event 5140  
-16. PowerShell execution and module loading: Event 501 and 4104 respectively  
-17. External media detection: All Events 7045, 10000, 10001 or 10002, 10100, 20001, 20003, 24576, 24577, 24579  
+1. A logon was attempted using explicit credentials: Event 552 and 4648
+2. A member was added to a security-enabled global group: Event 4728
+3. A member was added to a security-enabled local group: Event 4732
+4. A member was added to a security-enabled universal group: Event 4756
+5. An account failed to log on: Event 529-539 4625 (followed by a success 4624)
+6. LogonAccount/TargetUserName is Administrator (Using RID-500): Event 4624, 4776
+7. Scheduled Task Creation: Event 602, 4698
+8. Log was cleared: Event 104 and 1102, 4949
+9. EMET dies: Event 1 and 2
+10. Application Error or Hang: Event 1000 and 1002
+11. Windows Defender Errors: Event 1005, 1006, 1008, 1010, 2001, 2003, 2004, 3002, 5008
+12. New process: User NOT admin and Event 4688
+(arp, at, bcdedit, certutil, cscript, cmd, dsquery, hostname, ipconfig, msbuild, nbtstat, net, netsh, netstat, nslookup, ntdsutil, pcalua, ping, powershell, psexec, reg, regasm, regedit, regedt32, regsvr32, regsvcs, rundll32, set, sc, schtasks, systeminfo, tasklist, tracert, whoami, wmic, wscript, wsmprovhost)
+13. Service creation/install: Event 601, 4697, 7045
+14. Service changes: Event 7040
+15. File share access/attempts (C$, ADMIN$, IPC$): Event 5140
+16. PowerShell execution and module loading: Event 501 and 4104 respectively
+17. External media detection: All Events 7045, 10000, 10001 or 10002, 10100, 20001, 20003, 24576, 24577, 24579
 18. User creation: Event 4720
 ```
 
 !!! Tip
-    It's a good idea to hide/exclude these events except specific conditions (See caveats above) as these are consistently rolling: 4688,4689,5156,5158
+It's a good idea to hide/exclude these events except specific conditions (See caveats above) as these are consistently rolling: 4688,4689,5156,5158
 
 ##### Enable Command Line Logging (Must include MS15-015 KB3031432)
 
@@ -227,18 +231,18 @@ Reference: https://github.com/Ben0xA/PowerShellDefense/blob/master/Invoke-HoneyC
 
 `Set-ADUser watchaccount -ServicePrincipalNames @{Add="MSSQLSvc/sql1:1433″}`
 
-* * *
+---
 
 ### PowerShell Module Logging
 
 Ensure all Windows systems have PowerShell v3 or newer. Newer versions of PowerShell have better logging features, especially PowerShell v5. This will log all PowerShell activity including all PowerShell modules.
 
-Enable PowerShell Module Logging  
+Enable PowerShell Module Logging
 
 ```
-1. Open Group Policy  
-2. Computer Configuration > Policies > Administrative Templates > Windows Components > Windows PowerShell  
-3. Turn on Module Logging  
+1. Open Group Policy
+2. Computer Configuration > Policies > Administrative Templates > Windows Components > Windows PowerShell
+3. Turn on Module Logging
 4. Enter "*" and click OK.`
 ```
 
@@ -249,10 +253,10 @@ If enabled, PowerShell activity will be logged to the Microsoft-Windows-PowerShe
 #### Parse PowerShell events for the following Mimikatz indicators
 
 ```
-"System.Reflection.AssemblyName"  
-"System.Reflection.Emit.AssemblyBuilderAccess "  
-"System.Runtime.InteropServices.MarshalAsAttribute"  
-"TOKEN_PRIVILEGES"  
+"System.Reflection.AssemblyName"
+"System.Reflection.Emit.AssemblyBuilderAccess "
+"System.Runtime.InteropServices.MarshalAsAttribute"
+"TOKEN_PRIVILEGES"
 "SE_PRIVILEGE_ENABLED"`
 ```
 
@@ -261,24 +265,25 @@ If enabled, PowerShell activity will be logged to the Microsoft-Windows-PowerShe
 Many PowerShell offensive tools use the following calls which are logged in PowerShell Module Logging.
 
 ```
-"GetDelegateForFunctionPointer"  
-"System.Reflection.AssemblyName"  
-"System.Reflection.Emit.AssemblyBuilderAccess"  
-"System.Management.Automation.WindowsErrorReporting"  
-"MiniDumpWriteDump"  
-"TOKEN_IMPERSONATE"  
-"TOKEN_DUPLICATE"  
-"TOKEN_ADJUST_PRIVILEGES"  
+"GetDelegateForFunctionPointer"
+"System.Reflection.AssemblyName"
+"System.Reflection.Emit.AssemblyBuilderAccess"
+"System.Management.Automation.WindowsErrorReporting"
+"MiniDumpWriteDump"
+"TOKEN_IMPERSONATE"
+"TOKEN_DUPLICATE"
+"TOKEN_ADJUST_PRIVILEGES"
 "TOKEN_PRIVILEGES"`
 ```
 
 **Reference**
 
-* https://github.com/palantir/windows-event-forwarding/tree/master/group-policy-objects
-* https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Subscriptions/samples
-* https://docs.microsoft.com/en-us/windows/threat-protection/use-windows-event-forwarding-to-assist-in-instrusion-detection
-* https://github.com/MicrosoftDocs/windows-itpro-docs/blob/master/windows/threat-protection/use-windows-event-forwarding-to-assist-in-instrusion-detection.md
-* * *
+- https://github.com/palantir/windows-event-forwarding/tree/master/group-policy-objects
+- https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Subscriptions/samples
+- https://docs.microsoft.com/en-us/windows/threat-protection/use-windows-event-forwarding-to-assist-in-instrusion-detection
+- https://github.com/MicrosoftDocs/windows-itpro-docs/blob/master/windows/threat-protection/use-windows-event-forwarding-to-assist-in-instrusion-detection.md
+
+---
 
 ## Disable Windows Legacy & **Typically** Unused Features
 
@@ -288,36 +293,38 @@ The reference (Securing Windows Workstations: Developing a Secure Baseline) loca
 
 `Computer Configuration>Policies>Administrative Templates>System>Group Policy>Configure security policy processing`
 
-Set to Enabled  
+Set to Enabled
 
 `Also check the box for "Process even if the Group Policy objects have not changed"`
 
 It's also recommended to configure the same settings for each of the following:
 
-* Computer Configuration, Policies, Administrative Templates, System, Group Policy, Configure registry policy processing
-* Computer Configuration, Policies, Administrative Templates, System, Group Policy, Configure scripts policy processing
-* As well as any other policy settings as needed.
-* * *
+- Computer Configuration, Policies, Administrative Templates, System, Group Policy, Configure registry policy processing
+- Computer Configuration, Policies, Administrative Templates, System, Group Policy, Configure scripts policy processing
+- As well as any other policy settings as needed.
+
+---
 
 ### Disable Unneeded Services
 
 The document Service-management-WS2016.xlsx contains a list default services, their state, use, and if it is safe to disable.
 
-* Review the Services outlined in the document Service-management-WS2016.xlsx
-* Create a list of service to disable, and enforce via GPO
+- Review the Services outlined in the document Service-management-WS2016.xlsx
+- Create a list of service to disable, and enforce via GPO
 
 ### Disable Net Session Enumeration (NetCease)
 
 This hardening process prevents attackers from easily getting some valuable recon information to move laterally within their victim's network.
 
-* Run the NetCease PowerShell script on Server
-* Include DCs, Fileservers, or other servers where Session information may be used by and attacker for enumeration
+- Run the NetCease PowerShell script on Server
+- Include DCs, Fileservers, or other servers where Session information may be used by and attacker for enumeration
 
 **References**
 
-* https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b
-* https://adsecurity.org/?p=3299
-* * *
+- https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b
+- https://adsecurity.org/?p=3299
+
+---
 
 ### Disable WPAD
 
@@ -325,30 +332,30 @@ Web Proxy Auto-Discovery Protocol (WPAD) is "a method used by clients to locate 
 
 Disable WPAD via Group Policy by deploying the following registry change:
 
-`HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionInternet SettingsWpad  
+`HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionInternet SettingsWpad
 New DWORD (32-Bit Value) called "WpadOverride" and set to "1"`
 
 Disable the service "WinHTTP Web Proxy Auto-Discovery Service"
 
-`Computer Configuration>Policies>Windows Settings>Security Settings>System Services  
+`Computer Configuration>Policies>Windows Settings>Security Settings>System Services
 Set WinHTTP Web Proxy Auto-Discovery Service to Disabled`
 
-Note:  
+Note:
 Partial mitigation of WPAD issues is possible by installing the Microsoft patch KB3165191 (MS16-077). This patch hardens the WPAD process and when the system responds to NetBIOS requests.
 
-* * *
+---
 
 ### Disable LLMNR
 
-Link-Local Multicast Name Resolution (LLMNR):  
+Link-Local Multicast Name Resolution (LLMNR):
 In a nutshell, Link-Local Multicast Name Resolution (LLMNR) resolves single label names (like: COMPUTER1), on the local subnet, when DNS is unable to resolve the name.
 
 Disable LLMNR via Group Policy by deploying the following:
 
-`Group Policy:Computer Configuration/Administrative Templates/Network/DNS Client  
+`Group Policy:Computer Configuration/Administrative Templates/Network/DNS Client
 Set "Turn Off Multicast Name Resolution" to "Enabled"`
 
-* * *
+---
 
 ### Disable WDigest
 
@@ -362,22 +369,23 @@ Disable WDigest via Group Policy by deploying the following registry change:
 
 **References**
 
-* https://adsecurity.org/?p=3299
-* * *
+- https://adsecurity.org/?p=3299
+
+---
 
 ### Remove the use of NTLM v1
 
-Windows Server 2008 R2 included features to help identify NTLM authentication use on the network. It is important to completely remove these legacy authentication protocols since they are insecure. Removal and prevention of LM and NTLMv1 use can be activated through the use of Group Policy security settings.  
+Windows Server 2008 R2 included features to help identify NTLM authentication use on the network. It is important to completely remove these legacy authentication protocols since they are insecure. Removal and prevention of LM and NTLMv1 use can be activated through the use of Group Policy security settings.
 Plan to move to NTLMv2 and Kerberos at the least, with the long-term goal being Kerberos only.
 
-* Audit the use of NTLM v1 on the network
-* Determine the risks and need to support NTLM v1
-* Disable the use of NTLM v1
+- Audit the use of NTLM v1 on the network
+- Determine the risks and need to support NTLM v1
+- Disable the use of NTLM v1
 
 **Reference**
 
-* https://technet.microsoft.com/en-us/library/jj865674(v=ws.10).aspx
-* https://technet.microsoft.com/en-us/library/dd560653%28v=ws.10%29.aspx
+- https://technet.microsoft.com/en-us/library/jj865674(v=ws.10).aspx
+- https://technet.microsoft.com/en-us/library/dd560653%28v=ws.10%29.aspx
 
 ### Consider other Mitigations
 
@@ -385,8 +393,9 @@ Consider other mitigations detailed at https://adsecurity.org/?p=3299
 
 **References**
 
-* https://adsecurity.org/?p=3299
-* * *
+- https://adsecurity.org/?p=3299
+
+---
 
 ### Deploy security back-port patch (KB2871997)
 
@@ -394,17 +403,17 @@ Ensure all Windows systems prior to Windows 8.1 & Windows Server 2012 R2 have th
 
 **References**
 
-* https://adsecurity.org/?p=559
-* https://blogs.technet.microsoft.com/kfalde/2014/11/01/kb2871997-and-wdigest-part-1/
+- https://adsecurity.org/?p=559
+- https://blogs.technet.microsoft.com/kfalde/2014/11/01/kb2871997-and-wdigest-part-1/
 
 ### Prevent local "administrator" accounts from authenticating over the network
 
-While the local Administrator (RID 500) account on two different computers has a different SID, if they have the same account name and password, the local Administrator account from one can authenticate as Administrator on the other. The same is true with any local account that is duplicated on multiple computers.  
+While the local Administrator (RID 500) account on two different computers has a different SID, if they have the same account name and password, the local Administrator account from one can authenticate as Administrator on the other. The same is true with any local account that is duplicated on multiple computers.
 This presents a security issue if multiple (or all) workstations in an organization have the same account name and password since compromise of one workstation results in compromise of all.
 
-Windows 8.1 & Windows 2012 R2 and newer introduced two new local SIDs:  
-S-1-5-113: NT AUTHORITYLocal account  
-S-1-5-114: NT AUTHORITYLocal account and member of Administrators group  
+Windows 8.1 & Windows 2012 R2 and newer introduced two new local SIDs:
+S-1-5-113: NT AUTHORITYLocal account
+S-1-5-114: NT AUTHORITYLocal account and member of Administrators group
 These SIDs are also added in earlier supported versions of Windows by installing the KB2871997 patch.
 
 `Install patch KB2871997`
@@ -412,13 +421,13 @@ These SIDs are also added in earlier supported versions of Windows by installing
 #### Configure through Group Policy:
 
 ```
-1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)  
-2. Computer Configuration > Windows Settings > Local Policies > User Rights Assignment  
-3. Deny access to this computer from the network: Local account and member of Administrators group  
+1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)
+2. Computer Configuration > Windows Settings > Local Policies > User Rights Assignment
+3. Deny access to this computer from the network: Local account and member of Administrators group
 4. Deny log on through Remote Desktop Services: Local account and member of Administrators group
 ```
 
-* * *
+---
 
 ### Remote Connections
 
@@ -437,8 +446,8 @@ or
 ##### Enable Restricted Admin via GPO
 
 ```
-1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)  
-2. Computer Configurations > Policies > Administrative Templates > System > Credential Delegation  
+1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)
+2. Computer Configurations > Policies > Administrative Templates > System > Credential Delegation
 3. Set "Restrict Delegation of credential to remote servers" to enable
 ```
 
@@ -457,65 +466,67 @@ or
 ##### Enable WinDef Cred Guard via GPO
 
 ```
-1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)  
-2. Computer Configurations > Policies > Administrative Templates > System > Credential Delegation  
-3. Set "Restrict Delegation of credential to remote servers" to enable  
-4. In Options, Under use the following restricted mode: Choose "Prefer Windows Defender Remote Credential Guard" 
+1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)
+2. Computer Configurations > Policies > Administrative Templates > System > Credential Delegation
+3. Set "Restrict Delegation of credential to remote servers" to enable
+4. In Options, Under use the following restricted mode: Choose "Prefer Windows Defender Remote Credential Guard"
 ```
 
 !!! Note
-    If all systems are Windows 10/2016, Choose "Require Remote Credential Guard"
+If all systems are Windows 10/2016, Choose "Require Remote Credential Guard"
 
-* * *
+---
 
 ### Limit Client-to-Client Communication (Implement _and Configure_ Host Based Firewalls)
 
-* Clients and Server should be split into separate OU's
-* Enable the Windows Firewall through GPO
-* (Optional) Add exceptions to systems that are used to manage other hosts such as Sysadmins. Use a jump host to minimize exposure.
+- Clients and Server should be split into separate OU's
+- Enable the Windows Firewall through GPO
+- (Optional) Add exceptions to systems that are used to manage other hosts such as Sysadmins. Use a jump host to minimize exposure.
 
 #### Enable Firewall
 
 **PowerShell**
 
-1) Create a GPO to hold the Workstation FW settings (workstation_fw)
+1. Create a GPO to hold the Workstation FW settings (workstation_fw)
 
 Example
 
 ```
-Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True –PolicyStore example_domain.localworkstation_fw  
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True –PolicyStore example_domain.localworkstation_fw
 Set-NetFirewallProfile -DefaultInboundAction Block -DefaultOutboundAction Allow –NotifyOnListen True -AllowUnicastResponseToMulticast True –LogFileName %SystemRoot%System32LogFilesFirewallpfirewall.log –PolicyStore example_domain.localworkstation_fw
 ```
 
-2) Assign the GPO to a Workstation Container
+2. Assign the GPO to a Workstation Container
 
 **References**
 
-* https://technet.microsoft.com/en-us/library/hh831755(v=ws.11).aspx
+- https://technet.microsoft.com/en-us/library/hh831755(v=ws.11).aspx
 
 ### Block/control TCP/UDP access from the Internal network and DMZ
 
-* Evaluate the need for servers to connect to the Internet.
-* Create a list of systems outside the network that require access. Limit access using this whitelist.
-* Configure firewall rules to enforce these traffic policies.
-* * *
+- Evaluate the need for servers to connect to the Internet.
+- Create a list of systems outside the network that require access. Limit access using this whitelist.
+- Configure firewall rules to enforce these traffic policies.
+
+---
 
 ### Block out bound TCP/UDP access from the Client systems to outbound networks.
 
 Clients generally only need a few ports to connect out bound. Limit access from client workstations to these ports.
 
-* Create a list of ports required by clients to communicate outside the network. Limit access using this whitelist.
-* Configure firewall rules to enforce these traffic policies.
-* Rule can be managed at the HOST level via GPO or the network level via firewall rules.
-* * *
+- Create a list of ports required by clients to communicate outside the network. Limit access using this whitelist.
+- Configure firewall rules to enforce these traffic policies.
+- Rule can be managed at the HOST level via GPO or the network level via firewall rules.
+
+---
 
 ### Implement a Proxy for All Outbound Traffic
 
 Force systems to traverse an proxy to communicate outbound. It is preferred to only allow authenticated communications. This prevents privilege users (SYSTEM, root) from communicating outbound.
 
-* At a minimum, force all client's HTTP(S) and DNS through a proxy
-* If possible, require user authentication
-* Prevent outbound access if a client or system attempts to connect to external port directly using network firewall rules
+- At a minimum, force all client's HTTP(S) and DNS through a proxy
+- If possible, require user authentication
+- Prevent outbound access if a client or system attempts to connect to external port directly using network firewall rules
 
 #### Create a new GPO to manage the proxy settings
 
@@ -524,75 +535,75 @@ Edit the GPO
 `User Configuration>Windows Settings>Internet Explorer Maintenance>Connection`
 
 ```
-Select Proxy Server  
+Select Proxy Server
 Enter the Proxy IP address and Port
 ```
 
 Prevent Users from Changing Settings
 
 ```
-User Configuration>Administrative Templates>Windows Components>Internet Explorer>Internet Control Panel  
+User Configuration>Administrative Templates>Windows Components>Internet Explorer>Internet Control Panel
 Set Disable the Connections Page to Enabled
 ```
 
-* * *
+---
 
 ## Configurations
 
 ### AutoRuns
 
 ```
-1. De-select "Hide Microsoft Entries"  
-2. De-select "Hide Windows Entries"  
-3. Under Scan Options, enable "Verify code signatures"  
-4. Under Scan Options, enable "Check VirusTotal.com" (note this shouldn't be done on GOV or otherwise sensitive networks)  
+1. De-select "Hide Microsoft Entries"
+2. De-select "Hide Windows Entries"
+3. Under Scan Options, enable "Verify code signatures"
+4. Under Scan Options, enable "Check VirusTotal.com" (note this shouldn't be done on GOV or otherwise sensitive networks)
 5. Review all entries with multiple parameters
 ```
 
-* * *
+---
 
 ### Application White/Black listing
 
 A number of solutions exist to limit the applications a user can use on a system. AppLocker allows you to specify which users or groups can run particular applications in your organization based on unique identities of files. If you use AppLocker, you can create rules to allow or deny applications from running.
 
-* * *
+---
 
 ### Applocker
 
 #### AppLocker Executable Path Restrictions
 
 ```
-1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)  
-2. Computer Configuration > Policies > Windows Settings > Security Settings > Application Control Policies > AppLocker  
-3. Configure rule enforcement  
-4. Executable rules, Check Configured, Enforce rules  
-5. Overview > Executable Rules > Right Click Create New Rule  
-6. Permissions > Deny > Domain Users  
-7. Conditions > Path  
-8. Exceptions > Add as/if required  
+1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)
+2. Computer Configuration > Policies > Windows Settings > Security Settings > Application Control Policies > AppLocker
+3. Configure rule enforcement
+4. Executable rules, Check Configured, Enforce rules
+5. Overview > Executable Rules > Right Click Create New Rule
+6. Permissions > Deny > Domain Users
+7. Conditions > Path
+8. Exceptions > Add as/if required
 9. Create > Yes
 ```
 
 ##### Interesting Paths
 
 ```
-1. <drive letter>users<username>appdata (%AppData% or for extension %AppData%*.exe 5AppData%**.exe)  
-2. usersppdatalocal  
-3. usersppdatalocaltemp  
-4. usersppdataroaming  
+1. <drive letter>users<username>appdata (%AppData% or for extension %AppData%*.exe 5AppData%**.exe)
+2. usersppdatalocal
+3. usersppdatalocaltemp
+4. usersppdataroaming
 5. programdata
 ```
 
 #### Explicit Whitelisting
 
 ```
-1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)  
-2. Computer Configuration > Policies > Windows Settings > Security Settings > Software Restriction Policies  
-3. Security Level Disallowed  
-4. In additional rules allow  
-a. %HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsNTCurrentVersionSystemRoot%  
-b. %HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionProgramFilesDir (x86)%  
-c. %HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionProgramFilesDir%  
+1. Open Group Policy Management (gpmc.msc or via MMC Group Policy Object Editor)
+2. Computer Configuration > Policies > Windows Settings > Security Settings > Software Restriction Policies
+3. Security Level Disallowed
+4. In additional rules allow
+a. %HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsNTCurrentVersionSystemRoot%
+b. %HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionProgramFilesDir (x86)%
+c. %HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionProgramFilesDir%
 d. *.lnk
 ```
 
@@ -602,10 +613,11 @@ d. *.lnk
 
 **References**
 
-* https://technet.microsoft.com/en-us/library/dd759117(v=ws.11).aspx
-* https://technet.microsoft.com/en-us/library/dd759123(v=ws.11).aspx
-* https://technet.microsoft.com/en-us/library/dd759116(v=ws.11).aspx
-* * *
+- https://technet.microsoft.com/en-us/library/dd759117(v=ws.11).aspx
+- https://technet.microsoft.com/en-us/library/dd759123(v=ws.11).aspx
+- https://technet.microsoft.com/en-us/library/dd759116(v=ws.11).aspx
+
+---
 
 ## Manual Hunting and Detection Examples
 
@@ -655,7 +667,7 @@ d. *.lnk
 ##### Get remote eventlog (caution this drops credentials onto remote system)
 
 ```
-Get-EventLog -List -ComputerName <ip>  
+Get-EventLog -List -ComputerName <ip>
 Get-EventLog -LogName System -ComputerName
 ```
 
@@ -677,16 +689,16 @@ Get-EventLog -LogName System -ComputerName
 
 #### Windows consolidated logging
 
-1. enable winrm  
-    - `winrm qc`
-2. enable wecutil  
-    - `wecutil qc`
-3. Create subscriptions and select events/filters in event viewer  
-    - via event viewer or  
-    - by PowerShell  
-        - `wecutil cs "Creates a subscription"`
-        - `wecutil ss "Sets a subscription"`  
-        - `wecutil es "Views subscriptions"`
+1. enable winrm
+   - `winrm qc`
+2. enable wecutil
+   - `wecutil qc`
+3. Create subscriptions and select events/filters in event viewer
+   - via event viewer or
+   - by PowerShell
+     - `wecutil cs "Creates a subscription"`
+     - `wecutil ss "Sets a subscription"`
+     - `wecutil es "Views subscriptions"`
 
 ##### Get a detailed list of all security-auditing event entries (use an elevated prompt)
 
@@ -696,7 +708,7 @@ Get-EventLog -LogName System -ComputerName
 
 `auditpol /list /subcategory:*`
 
-* * *
+---
 
 ### Network
 
@@ -709,9 +721,9 @@ Get-EventLog -LogName System -ComputerName
 5. Identify and investigate Base64 encoded strings within the URL
 6. Identify and investigate executables being downloaded and traversing the network
 
-#### Basic PCAP Carving (*nix)
+#### Basic PCAP Carving (\*nix)
 
-Note: The snippets below are examples for pcap carving. I'd highly recommend using bro/  for traffic analysis.
+Note: The snippets below are examples for pcap carving. I'd highly recommend using bro/ for traffic analysis.
 
 ##### Get certificates from pcap (use BRO if possible)
 
@@ -739,29 +751,29 @@ or
 
 ##### DNS Response Codes
 
-| RCODE | Name      | Description                       |  
-| ----- | --------- | --------------------------------- |  
-| 0     | NoError   | No Error                          |  
-| 1     | FormErr   | Format Error                      |  
-| 2     | ServFail  | Server Failure                    |  
-| 3     | NXDomain  | Non-Existent Domain               |  
-| 4     | NotImp    | Not Implemented                   |  
-| 5     | Refused   | Query Refused                     |  
-| 6     | YXDomain  | Name Exists when it should not    |  
-| 7     | YXRRSet   | RR Set Exists when it should not  |  
-| 8     | NXRRSet   | RR Set that should exist does not |  
-| 9     | NotAuth   | Server Not Authoritative for zone |  
-| 9     | NotAuth   | Not Authorized                    |  
-| 10    | NotZone   | Name not contained in zone        |  
-| 16    | BADVERS   | Bad OPT Version                   |  
-| 16    | BADSIG    | TSIG Signature Failure            |  
-| 17    | BADKEY    | Key not recognized                |  
-| 18    | BADTIME   | Signature out of time window      |  
-| 19    | BADMODE   | Bad TKEY Mode                     |  
-| 20    | BADNAME   | Duplicate key name                |  
-| 21    | BADALG    | Algorithm not supported           |  
-| 22    | BADTRUNC  | Bad Truncation                    |  
-| 23    | BADCOOKIE | Bad/missing Server Cookie         |  
+| RCODE | Name      | Description                       |
+| ----- | --------- | --------------------------------- |
+| 0     | NoError   | No Error                          |
+| 1     | FormErr   | Format Error                      |
+| 2     | ServFail  | Server Failure                    |
+| 3     | NXDomain  | Non-Existent Domain               |
+| 4     | NotImp    | Not Implemented                   |
+| 5     | Refused   | Query Refused                     |
+| 6     | YXDomain  | Name Exists when it should not    |
+| 7     | YXRRSet   | RR Set Exists when it should not  |
+| 8     | NXRRSet   | RR Set that should exist does not |
+| 9     | NotAuth   | Server Not Authoritative for zone |
+| 9     | NotAuth   | Not Authorized                    |
+| 10    | NotZone   | Name not contained in zone        |
+| 16    | BADVERS   | Bad OPT Version                   |
+| 16    | BADSIG    | TSIG Signature Failure            |
+| 17    | BADKEY    | Key not recognized                |
+| 18    | BADTIME   | Signature out of time window      |
+| 19    | BADMODE   | Bad TKEY Mode                     |
+| 20    | BADNAME   | Duplicate key name                |
+| 21    | BADALG    | Algorithm not supported           |
+| 22    | BADTRUNC  | Bad Truncation                    |
+| 23    | BADCOOKIE | Bad/missing Server Cookie         |
 
 ##### Get User-Agents from pcap
 
@@ -846,16 +858,16 @@ or
 ##### Filter Info
 
 ```
-URG = 32 or 0x20  
-ACK = 16 or 0x10  
-PSH = 8 or 0x08  
-RST = 4 or 0x04  
-SYN = 2 or 0x02  
-FIN = 1 or 0x01  
+URG = 32 or 0x20
+ACK = 16 or 0x10
+PSH = 8 or 0x08
+RST = 4 or 0x04
+SYN = 2 or 0x02
+FIN = 1 or 0x01
 All = 0xFF
 ```
 
-Examples:  
+Examples:
 `'tcp[13] & 2 !=0' Get all SYN`
 
 `'tcp[13] & 4 !=0' Get all RST`
@@ -943,7 +955,8 @@ or
 ##### Get flows with larger than 100,000 bytes
 
 `rwfilter phishing-attack.silk --proto=6 --bytes=100000- --pass=stdout |rwcut -f 1-8`
-* * *
+
+---
 
 #### ELSA (BRO queries)
 
@@ -975,7 +988,7 @@ or
 
 `class=BRO_HTTP "-" user_agent="-" groupby:srcipt`
 
-* * *
+---
 
 #### BRO
 
@@ -985,52 +998,52 @@ Just a few logs that can be used to gather information. Note, custom logs can be
 
 ##### BRO Log Hunting
 
-| BRO log                              | Description                             |  
-| ------------------------------------ | --------------------------------------- |  
-| conn.log                             | IP/protocol connections                 |  
-| conn-summary.log                     | Statistics/summarizes activity          |  
-| known_hosts.log                      | New hosts within past hour              |  
-| known_serices.log                    | New services within past hour           |  
-| dpd.log                              | Dynamic protocol detection              |  
-| weird.log                            | Anomalous activity                      |  
-| loaded_scripts.log                   | Scripts loaded on start                 |  
-| reporter.log                         | Severity of issues with bro             |  
-| software.log                         | Determines version of detected protocol |  
-| various protocols (http,dns,ssl,etc) | Activity log per protocol               |  
+| BRO log                              | Description                             |
+| ------------------------------------ | --------------------------------------- |
+| conn.log                             | IP/protocol connections                 |
+| conn-summary.log                     | Statistics/summarizes activity          |
+| known_hosts.log                      | New hosts within past hour              |
+| known_serices.log                    | New services within past hour           |
+| dpd.log                              | Dynamic protocol detection              |
+| weird.log                            | Anomalous activity                      |
+| loaded_scripts.log                   | Scripts loaded on start                 |
+| reporter.log                         | Severity of issues with bro             |
+| software.log                         | Determines version of detected protocol |
+| various protocols (http,dns,ssl,etc) | Activity log per protocol               |
 
 ##### BRO Protocol Logs
 
-| BRO log                    | Description                                |  
-| -------------------------- | ------------------------------------------ |  
-| conn.log                   | TCP/UDP/ICMP connections                   |  
-| dce_rpc.log                | Distributed Computing Environment/RPC      |  
-| dhcp.log                   | DHCP leases                                |  
-| dnp3.log                   | DNP3 requests and replies                  |  
-| dns.log                    | DNS activity                               |  
-| ftp.log                    | FTP activity                               |  
-| http.log                   | HTTP requests and replies                  |  
-| irc.log                    | IRC commands and responses                 |  
-| kerberos.log               | Kerberos                                   |  
-| modbus.log                 | Modbus commands and responses              |  
-| modbus_register_change.log | Tracks changes to Modbus holding registers |  
-| mysql.log                  | MySQL                                      |  
-| ntlm.log                   | NT LAN Manager (NTLM)                      |  
-| radius.log                 | RADIUS authentication attempts             |  
-| rdp.log                    | RDP RDP                                    |  
-| rfb.log                    | Remote Framebuffer (RFB)                   |  
-| sip.log                    | SIP                                        |  
-| smb_cmd.log                | SMB commands                               |  
-| smb_files.log              | SMB files                                  |  
-| smb_mapping.log            | SMB trees                                  |  
-| smtp.log                   | SMTP transactions                          |  
-| snmp.log                   | SNMP messages                              |  
-| socks.log                  | SOCKS proxy requests                       |  
-| ssh.log                    | SSH connections                            |  
-| ssl.log                    | SSL/TLS handshake info                     |  
-| syslog.log                 | Syslog messages                            |  
-| tunnel.log                 | Tunneling protocol events                  |  
+| BRO log                    | Description                                |
+| -------------------------- | ------------------------------------------ |
+| conn.log                   | TCP/UDP/ICMP connections                   |
+| dce_rpc.log                | Distributed Computing Environment/RPC      |
+| dhcp.log                   | DHCP leases                                |
+| dnp3.log                   | DNP3 requests and replies                  |
+| dns.log                    | DNS activity                               |
+| ftp.log                    | FTP activity                               |
+| http.log                   | HTTP requests and replies                  |
+| irc.log                    | IRC commands and responses                 |
+| kerberos.log               | Kerberos                                   |
+| modbus.log                 | Modbus commands and responses              |
+| modbus_register_change.log | Tracks changes to Modbus holding registers |
+| mysql.log                  | MySQL                                      |
+| ntlm.log                   | NT LAN Manager (NTLM)                      |
+| radius.log                 | RADIUS authentication attempts             |
+| rdp.log                    | RDP RDP                                    |
+| rfb.log                    | Remote Framebuffer (RFB)                   |
+| sip.log                    | SIP                                        |
+| smb_cmd.log                | SMB commands                               |
+| smb_files.log              | SMB files                                  |
+| smb_mapping.log            | SMB trees                                  |
+| smtp.log                   | SMTP transactions                          |
+| snmp.log                   | SNMP messages                              |
+| socks.log                  | SOCKS proxy requests                       |
+| ssh.log                    | SSH connections                            |
+| ssl.log                    | SSL/TLS handshake info                     |
+| syslog.log                 | Syslog messages                            |
+| tunnel.log                 | Tunneling protocol events                  |
 
-**BRO Log Reference**  
+**BRO Log Reference**
 – https://www.bro.org/sphinx-git/script-reference/log-files.html
 
 #### BRO Carving
@@ -1070,33 +1083,33 @@ and
 ##### Get bro outbound signature stored in .sig file (read with -s)
 
 ```
-signature outbound-sig {  
-ip-proto == tcp  
-src-ip == 192.168.0.0/16  
-dst-ip != 192.168.0.0/16  
-dst-port == 80  
-http-request-header /^User-Agent:.*/  
-event "Outbound HTTP traffic"  
+signature outbound-sig {
+ip-proto == tcp
+src-ip == 192.168.0.0/16
+dst-ip != 192.168.0.0/16
+dst-port == 80
+http-request-header /^User-Agent:.*/
+event "Outbound HTTP traffic"
 }
 ```
 
 ##### Get bro Windows Shell signature stored in .sig file (read with -s)
 
 ```
-signature windows_reverse_shell {  
-ip-proto == tcp  
-tcp-state established,originator  
-event "ATTACK-RESPONSES Microsoft cmd.exe banner (reverse-shell originator)"  
-payload /.*Microsoft Windows.*x28Cx29 Copyright 1985-.*Microsoft Corp/  
+signature windows_reverse_shell {
+ip-proto == tcp
+tcp-state established,originator
+event "ATTACK-RESPONSES Microsoft cmd.exe banner (reverse-shell originator)"
+payload /.*Microsoft Windows.*x28Cx29 Copyright 1985-.*Microsoft Corp/
 }
 ```
 
 ```
-signature windows_shell {  
-ip-proto == tcp  
-tcp-state established,responder  
-event "ATTACK-RESPONSES Microsoft cmd.exe banner (normal-shell responder)"  
-payload /.*Microsoft Windows.*x28Cx29 Copyright 1985-.*Microsoft Corp/  
+signature windows_shell {
+ip-proto == tcp
+tcp-state established,responder
+event "ATTACK-RESPONSES Microsoft cmd.exe banner (normal-shell responder)"
+payload /.*Microsoft Windows.*x28Cx29 Copyright 1985-.*Microsoft Corp/
 }
 ```
 
@@ -1113,24 +1126,24 @@ bro -r file.pcap -s outbound.sig
 ##### BRO event script to find User-Agent (outbound.bro)
 
 ```
-event http_header(c: connection, is_orig: bool, name: string, value: string)  
-{  
-local snet = 192.168.0.0/16;  
-if (c$id$orig_h in snet)  
-{  
-if (c$id$resp_h !in snet)  
-{  
-if (c$id$resp_p == 80/tcp && name == "USER-AGENT")  
-{  
-print fmt ("source IP %s, destination IP/port %s %s, USER-AGENT content %s",  
-c$id$orig_h,c$id$resp_h,c$id$resp_p,value);  
-}  
-}  
-}  
+event http_header(c: connection, is_orig: bool, name: string, value: string)
+{
+local snet = 192.168.0.0/16;
+if (c$id$orig_h in snet)
+{
+if (c$id$resp_h !in snet)
+{
+if (c$id$resp_p == 80/tcp && name == "USER-AGENT")
+{
+print fmt ("source IP %s, destination IP/port %s %s, USER-AGENT content %s",
+c$id$orig_h,c$id$resp_h,c$id$resp_p,value);
+}
+}
+}
 }
 ```
 
-__BRO Scripting Reference__ 
+**BRO Scripting Reference**
 – https://www.bro.org/sphinx/scripting/
 
 ##### Run event file to view user-agent
@@ -1157,7 +1170,7 @@ __BRO Scripting Reference__
 
 `cat /tmp/bro/data.txt |awk '{print length, $0}'|sort -nr`
 
-* * *
+---
 
 #### ModSecurity rules
 
@@ -1191,10 +1204,10 @@ __BRO Scripting Reference__
 
 ##### error.log trigger on keyword (can use pattern)
 
-`#Trigger on EXFIL from body (phase:4 is the Response Body)  
+`#Trigger on EXFIL from body (phase:4 is the Response Body)
 SecRule RESPONSE_BODY "badguy" "phase:4, msg:'HoneyToken Exfil Detected', tag:'HONEYTOKEN EXFIL'"`
 
-* * *
+---
 
 #### Splunk
 
@@ -1296,7 +1309,7 @@ and
 
 `index=av sourcetype=mcafee:epo (severity=critical OR severity=high) | stats values(event_description) AS desc, values(signature) AS signature, values(file_name) AS file_path, count AS result BY dest | eval dd="index=av sourcetype=mcafee:epo (severity=critical OR severity=high) dest=".dest`
 
-* * *
+---
 
 #### Snort
 
@@ -1318,7 +1331,7 @@ Note these are examples and are mainly illustrated as templates for creating you
 
 `.ade, .adp, .ani, .bas, .bat, .chm, .cmd, .com, .cpl, .crt, .exe, .hlp, .ht, .hta, .inf, .ins, .isp, .jar, .job, .js, .jse, .lnk, .mda, .mdb, .mde, .mdz, .msc, .msi, .msp, .mst, .ocx, .pcd, .ps1, .reg, .scr, .sct, .shs, .svg, .url, .vb, .vbe, .vbs, .wbk, .wsc, .ws, .wsf, .wsh, .exe, .pif, .pub, .ip`
 
-* * *
+---
 
 #### Additional Useful Info
 
@@ -1364,11 +1377,9 @@ and
 
 `Get-InjectedThread.ps1`
 
-**Reference**  
+**Reference**
 – https://gist.github.com/jaredcatkinson/23905d34537ce4b5b1818c3e6405c1d2
 
-* * *
+---
 
 [1]: /img/20180515_094034_defend-300x300.png
-
-  

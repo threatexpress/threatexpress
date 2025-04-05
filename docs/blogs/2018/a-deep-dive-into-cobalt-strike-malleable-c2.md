@@ -1,6 +1,6 @@
 # A Deep Dive into Cobalt Strike Malleable C2
 
-**Joe Vest | September 5, 2018 | Tweet This Post: [:fa-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2/&text=A deep dive into Cobaltstrike malleable C2)**
+**Joe Vest | September 5, 2018 | Tweet This Post: [:fontawesome-brands-twitter:](https://twitter.com/intent/tweet?url=http://threatexpress.com/blogs/2018/11/a-deep-dive-into-cobalt-strike-malleable-c2/&text=A deep dive into Cobaltstrike malleable C2)**
 
 ![][1]
 
@@ -8,14 +8,14 @@ One of Cobalt Strike's most valuable features is its ability to modify the behav
 
 The article makes the assumption that you understand the basics of malleable C2 and is intended to be used as reference for designing and creating malleable C2 profiles. The profile found at [(https://github.com/threatexpress/malleable-c2](https://github.com/threatexpress/malleable-c2) is to used as a reference profile. It is highly documented and contains tips and guidance to aide in creating new C2 profiles.
 
-If you are new to malleable C2, we recommend starting with this reference by Jeff Dimmock (@bluscreenofjeff) https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/  or reading the other references.
+If you are new to malleable C2, we recommend starting with this reference by Jeff Dimmock (@bluscreenofjeff) https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/ or reading the other references.
 
 Big thanks to [@andrewchiles][2] and [@001SPARTaN][3] for helping test and develop this C2 profile!!!
 
-* Don't use defaults. Use a profile.
-* Modify sample profiles before use. It's likely that public Malleable C2 profiles are signatured by security products.
-* Remember you're still generating "beaconing" network traffic that creates a detectable pattern that is mostly independent of the chosen profile
-* Test, Test, Test
+- Don't use defaults. Use a profile.
+- Modify sample profiles before use. It's likely that public Malleable C2 profiles are signatured by security products.
+- Remember you're still generating "beaconing" network traffic that creates a detectable pattern that is mostly independent of the chosen profile
+- Test, Test, Test
 
 The following are quick tips to consider when setting parameter values. Follow this to reduce troubleshooting errors.
 
@@ -51,7 +51,7 @@ Start from scratch or use a template? We recommend using an existing profile and
 The reference profile is self-documented, but let's walk through each section…
 
 !!! Note "Malleable C2 References"
-    The references and guidelines described below use the Malleable C2 profile found at [https://github.com/threatexpress/malleable-c2](https://github.com/threatexpress/malleable-c2).
+The references and guidelines described below use the Malleable C2 profile found at [https://github.com/threatexpress/malleable-c2](https://github.com/threatexpress/malleable-c2).
 
 ## Profile Name
 
@@ -69,10 +69,10 @@ The reference profile is self-documented, but let's walk through each section…
 
 ![][7]This setting controls the SSL certificate used for HTTPS communications. If possible, utilize a real, properly-issued SSL certificate for the domain you're using. LetsEncrypt can issue free SSL certificates that are trusted by all major operating systems and browsers, and will make it harder for defenders to inspect Beacon traffic.
 
-SSL certificate store creation steps are well documented in 
+SSL certificate store creation steps are well documented in
 
 !!!Tip "Protect your C2 Server"
-    It is generally recommended to setup your target facing HTTPS certificates on redirector hosts. This limits the reconfiguration required on your teamserver in case a domain is burned during an operation. Caveat: Some CDN providers require your origin host to maintain a valid SSL certificate and your teamserver will need a trusted SSL certificate installed for Domain Fronting to function. Refer to the Cobalt Strike documentation [https://www.cobaltstrike.com/help-malleable-c2#validssl](https://www.cobaltstrike.com/help-malleable-c2#validssl) or this post by [@bluscreenofjeff][8] [https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/](https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/) for instructions on configuring SSL with Cobalt Strike.
+It is generally recommended to setup your target facing HTTPS certificates on redirector hosts. This limits the reconfiguration required on your teamserver in case a domain is burned during an operation. Caveat: Some CDN providers require your origin host to maintain a valid SSL certificate and your teamserver will need a trusted SSL certificate installed for Domain Fronting to function. Refer to the Cobalt Strike documentation [https://www.cobaltstrike.com/help-malleable-c2#validssl](https://www.cobaltstrike.com/help-malleable-c2#validssl) or this post by [@bluscreenofjeff][8] [https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/](https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/) for instructions on configuring SSL with Cobalt Strike.
 
 ## SpawnTo Process
 
@@ -84,10 +84,10 @@ The additional parameters may help a Beacon blend in more if a defender looks at
 
 General Guidelines:
 
-* Don't use protected binaries. How do you know if they are protected? Test
-* Don't select binaries that executes with UAC
-* Choose a 64 bit binary for x64 payloads and 32-bit payload for x86 payloads
-* Consider choosing a binary that would not look strange making network connections
+- Don't use protected binaries. How do you know if they are protected? Test
+- Don't select binaries that executes with UAC
+- Choose a 64 bit binary for x64 payloads and 32-bit payload for x86 payloads
+- Consider choosing a binary that would not look strange making network connections
 
 ## SMB Beacons
 
@@ -115,17 +115,17 @@ In some cases, it may be better to use stageless payloads, as the staging proces
 
 ![][15]… truncated…
 
-Like the http-stager section, the HTTP GET requests/responses can be modified. This section is used to check a teamserver for tasks. More information can be found here [https://www.cobaltstrike.com/help-http-beacon](https://www.cobaltstrike.com/help-http-beacon). This profile uses a similar format found in the http-stager. The difference is the use of the cookie **__cfduid=**. This value contains information about the Beacon and is used by the teamserver to issue tasks. The teamserver responds with a task hidden in the jQuery javascript text. Modify this section to match the HTTP traffic you would like to use. If you choose to use a GET-only profile (see below), this is also how Beacon transmits information back to the teamserver.
+Like the http-stager section, the HTTP GET requests/responses can be modified. This section is used to check a teamserver for tasks. More information can be found here [https://www.cobaltstrike.com/help-http-beacon](https://www.cobaltstrike.com/help-http-beacon). This profile uses a similar format found in the http-stager. The difference is the use of the cookie **\_\_cfduid=**. This value contains information about the Beacon and is used by the teamserver to issue tasks. The teamserver responds with a task hidden in the jQuery javascript text. Modify this section to match the HTTP traffic you would like to use. If you choose to use a GET-only profile (see below), this is also how Beacon transmits information back to the teamserver.
 
 !!! Note
-    The **set uri** option can accept multiple URIs. This can be used to add diversity to your requests. However, Beacons will not perform requests in a round robin style as you might assume and instead a single URI from the list will be assigned to each Beacon during staging.
+The **set uri** option can accept multiple URIs. This can be used to add diversity to your requests. However, Beacons will not perform requests in a round robin style as you might assume and instead a single URI from the list will be assigned to each Beacon during staging.
 
 ## HTTP POST
 
 ![][16] Like the http-stager and http-get sections, the HTTP-POST requests/responses can be modified. The HTTP-POST section serves as Beacon's response to commands issued by the server and can actually be performed as a HTTP GET or HTTP POST request. This example uses an HTTP POST as shown with **set verb "POST";** The HTTP traffic follows the same style of the HTTP-GET section and mimics a jQuery request. You can change the mode from HTTP-POST to HTTP-GET by commenting out the POST section and uncommenting the GET section of HTTP-POST.
 
 !!! Note "GET-Only Profiles have Trade-offs"
-    GET-Only profiles have some trade-offs and may leave you scratching your head when attempting to pull large amounts of data (i.e. download a file or take a screenshot). This is due to the way data is transmitted within the URI, URI parameters, or Headers. This side-effect is well documented by Raphael at 
+GET-Only profiles have some trade-offs and may leave you scratching your head when attempting to pull large amounts of data (i.e. download a file or take a screenshot). This is due to the way data is transmitted within the URI, URI parameters, or Headers. This side-effect is well documented by Raphael at
 
 It is important to always validate and test Malleable C2 profiles before using them on a target. A malformed profile can easily cause Beacons to fail to check in, or to not send output from tasks. Always test new C2 profiles before utilizing them in a real-world situation.
 
@@ -134,7 +134,7 @@ It is important to always validate and test Malleable C2 profiles before using t
 C2lint is a tool provide with Cobalt Strike to test a profile for errors. Run this and correct errors before using on an engagement. [https://www.cobaltstrike.com/help-malleable-c2](https://www.cobaltstrike.com/help-malleable-c2)
 
 !!! Example
-    `./c2lint c2lint jquery-c2.3.11.profile`
+`./c2lint c2lint jquery-c2.3.11.profile`
 
 ## Manual Testing
 
@@ -142,33 +142,33 @@ In addition to testing with c2lint, manually test all features of a Beacon on a 
 
 _Quick Steps for Manual Testing and Validation_
 
-* Start wireshark
-* Start a teamserver using the test profile
-* Create a HTTP listener (named http)
-* Create a SMB listener (named smb)
-* Create a Scripted Web Delivery attack to stage the HTTP Beacon 
-    * Attacks -> Web Drive-by -> Scripted Web Delivery
-* Run the PowerShell on a test Windows system as an Administrator
-* Interact with the elevated Beacon
-* Spawn new Beacons, interact with each, and execute spawn commands:
+- Start wireshark
+- Start a teamserver using the test profile
+- Create a HTTP listener (named http)
+- Create a SMB listener (named smb)
+- Create a Scripted Web Delivery attack to stage the HTTP Beacon
+  - Attacks -> Web Drive-by -> Scripted Web Delivery
+- Run the PowerShell on a test Windows system as an Administrator
+- Interact with the elevated Beacon
+- Spawn new Beacons, interact with each, and execute spawn commands:
 
 ```
 spawn x64 http
-spawn x86 http  
-spawn x64 smb  
+spawn x86 http
+spawn x64 smb
 spawn x86 smb
 ```
 
-* Review the packet capture data to ensure the http traffic is what you expect: 
-    * Review the staging process
-    * Review the http-get process
-    * Review th http-post process (even if you use GET)
-* Execute other Beacon commands to ensure it is working as expected (at a minimum):
+- Review the packet capture data to ensure the http traffic is what you expect:
+  - Review the staging process
+  - Review the http-get process
+  - Review th http-post process (even if you use GET)
+- Execute other Beacon commands to ensure it is working as expected (at a minimum):
 
 ```
-keylogger  
-screenshot  
-download 
+keylogger
+screenshot
+download
 upload
 ```
 
@@ -197,5 +197,3 @@ upload
 [14]: /img/memory.png
 [15]: /img/httpget.png
 [16]: /img/httppost.png
-
-  
