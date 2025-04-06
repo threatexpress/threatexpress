@@ -4,6 +4,8 @@
 
 ![][1]
 
+NOTE: This reference is outdated (version 4). I've learned that this blog still shows up in search engine results.
+
 This post is intended as a quick reference guide to install Bloodhound on an Ubuntu system.
 
 This is heavily based on https://popped.io/setting-up-bloodhound-on-debian-jessie/ with a few tweaks.

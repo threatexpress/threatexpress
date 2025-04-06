@@ -15,8 +15,9 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  feature:
-    tabs: false
+  features:
+    - search.highlight
+
 repo_name: "threatexpress/threatexpress"
 repo_url: "https://github.com/threatexpress"
 
@@ -30,13 +31,12 @@ extra:
 # Support for jquery and custom javascript
 extra_javascript:
   - https://platform.twitter.com/widgets.js
-  - https://code.jquery.com/jquery-3.3.1.min.js
+  - https://code.jquery.com/jquery-3.6.0.min.js
   - js/extra.js
 
 # Support extra CSS
 extra_css:
   - css/extra.css
-  - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
 
 # Extensions
 markdown_extensions:
@@ -55,19 +55,21 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  # - fontawesome_markdown
 
 # Navigation
 nav:
   - Home: index.md
   - REDTEAM.GUIDE: https://redteam.guide
   - Posts:
+      - 2025:
+          - Red Team Development and Operations Audiobook release: blogs/2025/red-team-development-and-operations-audiobook.md
+          - Blog update: blogs/2025/blog-updates.md
+          - Installing BloodHound Community Edition (CE) on Linux: blogs/2025/install-bloodhound.md
       - 2020:
           - ThreatBox - Standard Attack Platform: blogs/2020/threatbox-standard-attack-platform.md
           - Red Team Development and Operations: blogs/2020/red-team-development-and-operations.md
@@ -93,7 +95,8 @@ nav:
           - Slack Notifications for Cobalt Strike: blogs/2016/slack-notifications-for-cobalt-strike.md
           - SubShell and TinyShell - Custom Covert Webshells: blogs/2016/web-shells-covert-channel.md
           - New Information Security and Red Teaming Blog Threat Express by MINIS: blogs/2016/new-information-security-red-teaming-blog-threat-express-minis.md
-  - Red Teaming:
+  - Presentations: presentations/presentations.md
+  - Red Teaming Resources:
       - What is Red Teaming: redteaming/redteaming.md
       - Red vs Pen vs Vuln: redteaming/red_vs_pen_vs_vuln.md
       - Roles and Relationships: redteaming/rolesandrelationships.md
@@ -114,5 +117,4 @@ nav:
           - General Resources: redteaming/resources.md
           - Attack Active Directory: redteaming/windowsactivedirectory.md
       - Red Team Videos: redteaming/videos/videos.md
-  - Post Archive: archive.md
   - Contributors: contributors.md
